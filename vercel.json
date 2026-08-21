@@ -1,7 +1,12 @@
 {
   "redirects": [
     {
-      "source": "/add-listing/?",
+      "source": "/add-listing",
+      "destination": "/listings/",
+      "permanent": true
+    },
+    {
+      "source": "/add-listing/",
       "destination": "/listings/",
       "permanent": true
     }
