@@ -1,101 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>College Admissions Chances Predictor | Top Schools Rankings</title><meta name="description" content="Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier."><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/tools/college-chances-calculator/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="College Admissions Chances Predictor"><meta property="og:description" content="Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier."><meta property="og:url" content="https://topschoolsrankings.com/tools/college-chances-calculator/"><meta property="og:image" content="https://topschoolsrankings.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/og.png"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825245351059712"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"College Admissions Chances Predictor","description":"Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier.","image":"https://topschoolsrankings.com/og.png","url":"https://topschoolsrankings.com/tools/college-chances-calculator/","publisher":{"@type":"Organization","name":"Top Schools Rankings","url":"https://topschoolsrankings.com"}}</script><script src="/assets/site.js" defer></script>
-<style>
-.tool-fields select { width: 100%; height: 48px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 9px; padding: 0 13px; background: rgba(255, 255, 255, .09); color: white; outline: none; }
-.tool-fields select:focus { border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(230, 173, 58, .16); }
-.tool-fields select option { background: #1a2535; color: white; }
-.tool-result h3 { margin: 0 0 8px 0; color: inherit; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
-.tool-result p { margin: 0; font-size: 15px; opacity: 0.9; font-weight: normal; }
-.tier-safety { background: rgba(40, 167, 69, 0.15); color: #8de49f; border-color: rgba(40, 167, 69, 0.3); }
-.tier-match { background: rgba(0, 86, 179, 0.15); color: #9bc5ff; border-color: rgba(0, 86, 179, 0.3); }
-.tier-reach { background: rgba(255, 193, 7, 0.15); color: #ffe68a; border-color: rgba(255, 193, 7, 0.3); }
-.tier-far-reach { background: rgba(220, 53, 69, 0.15); color: #f596a0; border-color: rgba(220, 53, 69, 0.3); }
-</style>
-</head><body>
-  <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown · Dates checked · Corrections welcomed</span></div></div>
-  <header class="site-header"><div class="site-container header-inner">
-  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
-    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
-  </a>
-    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a></nav>
-    <div class="header-search">
-  <div class="search-box search-box-compact" data-search>
-    <label class="sr-only">Search schools, universities and guides</label>
-    <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search guides…" autocomplete="off"></div>
-    <div class="search-results" hidden></div>
-  </div></div>
-    <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
-  </div></header><main>
-  <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/tools/">Tools</a></span><span><i aria-hidden="true">/</i><b>College Admissions Chances Predictor</b></span></nav>
-  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive planning resource</span><h1>College Admissions Chances Predictor</h1><p>Find out if a university is a Safety, Match, or Reach school based on your GPA and SAT/ACT.</p><div class="page-meta">Free to use · No account · Educational estimate only</div></div></header><section class="section site-container article-layout"><article class="article-body">
-  
-  <section class="tool-panel" data-custom>
-    <div class="tool-panel-head" style="margin-bottom: 20px;">
-      <span>Interactive planning tool</span>
-      <h2>Admissions Chances Predictor</h2>
-    </div>
-    
-    <div class="tool-fields">
-      <label><span>Unweighted GPA (Out of 4.0)</span><input type="number" id="gpa" placeholder="e.g. 3.8" min="2.0" max="4.0" step="0.01" inputmode="decimal"></label>
-      <label><span>SAT Score (Out of 1600) or ACT equivalent</span><input type="number" id="sat" placeholder="e.g. 1450" min="400" max="1600" step="10" inputmode="numeric"></label>
-      <label><span>Target University Tier</span>
-        <select id="tier">
-          <option value="ivy">Ivy League & Top 20 (e.g., Harvard, MIT, Stanford) - <10% Acceptance</option>
-          <option value="highly_selective">Highly Selective (e.g., NYU, USC, Michigan) - 10-30% Acceptance</option>
-          <option value="selective">Selective State/Private (e.g., Penn State, Ohio State) - 30-60% Acceptance</option>
-          <option value="accessible">Accessible Universities - >60% Acceptance</option>
-        </select>
-      </label>
-    </div>
-    <button class="button button-primary" type="button" id="calc_btn" style="width: 100%;">Predict My Chances</button>
-    <div id="result_box" class="tool-result" hidden></div>
-  </section>
-  
-  <script>
-    document.getElementById("calc_btn").addEventListener("click", function() {
-      var gpa = parseFloat(document.getElementById("gpa").value);
-      var sat = parseFloat(document.getElementById("sat").value);
-      var tier = document.getElementById("tier").value;
-      var resultBox = document.getElementById("result_box");
-      
-      if (isNaN(gpa) || isNaN(sat) || gpa < 1 || gpa > 4.5 || sat < 400 || sat > 1600) {
-        resultBox.innerHTML = "<h3>Error</h3><p>Please enter a valid GPA (0-4.0) and SAT score (400-1600).</p>";
-        resultBox.className = "custom-tool-result tier-reach";
-        resultBox.hidden = false;
-        return;
-      }
-      
-      // Basic heuristic score out of 100
-      var gpa_score = (gpa / 4.0) * 100;
-      var sat_score = (sat / 1600) * 100;
-      var profile_score = (gpa_score * 0.6) + (sat_score * 0.4); // GPA is slightly more important
-      
-      var category = "";
-      var desc = "";
-      var cssClass = "";
-      
-      if (tier === "ivy") {
-        if (profile_score >= 95) { category = "Match / Reach"; desc = "Even with perfect stats, the Ivy League is highly competitive. Your stats make you a competitive applicant, but essays and extracurriculars will be the deciding factor."; cssClass = "tier-reach"; }
-        else if (profile_score >= 88) { category = "Reach"; desc = "Your stats are slightly below the typical median for Ivy League schools. It will be a challenging process, but strong extracurriculars could help."; cssClass = "tier-reach"; }
-        else { category = "Far Reach"; desc = "Your stats are significantly below the median for Top 20 schools. Acceptance is highly unlikely without an extraordinary hook."; cssClass = "tier-far-reach"; }
-      } else if (tier === "highly_selective") {
-        if (profile_score >= 90) { category = "Safety / Match"; desc = "Your stats are very strong for highly selective schools. You have a very solid chance of admission."; cssClass = "tier-match"; }
-        else if (profile_score >= 82) { category = "Match"; desc = "Your stats align well with typical admitted students at highly selective universities. You are right in the sweet spot."; cssClass = "tier-match"; }
-        else { category = "Reach"; desc = "Your stats are below the typical average for highly selective schools. You should consider adding more accessible schools to your list."; cssClass = "tier-reach"; }
-      } else if (tier === "selective") {
-        if (profile_score >= 80) { category = "Safety"; desc = "Your stats are well above average for selective state and private universities. You are highly likely to be admitted."; cssClass = "tier-safety"; }
-        else if (profile_score >= 70) { category = "Match"; desc = "Your stats are right in line with the averages. You have a very good chance of admission."; cssClass = "tier-match"; }
-        else { category = "Reach"; desc = "Your stats are a bit below average for these schools, making them a slight reach. Make sure your essays stand out."; cssClass = "tier-reach"; }
-      } else {
-        if (profile_score >= 65) { category = "Safety"; desc = "Your stats strongly exceed the requirements for accessible universities. You are almost guaranteed admission."; cssClass = "tier-safety"; }
-        else { category = "Match"; desc = "You are well within the typical range for accessible universities. Admission is highly likely."; cssClass = "tier-match"; }
-      }
-      
-      resultBox.innerHTML = "<h3>" + category + "</h3><p>" + desc + "</p>";
-      resultBox.className = "custom-tool-result " + cssClass;
-      resultBox.hidden = false;
-    });
-  </script>
-  
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>College Admissions Chances Predictor | Top Schools Rankings</title><meta name="description" content="Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier."><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/tools/college-chances-calculator/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="College Admissions Chances Predictor"><meta property="og:description" content="Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier."><meta property="og:url" content="https://topschoolsrankings.com/tools/college-chances-calculator/"><meta property="og:image" content="https://topschoolsrankings.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/og.png"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825245351059712"></script>
+  <p>Figuring out where to apply to college can be overwhelming. The College Admissions Chances Predictor is designed to help you quickly identify whether a university should be considered a Safety, Match, or Reach school based on historical admissions data and your current academic profile.</p>
+
   <h2>How do admissions chances work?</h2>
   <p>Most college counselors divide your college list into three distinct categories based on your academic profile compared to the school's historical admitted student data:</p>
   <ul>
@@ -104,10 +9,27 @@
     <li><strong>Reach Schools:</strong> Your academic profile is below the 25th percentile, OR the school is so hyper-selective (like the Ivy League) that it is a reach for absolutely everyone, regardless of perfect scores.</li>
   </ul>
   
-  <h2>Important Limitations</h2>
-  <p>This calculator relies entirely on GPA and SAT/ACT scores. While these are the most critical factors in college admissions, they do not tell the whole story. Holistic admissions processes, especially at top-tier universities, heavily weigh your application essays, letters of recommendation, extracurricular activities, and demonstrated interest.</p>
+  <h2>Important Limitations & Holistic Admissions</h2>
+  <p>This calculator relies entirely on quantitative metrics: GPA and SAT/ACT scores. While these are usually the most critical factors in college admissions, they do not tell the whole story. Holistic admissions processes, especially at top-tier universities, heavily weigh your application essays, letters of recommendation, extracurricular activities, and demonstrated interest. A perfect score does not guarantee admission to Harvard or Stanford, and a lower score doesn't mean an automatic rejection if you have extraordinary extracurriculars.</p>
   
-  </article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Not an official decision</strong><p>This is a heuristic planning tool and does not guarantee admission or rejection from any university.</p></div></aside></section></main>
+  <h2>Frequently asked questions</h2>
+  <h3>What is a "Far Reach" school?</h3>
+  <p>A "Far Reach" school is one where your academic profile is significantly below the historical average of admitted students (e.g., applying to Princeton with a 3.2 GPA and an 1100 SAT). While miracles do happen, students in this category usually require a massive "hook" (like being a recruited athlete or a child of a major donor) to gain admission.</p>
+  
+  <h3>Are Ivy League schools ever considered a "Safety"?</h3>
+  <p>No. Universities with acceptance rates below 10% (like Harvard, Yale, Princeton, Stanford, and MIT) are considered "Reach" schools for absolutely every applicant, regardless of whether you have a 4.0 GPA and a 1600 SAT. There are simply too many highly qualified applicants for the limited number of spots.</p>
+
+  <h3>Should I submit my SAT/ACT score if it's test-optional?</h3>
+  <p>If your SAT/ACT score places a school in the "Safety" or "Match" category, you should definitely submit it. If your score lowers your prediction to a "Reach", you might want to consider applying test-optional if the university allows it, and rely on your strong GPA instead.</p>
+
+  <h2>Related tools</h2>
+  <h3><a href="/tools/sat-score-estimator/">SAT Score Estimator</a></h3>
+  <p>Calculate your total SAT score and see its competitiveness band.</p>
+  <h3><a href="/tools/act-to-sat-converter/">ACT to SAT Score Converter</a></h3>
+  <p>Convert your ACT composite score to an approximate SAT total.</p>
+  <h3><a href="/tools/us-college-fit-quiz/">US College Fit Quiz</a></h3>
+  <p>Find your best-fit US college type based on size, setting, and culture.</p>
+</article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Not an official decision</strong><p>This is a heuristic planning tool and does not guarantee admission or rejection from any university.</p></div></aside></section></main>
   <footer class="site-footer"><div class="site-container footer-grid">
     <div class="footer-about">
   <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
