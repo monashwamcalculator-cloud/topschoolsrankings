@@ -1,0 +1,262 @@
+import os
+
+final_grade_content = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Final Grade Calculator | What Do I Need on My Final Exam? | Top Schools Rankings</title><meta name="description" content="Use this free final grade calculator to find out exactly what you need to score on your final exam to pass or get an A."><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/tools/final-grade-calculator/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="Final Grade Calculator"><meta property="og:description" content="Use this free final grade calculator to find out exactly what you need to score on your final exam to pass or get an A."><meta property="og:url" content="https://topschoolsrankings.com/tools/final-grade-calculator/"><meta property="og:image" content="https://topschoolsrankings.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/og.png"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825245351059712"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Final Grade Calculator","description":"Use this free final grade calculator to find out exactly what you need to score on your final exam to pass or get an A.","image":"https://topschoolsrankings.com/og.png","url":"https://topschoolsrankings.com/tools/final-grade-calculator/","publisher":{"@type":"Organization","name":"Top Schools Rankings","url":"https://topschoolsrankings.com"}}</script><script src="/assets/site.js" defer></script>
+<style>
+.result-success { background: rgba(40, 167, 69, 0.15); color: #8de49f; border-color: rgba(40, 167, 69, 0.3); }
+.result-warning { background: rgba(255, 193, 7, 0.15); color: #ffe68a; border-color: rgba(255, 193, 7, 0.3); }
+.result-danger { background: rgba(220, 53, 69, 0.15); color: #f596a0; border-color: rgba(220, 53, 69, 0.3); }
+</style>
+</head><body>
+  <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown · Dates checked · Corrections welcomed</span></div></div>
+  <header class="site-header"><div class="site-container header-inner">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a></nav>
+    <div class="header-search">
+  <div class="search-box search-box-compact" data-search>
+    <label class="sr-only">Search schools, universities and guides</label>
+    <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search guides…" autocomplete="off"></div>
+    <div class="search-results" hidden></div>
+  </div></div>
+    <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
+  </div></header><main>
+  <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/tools/">Tools</a></span><span><i aria-hidden="true">/</i><b>Final Grade Calculator</b></span></nav>
+  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive planning resource</span><h1>Final Grade Calculator</h1><p>Find out exactly what you need to score on your final exam to pass your class or get an A.</p><div class="page-meta">Free to use · No account · Instant calculation</div></div></header><section class="section site-container article-layout"><article class="article-body">
+  
+  <section class="tool-panel" data-custom>
+    <div class="tool-panel-head" style="margin-bottom: 20px;">
+      <span>Interactive planning tool</span>
+      <h2>Final Grade Calculator</h2>
+      <p>Enter your current grade, what grade you want to achieve, and how much your final exam is worth.</p>
+    </div>
+    
+    <div class="tool-fields">
+      <label><span>Current Grade (%)</span><input type="number" id="current_grade" placeholder="e.g. 85" min="0" step="0.01" inputmode="decimal"></label>
+      <label><span>Desired Class Grade (%)</span><input type="number" id="desired_grade" placeholder="e.g. 90" min="0" step="0.01" inputmode="decimal"></label>
+      <label><span>Final Exam Weight (%)</span><input type="number" id="exam_weight" placeholder="e.g. 20" min="0.01" max="100" step="0.01" inputmode="decimal"></label>
+    </div>
+    <button class="button button-primary" type="button" id="calc_btn" style="width: 100%;">Calculate What I Need</button>
+    <div id="result_box" class="tool-result" hidden></div>
+  </section>
+  
+  <script>
+    document.getElementById("calc_btn").addEventListener("click", function() {
+      var current = parseFloat(document.getElementById("current_grade").value);
+      var desired = parseFloat(document.getElementById("desired_grade").value);
+      var weight = parseFloat(document.getElementById("exam_weight").value);
+      var resultBox = document.getElementById("result_box");
+      
+      if (isNaN(current) || isNaN(desired) || isNaN(weight) || weight <= 0 || weight > 100) {
+        resultBox.textContent = "Please enter valid numbers in all fields.";
+        resultBox.className = "tool-result result-warning";
+        resultBox.hidden = false;
+        return;
+      }
+      
+      var required = (desired - current * (1 - (weight / 100))) / (weight / 100);
+      required = Math.round(required * 100) / 100;
+      
+      if (required <= 0) {
+        resultBox.innerHTML = "You only need a <strong>" + required + "%</strong>. You're guaranteed to get your desired grade!";
+        resultBox.className = "tool-result result-success";
+      } else if (required <= 100) {
+        resultBox.innerHTML = "You need to score at least <strong>" + required + "%</strong> on your final to get a " + desired + "% in the class.";
+        resultBox.className = "tool-result result-success";
+      } else {
+        resultBox.innerHTML = "You need a <strong>" + required + "%</strong>. This is impossible without extra credit! Try aiming for a slightly lower grade.";
+        resultBox.className = "tool-result result-danger";
+      }
+      resultBox.hidden = false;
+    });
+  </script>
+  
+  <p>The end of the semester is stressful enough without having to guess what you need to score on your final exam. Our Final Grade Calculator does the math for you instantly, helping you prioritize your study time for the exams that matter most.</p>
+  
+  <h2>How to use the Final Grade Calculator</h2>
+  <ul>
+    <li><strong>Current Grade:</strong> Look at your syllabus or student portal and enter your current overall grade percentage before taking the final exam.</li>
+    <li><strong>Desired Grade:</strong> Enter the final percentage you want to achieve in the class (e.g., 90% for an A, 80% for a B, or 70% to pass).</li>
+    <li><strong>Final Exam Weight:</strong> Enter what percentage of your total course grade the final exam is worth (usually between 15% and 30%). Check your syllabus for the exact weight.</li>
+  </ul>
+  
+  <h2>Formula Used</h2>
+  <p>If you prefer to do the math manually, here is the standard algebraic formula we use to calculate your required final score:</p>
+  <p><em>Required Final Score = [Desired Grade - Current Grade × (1 - Final Weight)] / Final Weight</em></p>
+  <p>For example, if you have an 85% in the class, want a 90%, and the final is worth 20% (0.20), the math is: [90 - (85 * 0.8)] / 0.20 = [90 - 68] / 0.20 = 22 / 0.20 = 110%. You would need 110% on the final to get an A, which requires extra credit.</p>
+  
+  <h2>Tips for Finals Week</h2>
+  <p>If the calculator tells you that you need over 100%, it might be time to speak to your professor about extra credit opportunities or adjust your expectations. If you only need a very low score to keep your current grade (e.g., 40%), you can afford to allocate more study time to your harder classes where your grade is borderline!</p>
+
+  <h2>Frequently asked questions</h2>
+  <h3>What if my final exam is worth points instead of a percentage?</h3>
+  <p>If your class uses a points system instead of weighted percentages, you can calculate the final exam weight yourself. Simply divide the total points the final exam is worth by the total points in the entire course. For example, if the final is worth 100 points out of 500 total points for the semester, the final exam weight is 20%.</p>
+  
+  <h3>Does this calculator work for college and high school?</h3>
+  <p>Yes, this calculator works for any grading system that uses percentages. Whether you are in middle school, high school, or a university undergraduate or graduate program, the mathematical formula remains exactly the same.</p>
+
+  <h2>Related tools</h2>
+  <h3><a href="/tools/gpa-percentage-converter/">GPA to percentage converter</a></h3>
+  <p>Convert your final percentage grade into a standard 4.0 scale GPA.</p>
+  <h3><a href="/tools/college-chances-calculator/">College admissions chances predictor</a></h3>
+  <p>See how your final grades affect your chances of getting into top colleges.</p>
+  <h3><a href="/tools/ap-gpa-calculator/">AP GPA calculator</a></h3>
+  <p>Calculate your weighted GPA based on your AP course results.</p>
+  
+  </article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Double check your syllabus</strong><p>Some professors drop your lowest exam score or weight participation differently. Always verify the weighting structure in your course syllabus.</p></div></aside></section></main>
+  <footer class="site-footer"><div class="site-container footer-grid">
+    <div class="footer-about">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a><p>Independent school and university research for students and families. We are not an admissions agency and do not sell rankings.</p><a class="correction-link" href="/contact-us/">Report a correction →</a><div class="social-links" style="margin-top:20px; display:flex; gap:15px; font-size:13px;"><a href="https://www.youtube.com/@TopSchoolsRankings" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 00-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 002.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.instagram.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a><a href="https://www.facebook.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a></div></div>
+    <div><h2>Research</h2><a href="/blogs/">All guides</a><a href="/listings/">Listings</a><a href="/compare/">Comparisons</a><a href="/tools/">Student tools</a></div>
+    <div><h2>Standards</h2><a href="/ranking-methodology/">Ranking methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/author/saahil/">Our writer</a><a href="/about-us/">About us</a></div>
+    <div><h2>Legal</h2><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms &amp; conditions</a><a href="/disclaimer/">Disclaimer</a><a href="/contact-us/">Contact us</a></div>
+  </div><div class="site-container footer-bottom"><p>© 2026 Top Schools Rankings. Educational information only.</p><p>Advertising, when enabled, is visually separated from editorial content.</p></div></footer></body></html>"""
+
+chances_content = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>College Admissions Chances Predictor | Top Schools Rankings</title><meta name="description" content="Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier."><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/tools/college-chances-calculator/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="College Admissions Chances Predictor"><meta property="og:description" content="Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier."><meta property="og:url" content="https://topschoolsrankings.com/tools/college-chances-calculator/"><meta property="og:image" content="https://topschoolsrankings.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/og.png"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825245351059712"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"College Admissions Chances Predictor","description":"Calculate your chances of admission to top US universities based on your GPA, SAT/ACT score, and the college's selectivity tier.","image":"https://topschoolsrankings.com/og.png","url":"https://topschoolsrankings.com/tools/college-chances-calculator/","publisher":{"@type":"Organization","name":"Top Schools Rankings","url":"https://topschoolsrankings.com"}}</script><script src="/assets/site.js" defer></script>
+<style>
+.tool-fields select { width: 100%; height: 48px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 9px; padding: 0 13px; background: rgba(255, 255, 255, .09); color: white; outline: none; }
+.tool-fields select:focus { border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(230, 173, 58, .16); }
+.tool-fields select option { background: #1a2535; color: white; }
+.tool-result h3 { margin: 0 0 8px 0; color: inherit; font-size: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+.tool-result p { margin: 0; font-size: 15px; opacity: 0.9; font-weight: normal; }
+.tier-safety { background: rgba(40, 167, 69, 0.15); color: #8de49f; border-color: rgba(40, 167, 69, 0.3); }
+.tier-match { background: rgba(0, 86, 179, 0.15); color: #9bc5ff; border-color: rgba(0, 86, 179, 0.3); }
+.tier-reach { background: rgba(255, 193, 7, 0.15); color: #ffe68a; border-color: rgba(255, 193, 7, 0.3); }
+.tier-far-reach { background: rgba(220, 53, 69, 0.15); color: #f596a0; border-color: rgba(220, 53, 69, 0.3); }
+</style>
+</head><body>
+  <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown · Dates checked · Corrections welcomed</span></div></div>
+  <header class="site-header"><div class="site-container header-inner">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a></nav>
+    <div class="header-search">
+  <div class="search-box search-box-compact" data-search>
+    <label class="sr-only">Search schools, universities and guides</label>
+    <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search guides…" autocomplete="off"></div>
+    <div class="search-results" hidden></div>
+  </div></div>
+    <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
+  </div></header><main>
+  <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/tools/">Tools</a></span><span><i aria-hidden="true">/</i><b>College Admissions Chances Predictor</b></span></nav>
+  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive planning resource</span><h1>College Admissions Chances Predictor</h1><p>Find out if a university is a Safety, Match, or Reach school based on your GPA and SAT/ACT.</p><div class="page-meta">Free to use · No account · Educational estimate only</div></div></header><section class="section site-container article-layout"><article class="article-body">
+  
+  <section class="tool-panel" data-custom>
+    <div class="tool-panel-head" style="margin-bottom: 20px;">
+      <span>Interactive planning tool</span>
+      <h2>Admissions Chances Predictor</h2>
+    </div>
+    
+    <div class="tool-fields">
+      <label><span>Unweighted GPA (Out of 4.0)</span><input type="number" id="gpa" placeholder="e.g. 3.8" min="2.0" max="4.0" step="0.01" inputmode="decimal"></label>
+      <label><span>SAT Score (Out of 1600) or ACT equivalent</span><input type="number" id="sat" placeholder="e.g. 1450" min="400" max="1600" step="10" inputmode="numeric"></label>
+      <label><span>Target University Tier</span>
+        <select id="tier">
+          <option value="ivy">Ivy League & Top 20 (e.g., Harvard, MIT, Stanford) - <10% Acceptance</option>
+          <option value="highly_selective">Highly Selective (e.g., NYU, USC, Michigan) - 10-30% Acceptance</option>
+          <option value="selective">Selective State/Private (e.g., Penn State, Ohio State) - 30-60% Acceptance</option>
+          <option value="accessible">Accessible Universities - >60% Acceptance</option>
+        </select>
+      </label>
+    </div>
+    <button class="button button-primary" type="button" id="calc_btn" style="width: 100%;">Predict My Chances</button>
+    <div id="result_box" class="tool-result" hidden></div>
+  </section>
+  
+  <script>
+    document.getElementById("calc_btn").addEventListener("click", function() {
+      var gpa = parseFloat(document.getElementById("gpa").value);
+      var sat = parseFloat(document.getElementById("sat").value);
+      var tier = document.getElementById("tier").value;
+      var resultBox = document.getElementById("result_box");
+      
+      if (isNaN(gpa) || isNaN(sat) || gpa < 1 || gpa > 4.5 || sat < 400 || sat > 1600) {
+        resultBox.innerHTML = "<h3>Error</h3><p>Please enter a valid GPA (0-4.0) and SAT score (400-1600).</p>";
+        resultBox.className = "tool-result tier-reach";
+        resultBox.hidden = false;
+        return;
+      }
+      
+      var gpa_score = (gpa / 4.0) * 100;
+      var sat_score = (sat / 1600) * 100;
+      var profile_score = (gpa_score * 0.6) + (sat_score * 0.4);
+      
+      var category = "";
+      var desc = "";
+      var cssClass = "";
+      
+      if (tier === "ivy") {
+        if (profile_score >= 95) { category = "Match / Reach"; desc = "Even with perfect stats, the Ivy League is highly competitive. Your stats make you a competitive applicant, but essays and extracurriculars will be the deciding factor."; cssClass = "tier-reach"; }
+        else if (profile_score >= 88) { category = "Reach"; desc = "Your stats are slightly below the typical median for Ivy League schools. It will be a challenging process, but strong extracurriculars could help."; cssClass = "tier-reach"; }
+        else { category = "Far Reach"; desc = "Your stats are significantly below the median for Top 20 schools. Acceptance is highly unlikely without an extraordinary hook."; cssClass = "tier-far-reach"; }
+      } else if (tier === "highly_selective") {
+        if (profile_score >= 90) { category = "Safety / Match"; desc = "Your stats are very strong for highly selective schools. You have a very solid chance of admission."; cssClass = "tier-match"; }
+        else if (profile_score >= 82) { category = "Match"; desc = "Your stats align well with typical admitted students at highly selective universities. You are right in the sweet spot."; cssClass = "tier-match"; }
+        else { category = "Reach"; desc = "Your stats are below the typical average for highly selective schools. You should consider adding more accessible schools to your list."; cssClass = "tier-reach"; }
+      } else if (tier === "selective") {
+        if (profile_score >= 80) { category = "Safety"; desc = "Your stats are well above average for selective state and private universities. You are highly likely to be admitted."; cssClass = "tier-safety"; }
+        else if (profile_score >= 70) { category = "Match"; desc = "Your stats are right in line with the averages. You have a very good chance of admission."; cssClass = "tier-match"; }
+        else { category = "Reach"; desc = "Your stats are a bit below average for these schools, making them a slight reach. Make sure your essays stand out."; cssClass = "tier-reach"; }
+      } else {
+        if (profile_score >= 65) { category = "Safety"; desc = "Your stats strongly exceed the requirements for accessible universities. You are almost guaranteed admission."; cssClass = "tier-safety"; }
+        else { category = "Match"; desc = "You are well within the typical range for accessible universities. Admission is highly likely."; cssClass = "tier-match"; }
+      }
+      
+      resultBox.innerHTML = "<h3>" + category + "</h3><p>" + desc + "</p>";
+      resultBox.className = "tool-result " + cssClass;
+      resultBox.hidden = false;
+    });
+  </script>
+
+  <p>Figuring out where to apply to college can be overwhelming. The College Admissions Chances Predictor is designed to help you quickly identify whether a university should be considered a Safety, Match, or Reach school based on historical admissions data and your current academic profile.</p>
+
+  <h2>How do admissions chances work?</h2>
+  <p>Most college counselors divide your college list into three distinct categories based on your academic profile compared to the school's historical admitted student data:</p>
+  <ul>
+    <li><strong>Safety Schools:</strong> Your GPA and SAT/ACT scores are well above the 75th percentile for admitted students. The school has a relatively high acceptance rate, making your admission highly likely.</li>
+    <li><strong>Match Schools (Target):</strong> Your academic profile falls squarely between the 25th and 75th percentile of admitted students. You have a realistic chance of getting in, but it's not guaranteed.</li>
+    <li><strong>Reach Schools:</strong> Your academic profile is below the 25th percentile, OR the school is so hyper-selective (like the Ivy League) that it is a reach for absolutely everyone, regardless of perfect scores.</li>
+  </ul>
+  
+  <h2>Important Limitations & Holistic Admissions</h2>
+  <p>This calculator relies entirely on quantitative metrics: GPA and SAT/ACT scores. While these are usually the most critical factors in college admissions, they do not tell the whole story. Holistic admissions processes, especially at top-tier universities, heavily weigh your application essays, letters of recommendation, extracurricular activities, and demonstrated interest. A perfect score does not guarantee admission to Harvard or Stanford, and a lower score doesn't mean an automatic rejection if you have extraordinary extracurriculars.</p>
+  
+  <h2>Frequently asked questions</h2>
+  <h3>What is a "Far Reach" school?</h3>
+  <p>A "Far Reach" school is one where your academic profile is significantly below the historical average of admitted students (e.g., applying to Princeton with a 3.2 GPA and an 1100 SAT). While miracles do happen, students in this category usually require a massive "hook" (like being a recruited athlete or a child of a major donor) to gain admission.</p>
+  
+  <h3>Are Ivy League schools ever considered a "Safety"?</h3>
+  <p>No. Universities with acceptance rates below 10% (like Harvard, Yale, Princeton, Stanford, and MIT) are considered "Reach" schools for absolutely every applicant, regardless of whether you have a 4.0 GPA and a 1600 SAT. There are simply too many highly qualified applicants for the limited number of spots.</p>
+
+  <h3>Should I submit my SAT/ACT score if it's test-optional?</h3>
+  <p>If your SAT/ACT score places a school in the "Safety" or "Match" category, you should definitely submit it. If your score lowers your prediction to a "Reach", you might want to consider applying test-optional if the university allows it, and rely on your strong GPA instead.</p>
+
+  <h2>Related tools</h2>
+  <h3><a href="/tools/sat-score-estimator/">SAT Score Estimator</a></h3>
+  <p>Calculate your total SAT score and see its competitiveness band.</p>
+  <h3><a href="/tools/act-to-sat-converter/">ACT to SAT Score Converter</a></h3>
+  <p>Convert your ACT composite score to an approximate SAT total.</p>
+  <h3><a href="/tools/us-college-fit-quiz/">US College Fit Quiz</a></h3>
+  <p>Find your best-fit US college type based on size, setting, and culture.</p>
+  
+  </article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Not an official decision</strong><p>This is a heuristic planning tool and does not guarantee admission or rejection from any university.</p></div></aside></section></main>
+  <footer class="site-footer"><div class="site-container footer-grid">
+    <div class="footer-about">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a><p>Independent school and university research for students and families. We are not an admissions agency and do not sell rankings.</p><a class="correction-link" href="/contact-us/">Report a correction →</a><div class="social-links" style="margin-top:20px; display:flex; gap:15px; font-size:13px;"><a href="https://www.youtube.com/@TopSchoolsRankings" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 00-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 002.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.instagram.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a><a href="https://www.facebook.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a></div></div>
+    <div><h2>Research</h2><a href="/blogs/">All guides</a><a href="/listings/">Listings</a><a href="/compare/">Comparisons</a><a href="/tools/">Student tools</a></div>
+    <div><h2>Standards</h2><a href="/ranking-methodology/">Ranking methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/author/saahil/">Our writer</a><a href="/about-us/">About us</a></div>
+    <div><h2>Legal</h2><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms &amp; conditions</a><a href="/disclaimer/">Disclaimer</a><a href="/contact-us/">Contact us</a></div>
+  </div><div class="site-container footer-bottom"><p>© 2026 Top Schools Rankings. Educational information only.</p><p>Advertising, when enabled, is visually separated from editorial content.</p></div></footer></body></html>"""
+
+with open("tools/final-grade-calculator/index.html", "w", encoding="utf-8") as f:
+    f.write(final_grade_content)
+
+with open("tools/college-chances-calculator/index.html", "w", encoding="utf-8") as f:
+    f.write(chances_content)
+
+print("Restored correct full HTML layout")
