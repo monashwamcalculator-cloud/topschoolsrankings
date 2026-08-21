@@ -1,0 +1,236 @@
+import os
+import urllib.request
+import urllib.parse
+
+universities = [
+    {
+        'id': 'ohio-state-university',
+        'name': 'Ohio State University',
+        'short_desc': 'Public land-grant research university in Columbus, Ohio, known for a massive campus, strong athletics, and comprehensive academic offerings.',
+        'desc_p1': 'The Ohio State University (OSU) is a public land-grant research university in Columbus, Ohio. Founded in 1870, it is the flagship institution of the University System of Ohio and is consistently ranked among the best public universities in the United States.',
+        'desc_p2': 'Undergraduate admission is competitive. Prospective students should review specific college requirements on osu.edu. OSU is accredited by the Higher Learning Commission (HLC). International applicants must meet specific language and documentation criteria.',
+        'address': 'Columbus, OH 43210',
+        'established': '1870',
+        'courses': 'Undergraduate and graduate programmes across engineering, business, medicine, law, agriculture, and liberal arts.',
+        'phone': '614-292-6446',
+        'accreditation': 'Accredited by the Higher Learning Commission (HLC)',
+        'domain': 'osu.edu',
+        'url': 'https://www.osu.edu/'
+    },
+    {
+        'id': 'pennsylvania-state-university',
+        'name': 'Pennsylvania State University',
+        'short_desc': 'Public land-grant research university in University Park, Pennsylvania, known for engineering, business, and meteorology programmes.',
+        'desc_p1': 'The Pennsylvania State University (Penn State) is a public state-related land-grant research university with campuses and facilities throughout Pennsylvania. Founded in 1855, its flagship University Park campus is a major research hub with strong community traditions.',
+        'desc_p2': 'Undergraduate admission to University Park is highly competitive. Prospective students should review campus-specific and major-specific requirements on psu.edu. Penn State is accredited by the Middle States Commission on Higher Education (MSCHE).',
+        'address': 'University Park, PA 16802',
+        'established': '1855',
+        'courses': 'Undergraduate and graduate programmes across engineering, business, earth sciences, education, and communications.',
+        'phone': '814-865-4700',
+        'accreditation': 'Accredited by the Middle States Commission on Higher Education (MSCHE)',
+        'domain': 'psu.edu',
+        'url': 'https://www.psu.edu/'
+    },
+    {
+        'id': 'rutgers-university',
+        'name': 'Rutgers University',
+        'short_desc': 'Public land-grant research university in New Brunswick, New Jersey, offering extensive degree options across diverse disciplines.',
+        'desc_p1': 'Rutgers, The State University of New Jersey, is a public land-grant research university based in New Brunswick, New Jersey. Founded in 1766, it is the eighth-oldest college in the United States and offers a rich history combined with robust modern research capabilities.',
+        'desc_p2': 'Undergraduate admission is competitive. Prospective students should review the requirements for the specific Rutgers campus and school they are applying to on rutgers.edu. Rutgers is accredited by the Middle States Commission on Higher Education (MSCHE).',
+        'address': 'New Brunswick, NJ 08901',
+        'established': '1766',
+        'courses': 'Undergraduate and graduate programmes across arts and sciences, engineering, pharmacy, business, and environmental sciences.',
+        'phone': '732-445-4636',
+        'accreditation': 'Accredited by the Middle States Commission on Higher Education (MSCHE)',
+        'domain': 'rutgers.edu',
+        'url': 'https://www.rutgers.edu/'
+    },
+    {
+        'id': 'texas-a-and-m-university',
+        'name': 'Texas A&M University',
+        'short_desc': 'Public land-grant research university in College Station, Texas, famous for engineering, agriculture, and strong school traditions.',
+        'desc_p1': 'Texas A&M University is a public land-grant research university in College Station, Texas. Founded in 1876 as the states first public higher education institution, it has grown into one of the largest universities in the United States, known for its tight-knit Aggie network.',
+        'desc_p2': 'Undergraduate admission is highly competitive, especially for engineering and business. Prospective students should review requirements on tamu.edu. Texas A&M is accredited by the Southern Association of Colleges and Schools Commission on Colleges (SACSCOC).',
+        'address': 'College Station, TX 77843',
+        'established': '1876',
+        'courses': 'Undergraduate and graduate programmes across engineering, agriculture and life sciences, business, and veterinary medicine.',
+        'phone': '979-845-3211',
+        'accreditation': 'Accredited by the Southern Association of Colleges and Schools Commission on Colleges (SACSCOC)',
+        'domain': 'tamu.edu',
+        'url': 'https://www.tamu.edu/'
+    },
+    {
+        'id': 'michigan-state-university',
+        'name': 'Michigan State University',
+        'short_desc': 'Public land-grant research university in East Lansing, Michigan, renowned for packaging, hospitality business, and agriculture.',
+        'desc_p1': 'Michigan State University (MSU) is a public land-grant research university in East Lansing, Michigan. Founded in 1855, it served as a model for future land-grant universities in the United States and is known for its pioneering research and global engagement.',
+        'desc_p2': 'Undergraduate admission is competitive. Prospective students should review specific major prerequisites on msu.edu. MSU is accredited by the Higher Learning Commission (HLC). International students must verify English language proficiency requirements.',
+        'address': 'East Lansing, MI 48824',
+        'established': '1855',
+        'courses': 'Undergraduate and graduate programmes across business, agriculture, education, communications, and the sciences.',
+        'phone': '517-355-1855',
+        'accreditation': 'Accredited by the Higher Learning Commission (HLC)',
+        'domain': 'msu.edu',
+        'url': 'https://msu.edu/'
+    },
+    {
+        'id': 'university-of-minnesota-twin-cities',
+        'name': 'University of Minnesota, Twin Cities',
+        'short_desc': 'Public land-grant research university spanning Minneapolis and St. Paul, Minnesota, offering strong engineering and health sciences programmes.',
+        'desc_p1': 'The University of Minnesota, Twin Cities (U of M) is a public land-grant research university in Minneapolis and Saint Paul, Minnesota. Founded in 1851, it is the flagship institution of the University of Minnesota system and boasts extensive research facilities.',
+        'desc_p2': 'Undergraduate admission is competitive. Prospective students should review specific college prerequisites on umn.edu. The University of Minnesota is accredited by the Higher Learning Commission (HLC). International applicants must meet specific language and documentation criteria.',
+        'address': 'Minneapolis, MN 55455',
+        'established': '1851',
+        'courses': 'Undergraduate and graduate programmes across liberal arts, science and engineering, business, and medicine.',
+        'phone': '612-625-5000',
+        'accreditation': 'Accredited by the Higher Learning Commission (HLC)',
+        'domain': 'umn.edu',
+        'url': 'https://twin-cities.umn.edu/'
+    },
+    {
+        'id': 'indiana-university-bloomington',
+        'name': 'Indiana University Bloomington',
+        'short_desc': 'Public research university in Bloomington, Indiana, known for its Kelley School of Business and Jacobs School of Music.',
+        'desc_p1': 'Indiana University Bloomington (IU Bloomington) is a public research university in Bloomington, Indiana. Founded in 1820, it is the flagship campus of the Indiana University system and is celebrated for its beautiful campus and top-ranked programmes in business, music, and public affairs.',
+        'desc_p2': 'Undergraduate admission is competitive. Prospective students should review specific requirements for direct admission to professional schools on indiana.edu. IU is accredited by the Higher Learning Commission (HLC).',
+        'address': '107 S Indiana Ave, Bloomington, IN 47405',
+        'established': '1820',
+        'courses': 'Undergraduate and graduate programmes across business, music, informatics, public health, and arts and sciences.',
+        'phone': '812-855-4848',
+        'accreditation': 'Accredited by the Higher Learning Commission (HLC)',
+        'domain': 'indiana.edu',
+        'url': 'https://www.indiana.edu/'
+    },
+    {
+        'id': 'university-of-california-irvine',
+        'name': 'University of California, Irvine',
+        'short_desc': 'Public land-grant research university in Irvine, California, known for its diverse student body, computer science, and healthcare programmes.',
+        'desc_p1': 'The University of California, Irvine (UCI) is a public land-grant research university in Irvine, California. Founded in 1965, it is one of the ten campuses of the University of California system and has quickly risen to prominence as a major research institution.',
+        'desc_p2': 'Undergraduate admission is highly selective. Prospective students should review the UC application process and specific major requirements on uci.edu. UCI is accredited by the WASC Senior College and University Commission (WSCUC).',
+        'address': 'Irvine, CA 92697',
+        'established': '1965',
+        'courses': 'Undergraduate and graduate programmes across engineering, computer science, biological sciences, and social ecology.',
+        'phone': '949-824-5011',
+        'accreditation': 'Accredited by the WASC Senior College and University Commission (WSCUC)',
+        'domain': 'uci.edu',
+        'url': 'https://www.uci.edu/'
+    },
+    {
+        'id': 'university-of-california-davis',
+        'name': 'University of California, Davis',
+        'short_desc': 'Public land-grant research university in Davis, California, acclaimed for its veterinary medicine, agriculture, and environmental sciences.',
+        'desc_p1': 'The University of California, Davis (UC Davis) is a public land-grant research university near Davis, California. Originally founded in 1905 as the university farm for the UC system, it is now a comprehensive university and a global leader in agricultural and veterinary studies.',
+        'desc_p2': 'Undergraduate admission is highly selective. Prospective students should review the UC application process and specific major prerequisites on ucdavis.edu. UC Davis is accredited by the WASC Senior College and University Commission (WSCUC).',
+        'address': '1 Shields Ave, Davis, CA 95616',
+        'established': '1905',
+        'courses': 'Undergraduate and graduate programmes across agriculture and environmental sciences, biological sciences, engineering, and letters and science.',
+        'phone': '530-752-1011',
+        'accreditation': 'Accredited by the WASC Senior College and University Commission (WSCUC)',
+        'domain': 'ucdavis.edu',
+        'url': 'https://www.ucdavis.edu/'
+    },
+    {
+        'id': 'boston-college',
+        'name': 'Boston College',
+        'short_desc': 'Private Jesuit research university in Chestnut Hill, Massachusetts, known for a strong liberal arts core and business programmes.',
+        'desc_p1': 'Boston College (BC) is a private Jesuit research university in Chestnut Hill, Massachusetts. Founded in 1863, it maintains a strong Catholic and Jesuit identity, emphasizing liberal arts education, formative learning, and service to others.',
+        'desc_p2': 'Undergraduate admission is highly selective. Prospective students should review specific school requirements and deadlines on bc.edu. Boston College is accredited by the New England Commission of Higher Education (NECHE). International applicants must meet specific language and documentation criteria.',
+        'address': '140 Commonwealth Ave, Chestnut Hill, MA 02467',
+        'established': '1863',
+        'courses': 'Undergraduate and graduate programmes across arts and sciences, management, nursing, and education and human development.',
+        'phone': '617-552-8000',
+        'accreditation': 'Accredited by the New England Commission of Higher Education (NECHE)',
+        'domain': 'bc.edu',
+        'url': 'https://www.bc.edu/'
+    }
+]
+
+template = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{name} | Top Schools Rankings</title><meta name="description" content="{short_desc}"><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/listing/{id}/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="{name}"><meta property="og:description" content="{short_desc}"><meta property="og:url" content="https://topschoolsrankings.com/listing/{id}/"><meta property="og:image" content="https://topschoolsrankings.com/media/listings/{id}-logo.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/media/listings/{id}-logo.webp"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebPage","name":"{name}","description":"{short_desc}","image":"https://topschoolsrankings.com/media/listings/{id}-logo.webp","url":"https://topschoolsrankings.com/listing/{id}/","publisher":{{"@type":"Organization","name":"Top Schools Rankings","url":"https://topschoolsrankings.com"}}}}</script><script src="/assets/site.js" defer></script></head><body>
+  <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown · Dates checked · Corrections welcomed</span></div></div>
+  <header class="site-header"><div class="site-container header-inner">
+    
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a></nav>
+    <div class="header-search">
+  <div class="search-box search-box-compact" data-search>
+    <label class="sr-only">Search schools, universities and guides</label>
+    <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search guides…" autocomplete="off"></div>
+    <div class="search-results" hidden></div>
+  </div></div>
+    <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
+  </div></header><main>
+  <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/listings/">Listings</a></span><span><i aria-hidden="true">/</i><b>{name}</b></span></nav>
+  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">University research profile</span><h1>{name}</h1><p>{short_desc}</p><div class="page-meta">University · Public · Universities · United States · Official details should be rechecked before applying</div></div></header><section class="site-container listing-profile-hero"><div class="listing-profile-identity"><img class="listing-profile-logo" src="/media/listings/{id}-logo.webp" alt="{name} logo" width="180" height="180" loading="eager" decoding="async"><div><span class="eyebrow">Official research starting point</span><h2>{name} at a glance</h2><p>{short_desc}</p><div class="listing-actions"><a class="button button-primary" href="{url}" rel="noopener noreferrer" target="_blank">Visit official website</a><a class="button button-secondary" href="https://www.google.com/maps/search/?api=1&amp;query={search_query}" rel="noopener noreferrer" target="_blank">View location</a></div></div></div></section><section class="section site-container article-layout"><article class="article-body"><div class="answer-box"><span>Profile purpose</span><p>This page helps students and families research {name}. It is not a ranking, paid placement, review score or admission recommendation.</p></div><h2>About {name}</h2><p>{desc_p1}</p><p>{desc_p2}</p><p>Campus address commonly cited: {address}. Confirm tuition, housing, deadlines and visit programmes on {domain} before applying. Keep recommendations and activities materials organised for early applications if relevant. Always confirm current tuition, deadlines, testing policy and visit details on the official website before applying. Keep transcripts and recommendations organised early in the cycle. Prospective students and families should verify the latest tuition, housing costs, application deadlines, testing policy and financial-aid rules on the institution's official website for the intended entry year. Published third-party summaries can become outdated quickly. Keep academic transcripts, counsellor recommendations and identification documents organised early, and confirm any programme-specific prerequisites before submitting an application. Campus visits or official virtual sessions are useful for understanding teaching style, student support and residential life.</p><section><h2>Key facts and contact details</h2><p>These profile fields provide a practical research snapshot. Confirm time-sensitive items with the institution because programmes, contacts and entry policies can change.</p><dl class="profile-facts"><div><dt>Address</dt><dd>{address}</dd></div><div><dt>Established</dt><dd>{established}</dd></div><div><dt>Grades / levels</dt><dd>Undergraduate and graduate degrees</dd></div><div><dt>Courses offered</dt><dd>{courses}</dd></div><div><dt>Languages</dt><dd>English</dd></div><div><dt>Accreditation</dt><dd>{accreditation}</dd></div><div><dt>Phone</dt><dd>{phone}</dd></div></dl></section><h2>Academic and student-fit questions</h2><p>Use this university · public · universities · united states profile as a starting point. Compare the exact course, grade pathway or curriculum, the campus where it is delivered, the teaching format, available student support and how outcomes are measured.</p><ul><li>Does the exact programme or grade pathway match the student’s academic goal?</li><li>Which campus, delivery mode, class format and assessment system apply?</li><li>What academic, language, accessibility and wellbeing support is available?</li><li>Which outcomes are published, and are they relevant to the specific programme?</li><li>What student experience, housing or boarding expectations should be checked directly?</li></ul><h2>Admissions, cost and eligibility checks</h2><p>Before paying an application fee or deposit, obtain the current requirements for the exact intake. Compare the full cost rather than tuition alone, including compulsory charges, housing, meals, insurance, transport, equipment and any international-student or boarding costs that apply.</p><ul><li>Official recognition or accreditation for the institution and programme</li><li>Current course availability, entry requirements and application deadline</li><li>Full tuition, compulsory fees, deposits and refund conditions</li><li>Campus, study mode, accommodation and student-support arrangements</li><li>Visa or professional-licensing implications from the relevant authority</li></ul><h2>How this profile was prepared</h2><p>We retained the existing URL, restored the institution’s identity and campus context where available, and separated profile facts from editorial guidance. Material decisions should still be confirmed using official institution, regulator and government sources.</p><p>There are no fabricated star ratings or testimonials on this page. If a detail is outdated, send the page URL and a current primary source through our correction channel.</p><a class="button button-secondary" href="/how-to-verify-university-accreditation-before-you-apply/">Read the accreditation checklist</a></article><aside class="article-aside"><div><span class="aside-label">Page policy</span><strong>No paid placement</strong><p>Directory inclusion and order are not sold. Profile pages remain ad-free.</p></div><div><span class="aside-label">Primary check</span><a href="{url}" rel="noopener noreferrer" target="_blank">Official institution website →</a></div><div><span class="aside-label">Next step</span><a href="/contact-us/">Suggest a correction →</a></div></aside></section></main>
+  <footer class="site-footer"><div class="site-container footer-grid">
+    <div class="footer-about">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a><p>Independent school and university research for students and families. We are not an admissions agency and do not sell rankings.</p><a class="correction-link" href="/contact-us/">Report a correction →</a><div class="social-links" style="margin-top:20px; display:flex; gap:15px; font-size:13px;"><a href="https://www.youtube.com/@TopSchoolsRankings" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 00-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 002.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.instagram.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a><a href="https://www.facebook.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a></div></div>
+    <div><h2>Research</h2><a href="/blogs/">All guides</a><a href="/listings/">Listings</a><a href="/compare/">Comparisons</a><a href="/tools/">Student tools</a></div>
+    <div><h2>Standards</h2><a href="/ranking-methodology/">Ranking methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/author/saahil/">Our writer</a><a href="/about-us/">About us</a></div>
+    <div><h2>Legal</h2><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms &amp; conditions</a><a href="/disclaimer/">Disclaimer</a><a href="/contact-us/">Contact us</a></div>
+  </div><div class="site-container footer-bottom"><p>© 2026 Top Schools Rankings. Educational information only.</p><p>Advertising, when enabled, is visually separated from editorial content.</p></div></footer></body></html>"""
+
+listing_grid_item = """<article class="listing-card">
+  <div class="listing-card-top">
+    <img class="listing-card-logo" src="/media/listings/{id}-logo.webp" alt="{name} logo" width="180" height="180" loading="lazy" decoding="async">
+    <span>University profile</span>
+  </div>
+  <h2><a href="/listing/{id}/">{name}</a></h2>
+  <p>{short_desc}</p>
+  <a href="/listing/{id}/">Open profile →</a>
+</article>
+"""
+
+new_grid_html = ""
+
+for uni in universities:
+    # 1. Create directory
+    os.makedirs(f"listing/{uni['id']}", exist_ok=True)
+    
+    # 2. Write HTML file
+    search_query = urllib.parse.quote(uni['name'])
+    html_content = template.format(
+        id=uni['id'],
+        name=uni['name'],
+        short_desc=uni['short_desc'],
+        desc_p1=uni['desc_p1'],
+        desc_p2=uni['desc_p2'],
+        address=uni['address'],
+        established=uni['established'],
+        courses=uni['courses'],
+        phone=uni['phone'],
+        accreditation=uni['accreditation'],
+        domain=uni['domain'],
+        url=uni['url'],
+        search_query=search_query
+    )
+    with open(f"listing/{uni['id']}/index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
+    
+    # 3. Download logo
+    logo_path = f"media/listings/{uni['id']}-logo.webp"
+    logo_url = f"https://www.google.com/s2/favicons?domain={uni['domain']}&sz=256"
+    try:
+        urllib.request.urlretrieve(logo_url, logo_path)
+        print(f"Downloaded logo for {uni['id']}")
+    except Exception as e:
+        print(f"Failed to download logo for {uni['id']}: {e}")
+        
+    # Append to grid
+    new_grid_html += listing_grid_item.format(id=uni['id'], name=uni['name'], short_desc=uni['short_desc'])
+
+# Update listings/index.html
+listings_file = "listings/index.html"
+with open(listings_file, "r", encoding="utf-8") as f:
+    content = f.read()
+
+if '<div class="listing-grid">' in content:
+    content = content.replace('<div class="listing-grid">', '<div class="listing-grid">\n' + new_grid_html, 1)
+    with open(listings_file, "w", encoding="utf-8") as f:
+        f.write(content)
+    print("Injected 10 new listings into index.")
+else:
+    print("Error: Could not find listing-grid in index.html")
