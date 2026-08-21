@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Target GPA Calculator | What Grades Do I Need? | Top Schools Rankings</title><meta name="description" content="Calculate what grades you need this semester to reach your target cumulative GPA."><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/tools/target-gpa-calculator/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="Target GPA Calculator"><meta property="og:description" content="Calculate what grades you need this semester to reach your target cumulative GPA."><meta property="og:url" content="https://topschoolsrankings.com/tools/target-gpa-calculator/"><meta property="og:image" content="https://topschoolsrankings.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/og.png"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825245351059712"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Target GPA Calculator","description":"Calculate what grades you need this semester to reach your target cumulative GPA.","image":"https://topschoolsrankings.com/og.png","url":"https://topschoolsrankings.com/tools/target-gpa-calculator/","publisher":{"@type":"Organization","name":"Top Schools Rankings","url":"https://topschoolsrankings.com"}}</script><script src="/assets/site.js" defer></script>
+<style>
+.result-success { background: rgba(40, 167, 69, 0.15); color: #8de49f; border-color: rgba(40, 167, 69, 0.3); }
+.result-warning { background: rgba(255, 193, 7, 0.15); color: #ffe68a; border-color: rgba(255, 193, 7, 0.3); }
+.result-danger { background: rgba(220, 53, 69, 0.15); color: #f596a0; border-color: rgba(220, 53, 69, 0.3); }
+.tool-result h3 { margin: 0 0 8px 0; color: inherit; font-size: 26px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+.tool-result p { margin: 0; font-size: 16px; opacity: 0.9; font-weight: normal; }
+</style>
+</head><body>
+  <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown · Dates checked · Corrections welcomed</span></div></div>
+  <header class="site-header"><div class="site-container header-inner">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a></nav>
+    <div class="header-search">
+  <div class="search-box search-box-compact" data-search>
+    <label class="sr-only">Search schools, universities and guides</label>
+    <div class="search-input-wrap"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search guides…" autocomplete="off"></div>
+    <div class="search-results" hidden></div>
+  </div></div>
+    <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
+  </div></header><main>
+  <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/tools/">Tools</a></span><span><i aria-hidden="true">/</i><b>Target GPA Calculator</b></span></nav>
+  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive planning resource</span><h1>Target GPA Calculator</h1><p>Find out exactly what grades you need this semester to reach your goal GPA.</p><div class="page-meta">Free to use · No account · Instant calculation</div></div></header><section class="section site-container article-layout"><article class="article-body">
+  
+  <section class="tool-panel" data-custom>
+    <div class="tool-panel-head" style="margin-bottom: 20px;">
+      <span>Interactive planning tool</span>
+      <h2>Target GPA Calculator</h2>
+      <p>Enter your current GPA history and your goal to see what you need to average this semester.</p>
+    </div>
+    
+    <div class="tool-fields">
+      <label><span>Current Cumulative GPA</span><input type="number" id="curr_gpa" placeholder="e.g. 3.2" min="0" max="4.0" step="0.01"></label>
+      <label><span>Total Credits Earned So Far</span><input type="number" id="curr_credits" placeholder="e.g. 60" min="1"></label>
+      <label><span>Target Cumulative GPA</span><input type="number" id="target_gpa" placeholder="e.g. 3.5" min="0" max="4.0" step="0.01"></label>
+      <label><span>Credits Taking This Semester</span><input type="number" id="new_credits" placeholder="e.g. 15" min="1"></label>
+    </div>
+    <div id="result_box" class="tool-result result-success" hidden style="text-align:center; padding: 25px; margin-top:20px;"></div>
+  </section>
+  
+  <script>
+    function calculateTarget() {
+      var curr_gpa = parseFloat(document.getElementById("curr_gpa").value);
+      var curr_credits = parseFloat(document.getElementById("curr_credits").value);
+      var target_gpa = parseFloat(document.getElementById("target_gpa").value);
+      var new_credits = parseFloat(document.getElementById("new_credits").value);
+      var resultBox = document.getElementById("result_box");
+      
+      if (isNaN(curr_gpa) || isNaN(curr_credits) || isNaN(target_gpa) || isNaN(new_credits) || new_credits <= 0) {
+        resultBox.hidden = true;
+        return;
+      }
+      
+      var total_future_credits = curr_credits + new_credits;
+      var required_quality_points = (target_gpa * total_future_credits) - (curr_gpa * curr_credits);
+      var required_gpa = required_quality_points / new_credits;
+      
+      required_gpa = required_gpa.toFixed(2);
+      
+      if (required_gpa > 4.0) {
+        resultBox.innerHTML = "<h3>Required GPA: " + required_gpa + "</h3><p><strong>Impossible!</strong> Even if you get a perfect 4.0 this semester, you don't have enough credits to reach your target GPA. You need to take more credit hours.</p>";
+        resultBox.className = "tool-result result-danger";
+      } else if (required_gpa < 0) {
+        resultBox.innerHTML = "<h3>Required GPA: 0.00</h3><p>You have already secured your target! Even if you fail all classes, you will stay above your target.</p>";
+        resultBox.className = "tool-result result-success";
+      } else {
+        resultBox.innerHTML = "<h3>Required GPA: " + required_gpa + "</h3><p>You need to average a <strong>" + required_gpa + "</strong> across your " + new_credits + " credits this semester to reach your goal.</p>";
+        resultBox.className = "tool-result result-success";
+      }
+      resultBox.hidden = false;
+    }
+    
+    document.getElementById("curr_gpa").addEventListener("input", calculateTarget);
+    document.getElementById("curr_credits").addEventListener("input", calculateTarget);
+    document.getElementById("target_gpa").addEventListener("input", calculateTarget);
+    document.getElementById("new_credits").addEventListener("input", calculateTarget);
+  </script>
+
+  <p>Trying to pull up your GPA to keep a scholarship, get into a competitive major, or graduate with honors? The Target GPA Calculator helps you determine exactly what Grade Point Average you must achieve this semester to hit your overall cumulative goal.</p>
+  
+  <h2>Why is it so hard to raise my GPA?</h2>
+  <p>If you are a junior or senior in college, you might notice that getting straight A's barely moves your cumulative GPA. This is because GPA is essentially a weighted average. The more credit hours you have already completed, the heavier the "anchor" holding your GPA in place.</p>
+  <p>If you have 90 credits completed at a 2.5 GPA, earning a 4.0 across just 15 credits this semester will only raise your cumulative GPA to a 2.71. That's why it is critical to use a Target GPA calculator to set realistic expectations before the semester begins.</p>
+  
+  <h2>How to use this tool</h2>
+  <ul>
+    <li><strong>Current Cumulative GPA:</strong> Your overall GPA right now (before this semester's grades are finalized).</li>
+    <li><strong>Total Credits Earned So Far:</strong> The total number of credit hours you have completed that count toward your GPA. (Do not include Pass/Fail credits or classes you are currently taking).</li>
+    <li><strong>Target Cumulative GPA:</strong> The overall GPA you want to have after this semester.</li>
+    <li><strong>Credits Taking This Semester:</strong> The number of credit hours you are currently enrolled in that will be graded on a 4.0 scale.</li>
+  </ul>
+  
+  <h2>Frequently asked questions</h2>
+  <h3>What does it mean if my required GPA is over 4.0?</h3>
+  <p>If the calculator tells you that you need a GPA higher than 4.0 (like a 4.6), it is mathematically impossible to reach your target cumulative GPA in just one semester, because the maximum grade you can earn in standard classes is an A (4.0). You will need to take additional semesters to dilute your older, lower grades with new 'A's.</p>
+
+  <h2>Related tools</h2>
+  <h3><a href="/tools/cumulative-gpa-calculator/">Cumulative GPA Calculator</a></h3>
+  <p>Calculate your current cumulative GPA based on your course letter grades.</p>
+  <h3><a href="/tools/final-grade-calculator/">Final Grade Calculator</a></h3>
+  <p>Figure out exactly what you need to score on your final exam to pass your class.</p>
+  
+  </article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Check your transcript</strong><p>Make sure you exclude credits transferred from other colleges or AP credits from your "Total Credits Earned So Far", as these usually do not factor into your institutional GPA.</p></div></aside></section></main>
+  <footer class="site-footer"><div class="site-container footer-grid">
+    <div class="footer-about">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a><p>Independent school and university research for students and families.</p><a class="correction-link" href="/contact-us/">Report a correction →</a></div>
+    <div><h2>Research</h2><a href="/blogs/">All guides</a><a href="/listings/">Listings</a><a href="/compare/">Comparisons</a><a href="/tools/">Student tools</a></div>
+    <div><h2>Standards</h2><a href="/ranking-methodology/">Ranking methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/about-us/">About us</a></div>
+    <div><h2>Legal</h2><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms &amp; conditions</a><a href="/contact-us/">Contact us</a></div>
+  </div><div class="site-container footer-bottom"><p>© 2026 Top Schools Rankings. Educational information only.</p></div></footer></body></html>
