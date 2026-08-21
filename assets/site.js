@@ -35,6 +35,8 @@
     return "score";
   }
   function renderTool(panel) {
+    if (panel.hasAttribute('data-custom')) return;
+
     var slug = panel.getAttribute("data-tool") || "";
     var runtime = panel.querySelector(".tool-runtime");
     var mode = toolMode(slug);
