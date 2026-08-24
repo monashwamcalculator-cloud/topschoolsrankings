@@ -283,9 +283,5 @@
   <priority>0.8</priority>
 </url>
 
-<url>
-  <loc>https://topschoolsrankings.com/top-100-universities-in-russia/</loc>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+
 </urlset>
