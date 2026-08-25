@@ -1,18 +1,15 @@
 import os
+import csv
 
 site_dir = 'c:/Users/Hp/Downloads/topschoolsrankings-new-site-upload-v2'
-slugs = [
-    'top-100-high-schools-usa',
-    'top-100-grammar-schools-uk',
-    'boarding-schools-canada',
-    'top-100-boarding-schools-world',
-    'top-100-international-schools-asia',
-    'top-100-international-schools-world',
-    'top-100-private-schools-canada',
-    'top-100-high-schools-canada',
-    'top-100-schools-australia',
-    'top-100-private-schools-world'
-]
+pack_dir = 'C:/Users/Hp/Downloads/seo_pack/topschools-content-pack'
+csv_path = os.path.join(pack_dir, 'CONTENT-MAP.csv')
+
+slugs = []
+with open(csv_path, 'r', encoding='utf-8') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        slugs.append(row['slug'])
 
 for slug in slugs:
     filepath = os.path.join(site_dir, slug, 'index.html')
