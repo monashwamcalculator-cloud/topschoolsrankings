@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="747" viewBox="0 0 1200 747" role="img" aria-labelledby="title desc">
 <title id="title">Top 100 private schools by country</title>
 <desc id="desc">United Kingdom: 25, United States: 15, Switzerland: 6, United Arab Emirates: 6, Canada: 5, Singapore: 3, Hong Kong SAR: 3, China: 3, South Africa: 3, Australia: 3, Italy: 2, Portugal: 2, France: 2, Malaysia: 2, Japan: 2, New Zealand: 2, Brazil: 2, Germany: 1, Spain: 1, Monaco: 1, Thailand: 1, South Korea: 1, Qatar: 1, Oman: 1, Saudi Arabia: 1, Jordan: 1, Nigeria: 1, Egypt: 1, Argentina: 1, Chile: 1, Mexico: 1</desc>
-<rect width="1200" height="680" fill="#f7f5ef"/>
-<rect x="0" y="0" width="18" height="680" fill="#d6a94b"/>
+<rect width="1200" height="747" fill="#f7f5ef"/>
+<rect x="0" y="0" width="18" height="747" fill="#d6a94b"/>
 <text x="70" y="76" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#15283b">Top 100 private schools by country</text>
 <text x="70" y="116" font-family="Arial, sans-serif" font-size="20" fill="#52606d">Geographic mix of the global editorial shortlist</text>
 <text x="70" y="194" font-family="Arial, sans-serif" font-size="19" fill="#263746">United Kingdom</text>
@@ -35,6 +35,6 @@
 <text x="70" y="644" font-family="Arial, sans-serif" font-size="19" fill="#263746">Australia</text>
 <rect x="330" y="620" width="87" height="32" rx="5" fill="#5b668c"/>
 <text x="431" y="644" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#263746">3</text>
-<line x1="70" y1="625" x2="1130" y2="625" stroke="#ccd2d6"/>
-<text x="70" y="654" font-family="Arial, sans-serif" font-size="15" fill="#66727c">Source: TopSchoolsRankings editorial dataset; checked August 24, 2026</text>
+<line x1="70" y1="692" x2="1130" y2="692" stroke="#ccd2d6"/>
+<text x="70" y="721" font-family="Arial, sans-serif" font-size="15" fill="#66727c">Source: TopSchoolsRankings editorial dataset; checked August 24, 2026</text>
 </svg>
