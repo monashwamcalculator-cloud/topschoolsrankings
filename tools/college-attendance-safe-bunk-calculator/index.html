@@ -140,38 +140,47 @@
     }
   </script>
 
+  
   <div class="rich-article-content" style="margin-top: 40px;">
+    <p>College life is a delicate balance between academics and extracurriculars. Whether you are planning a weekend trip, fighting off a fever, or just need a mental health day, knowing exactly how many classes you can afford to miss without dropping below the mandatory 75% or 80% mark is crucial.</p>
+    <p>Our <strong>Ultimate Attendance & Safe Bunk Calculator</strong> does the math for you. It tells you your current standing, how many more classes you can safely skip (bunk), or exactly how many consecutive classes you must attend to recover from an attendance shortage.</p>
+
     <h2>How to Use the Safe Bunk Calculator</h2>
-    <p>Managing college attendance is one of the most stressful parts of student life, especially when universities have strict <strong>75% or 85% attendance rules</strong>. Missing a few classes can quickly drop your percentage, leading to admit card blocks or grade penalties.</p>
-    <p>Our <strong>Ultimate Attendance Calculator</strong> takes the guesswork out of the equation. Here is how it works:</p>
     <ul>
-      <li><strong>Total Classes Conducted:</strong> Enter the total number of lectures, labs, or tutorials that have happened so far in the semester for a specific subject.</li>
-      <li><strong>Classes You Attended:</strong> Enter the exact number of classes you were present for. (If your professor marked you absent by mistake, do not count it!).</li>
-      <li><strong>Required Percentage:</strong> Most engineering and medical colleges mandate 75%. Some autonomous universities require 80% or 85%. Enter your specific target.</li>
+      <li><strong>Current Attendance (%):</strong> Check your student portal (e.g., ERP, TCS iON, or university app) and enter your current attendance percentage.</li>
+      <li><strong>Total Classes Conducted So Far:</strong> Enter the number of lectures that have happened up to today.</li>
+      <li><strong>Target Attendance (%):</strong> Enter your college's minimum requirement. For most Indian engineering and medical colleges, this is 75%, but some strict universities require 80% or 85%.</li>
     </ul>
 
-    <h2>Understanding Your Results</h2>
-    <p>Once you hit calculate, our algorithm runs the exact mathematical formula to give you one of three actionable insights:</p>
+    <h2>The Math Behind Attendance Calculation</h2>
+    <p>If you want to manually calculate your attendance or understand how the algorithm works, here are the core formulas:</p>
     
-    <h3>1. Safe Zone (You Can Bunk)</h3>
-    <p>If your current percentage is well above the required threshold, the calculator will tell you <strong>exactly how many upcoming classes you can skip</strong>. For example, if you can "safely bunk 3 classes", it means if you miss the next 3 consecutive classes, your attendance will drop, but it will still be mathematically equal to or above your required percentage. Use these bunks wisely for exam prep or emergencies!</p>
+    <h3>Formula for Classes Attended</h3>
+    <p><em>Classes Attended = (Current Attendance % / 100) × Total Classes Conducted</em></p>
 
-    <h3>2. Danger Zone (Attendance Shortage)</h3>
-    <p>If you have already fallen below the threshold, the tool shifts into "Recovery Mode". It calculates <strong>how many consecutive classes you must attend</strong> without missing a single one to push your percentage back over the required line. Knowing this exact number helps you plan your recovery strategy and decide if you need to speak to your professor for extra credit assignments or medical leave.</p>
+    <h3>Formula for Safe Bunks</h3>
+    <p>If your attendance is above the target, you can afford to miss upcoming classes. The formula to find the maximum allowed absences is:</p>
+    <p><em>Safe Bunks = (Classes Attended / (Target % / 100)) - Total Classes Conducted</em></p>
+    <p>For example: If you have attended 40 out of 50 classes (80%), and your target is 75%, you can safely miss 3 upcoming classes. (40 / 0.75) - 50 = 53.33 - 50 = 3 classes.</p>
 
-    <h3>3. Boundary Warning</h3>
-    <p>If you are exactly on the line, the tool warns you not to bunk. Missing the very next class will immediately push you into a shortage.</p>
+    <h3>Formula for Attendance Recovery</h3>
+    <p>If you are currently facing an attendance shortage (e.g., 65%), you must attend the next <em>N</em> consecutive classes without missing a single one. The formula is:</p>
+    <p><em>Required Classes = [(Target % / 100) × Total Classes - Classes Attended] / [1 - (Target % / 100)]</em></p>
 
-    <h2>Why is this better than manual calculation?</h2>
-    <p>Calculating "bunks" manually is confusing because the denominator (Total Classes) increases every time a new class happens. For example, if you have attended 30 out of 40 classes (75%), and you bunk the next one, your attended classes remain 30, but total classes become 41. Your percentage drops to 73.1%, instantly putting you in a shortage. Our tool handles this dynamic fraction automatically.</p>
-    
     <h2>Frequently Asked Questions</h2>
-    <h3>Does this calculator work for medical and engineering students?</h3>
-    <p>Yes. Whether you are aiming for a 75% cutoff at an engineering college or an 85% cutoff for medical clinical rotations, simply change the "Required Percentage" field to match your university's rules.</p>
+    <h3>Does missing a 2-hour lab count as one or two classes?</h3>
+    <p>This entirely depends on your university's ERP system. In most universities, a 2-hour lab is logged as 2 separate periods of attendance. If you miss a lab, you are technically bunking 2 classes. Always verify with your professor.</p>
 
-    <h3>What happens if my university calculates attendance overall vs subject-wise?</h3>
-    <p>You can use this tool for both! To check a specific subject, enter the classes for that subject only. To check your aggregate (overall) attendance, sum up all your classes across all subjects and enter the grand total.</p>
+    <h3>What happens if I fall below 75% attendance?</h3>
+    <p>Falling below the mandatory limit can lead to severe academic consequences. You may face a <em>"debarred"</em> status, meaning you will not be allowed to sit for your final end-semester examinations. In some cases, medical certificates can grant you a 10% relaxation (bringing the requirement down to 65%), but this is subject to HOD approval.</p>
+
+    <h2>Related Tools</h2>
+    <h3><a href="/tools/exam-passing-internal-marks-calculator/">Exam Passing & Internal Marks Calculator</a></h3>
+    <p>Find out exactly how many marks you need in your final exam to pass.</p>
+    <h3><a href="/tools/cgpa-recovery-placement-target-calculator/">CGPA Recovery & Placement Calculator</a></h3>
+    <p>See what GPA you need in your remaining semesters to hit your placement target.</p>
   </div>
+
 </article><aside class="article-aside"><div><span class="aside-label">Tool version</span><strong>v1.0 (2026)</strong></div><div><span class="aside-label">Correction</span><a href="/contact-us/">Report an issue +'</a></div></aside></section></main>
   <footer class="site-footer"><div class="site-container footer-grid">
     <div class="footer-about">
