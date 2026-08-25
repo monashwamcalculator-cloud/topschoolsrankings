@@ -1,0 +1,224 @@
+import os
+
+tool_slug = "cgpa-recovery-placement-target-calculator"
+tool_dir = os.path.join("tools", tool_slug)
+os.makedirs(tool_dir, exist_ok=True)
+
+html_content = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CGPA Recovery & Placement Target Calculator | Top Schools Rankings</title><meta name="description" content="Calculate what GPA you need in your remaining semesters to reach your target CGPA for campus placements, higher education, or graduation goals."><meta name="robots" content="index, follow"><link rel="canonical" href="https://topschoolsrankings.com/tools/cgpa-recovery-placement-target-calculator/"><meta name="google-adsense-account" content="ca-pub-5825245351059712"><meta property="og:type" content="website"><meta property="og:site_name" content="Top Schools Rankings"><meta property="og:title" content="CGPA Recovery & Placement Target Calculator"><meta property="og:description" content="Calculate what GPA you need in your remaining semesters to reach your target CGPA for campus placements, higher education, or graduation goals."><meta property="og:url" content="https://topschoolsrankings.com/tools/cgpa-recovery-placement-target-calculator/"><meta property="og:image" content="https://topschoolsrankings.com/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://topschoolsrankings.com/og.png"><link rel="icon" href="/favicon.jpg"><link rel="stylesheet" href="/assets/site.css"><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5825245351059712"></script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CGPA Recovery & Placement Target Calculator","description":"Calculate what GPA you need in your remaining semesters to reach your target CGPA for campus placements, higher education, or graduation goals.","url":"https://topschoolsrankings.com/tools/cgpa-recovery-placement-target-calculator/","publisher":{"@type":"Organization","name":"Top Schools Rankings","url":"https://topschoolsrankings.com"}}</script><script src="/assets/site.js" defer></script>
+<style>
+.input-row { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 20px; }
+.input-row div { display: flex; flex-direction: column; }
+.input-row label { font-size: 14px; color: #c9d5e4; margin-bottom: 8px; font-weight: 600; }
+.input-row input, .input-row select { height: 48px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 6px; padding: 0 15px; background: rgba(255, 255, 255, .09); color: white; outline: none; font-size: 16px; font-weight: 600; }
+.input-row select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"); background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto; }
+.input-row select option { background: #1a2535; color: white; }
+.input-row input:focus, .input-row select:focus { border-color: var(--gold-500); background: rgba(255, 255, 255, .15); }
+.calc-btn { background: #007bff; color: white; border: none; padding: 14px 24px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold; width: 100%; transition: background 0.2s; }
+.calc-btn:hover { background: #0056b3; }
+.tool-result.possible { background: rgba(0, 86, 179, 0.15); border-color: rgba(0, 86, 179, 0.4); color: #9bc5ff; }
+.tool-result.impossible { background: rgba(220, 53, 69, 0.15); border-color: rgba(220, 53, 69, 0.4); color: #f596a0; }
+.tool-result.safe { background: rgba(40, 167, 69, 0.15); border-color: rgba(40, 167, 69, 0.4); color: #85e09f; }
+.result-big { font-size: 42px; font-weight: 900; margin: 10px 0; color: white; }
+.result-desc { font-size: 18px; line-height: 1.5; font-weight: 500; }
+@media (min-width: 600px) {
+  .input-row.two-col { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head><body>
+  <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown A Dates checked A Corrections welcomed</span></div></div>
+  <header class="site-header"><div class="site-container header-inner">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a>
+    <nav class="desktop-nav" aria-label="Primary navigation"><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a></nav>
+    <div class="header-search">
+  <div class="search-box search-box-compact" data-search>
+    <label class="sr-only">Search schools, universities and guides</label>
+    <div class="search-input-wrap"><span aria-hidden="true">O </span><input type="search" placeholder="Search guides?" autocomplete="off"></div>
+    <div class="search-results" hidden></div>
+  </div></div>
+    <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/listings/">Listings</a><a href="/compare/">Compare</a><a href="/tools/">Tools</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
+  </div></header><main>
+  <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/tools/">Tools</a></span><span><i aria-hidden="true">/</i><b>CGPA Recovery Calculator</b></span></nav>
+  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive student resource</span><h1>CGPA Recovery & Placement Target Calculator</h1><p>Calculate exactly what GPA you need in your remaining semesters to reach your target CGPA for campus placements, higher education, or graduation goals.</p><div class="page-meta">Free to use A No account A Instant calculation</div></div></header><section class="section site-container article-layout"><article class="article-body">
+  
+  <section class="tool-panel" data-custom>
+    <div class="tool-panel-head" style="margin-bottom: 25px;">
+      <span>Smart tool</span>
+      <h2>Calculate Target GPA</h2>
+    </div>
+    
+    <div class="input-row">
+      <div>
+        <label>Grading Scale</label>
+        <select id="scale">
+          <option value="10">10.0 Scale (India, etc.)</option>
+          <option value="4">4.0 Scale (US, etc.)</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="input-row two-col">
+      <div>
+        <label>Your Current CGPA</label>
+        <input type="number" id="current_cgpa" placeholder="e.g. 6.5" step="0.01" min="0">
+      </div>
+      <div>
+        <label>Target CGPA (For Placements)</label>
+        <input type="number" id="target_cgpa" placeholder="e.g. 7.5" step="0.01" min="0">
+      </div>
+      <div>
+        <label>Credits Completed So Far</label>
+        <input type="number" id="credits_done" placeholder="e.g. 80" min="1">
+      </div>
+      <div>
+        <label>Remaining Credits (Upcoming)</label>
+        <input type="number" id="credits_left" placeholder="e.g. 40" min="1">
+      </div>
+    </div>
+    
+    <button class="calc-btn" onclick="calculateRecovery()">Calculate Required GPA</button>
+    
+    <div id="result_box" class="tool-result" style="display:none; margin-top:25px; text-align:center; padding:30px;">
+      <h3 style="font-size:20px; font-weight:600; opacity:0.9; margin:0;">Required Average GPA</h3>
+      <div id="result_val" class="result-big">0.00</div>
+      <div id="result_message" class="result-desc"></div>
+    </div>
+  </section>
+
+  <script>
+    function calculateRecovery() {
+      const scaleInput = document.getElementById('scale');
+      const currentInput = document.getElementById('current_cgpa');
+      const targetInput = document.getElementById('target_cgpa');
+      const doneInput = document.getElementById('credits_done');
+      const leftInput = document.getElementById('credits_left');
+      const resultBox = document.getElementById('result_box');
+      const resultVal = document.getElementById('result_val');
+      const resultMessage = document.getElementById('result_message');
+      
+      let scale = parseFloat(scaleInput.value);
+      let current = parseFloat(currentInput.value);
+      let target = parseFloat(targetInput.value);
+      let done = parseFloat(doneInput.value);
+      let left = parseFloat(leftInput.value);
+      
+      if (isNaN(current) || isNaN(target) || isNaN(done) || isNaN(left)) {
+        alert("Please fill all the numerical fields.");
+        return;
+      }
+      if (current > scale || target > scale) {
+        alert("Your CGPA values cannot be higher than the selected grading scale (" + scale + ").");
+        return;
+      }
+      if (done <= 0 || left <= 0) {
+        alert("Credits must be greater than 0.");
+        return;
+      }
+      
+      let currentPoints = current * done;
+      let totalCredits = done + left;
+      let requiredPoints = target * totalCredits;
+      let pointsNeeded = requiredPoints - currentPoints;
+      
+      let requiredGPA = pointsNeeded / left;
+      
+      resultVal.innerText = requiredGPA.toFixed(2);
+      resultBox.classList.remove('possible', 'impossible', 'safe');
+      
+      if (requiredGPA > scale) {
+        resultBox.classList.add('impossible');
+        resultMessage.innerHTML = `Unfortunately, it is mathematically <strong>impossible</strong> to reach a ${target} CGPA. Even if you score a perfect ${scale} in all remaining subjects, your maximum possible CGPA will be ${((currentPoints + (scale * left)) / totalCredits).toFixed(2)}.`;
+      } 
+      else if (requiredGPA <= current) {
+        resultBox.classList.add('safe');
+        resultMessage.innerHTML = `You are on the right track! You only need an average GPA of <strong>${requiredGPA.toFixed(2)}</strong> in your remaining credits, which is lower than your current performance.`;
+      } 
+      else {
+        resultBox.classList.add('possible');
+        resultMessage.innerHTML = `It is possible! You need to maintain a rigorous average GPA of <strong>${requiredGPA.toFixed(2)}</strong> in your remaining ${left} credits to hit your ${target} target.`;
+      }
+      
+      resultBox.style.display = 'block';
+    }
+  </script>
+
+  <div class="rich-article-content" style="margin-top: 40px;">
+    <h2>What is a CGPA Recovery Calculator?</h2>
+    <p>Every engineering, management, or degree student has faced a bad semester that tanked their Cumulative Grade Point Average (CGPA). Whether you are aiming for a strict <strong>7.0 CGPA cutoff for campus placements</strong> (like TCS, Infosys, Wipro) or an 8.5+ for Ivy League master's programs, knowing exactly what you need to score in your remaining semesters is critical.</p>
+    <p>Our CGPA Recovery & Placement Target Calculator removes the mathematical guesswork and tells you exactly what SGPA (Semester GPA) average you must maintain to hit your dream target.</p>
+    
+    <h2>How to Use the Calculator</h2>
+    <ul>
+      <li><strong>Grading Scale:</strong> Choose whether your university uses a 10.0 scale (common in India, Asia) or a 4.0 scale (common in the USA, Canada).</li>
+      <li><strong>Your Current CGPA:</strong> Enter the aggregate CGPA you have secured up to your most recent completed semester.</li>
+      <li><strong>Target CGPA:</strong> Enter the absolute minimum CGPA you wish to graduate with.</li>
+      <li><strong>Credits Completed:</strong> Sum up the total credit hours of all the subjects you have passed so far.</li>
+      <li><strong>Remaining Credits:</strong> Look at your university syllabus and sum up the credits of all the subjects left in your upcoming semesters.</li>
+    </ul>
+
+    <h2>Understanding Your Results</h2>
+    
+    <h3>1. The "Possible" Zone</h3>
+    <p>If your required GPA is below your grading scale maximum (e.g., you need an 8.2 on a 10.0 scale), then your goal is highly achievable. The calculator will show you this exact number. You must aim to score this SGPA or higher in every remaining semester to recover your aggregate score.</p>
+
+    <h3>2. The "Mathematically Impossible" Zone</h3>
+    <p>If you have completed 120 credits with a 5.0 CGPA and only have 20 credits left, reaching an 8.0 CGPA is mathematically impossible, even if you score a perfect 10 in every remaining subject. If our calculator flags your target as impossible, it will also reveal the <strong>maximum possible CGPA</strong> you can realistically achieve. Use this to set a new, realistic target!</p>
+
+    <h3>3. The "Safe" Zone</h3>
+    <p>If you are already a high-achiever looking to maintain a specific cutoff, you might find that you only need a 6.0 in your final year to maintain an overall 8.0. This means you can relax a bit and focus on internships, projects, and interview preparation rather than stressing over perfect academics.</p>
+
+    <h2>Why do Credits matter more than Semesters?</h2>
+    <p>A common mistake students make is calculating their CGPA by simply averaging their SGPAs: <code>(SGPA1 + SGPA2) / 2</code>. This is mathematically incorrect unless both semesters have the exact same number of credits. A 4-credit subject affects your CGPA four times as much as a 1-credit lab. By using your exact completed and remaining credits, this tool provides a 100% accurate forecast.</p>
+  </div>
+</article><aside class="article-aside"><div><span class="aside-label">Tool version</span><strong>v1.0 (2026)</strong></div><div><span class="aside-label">Correction</span><a href="/contact-us/">Report an issue +'</a></div></aside></section></main>
+  <footer class="site-footer"><div class="site-container footer-grid">
+    <div class="footer-about">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
+    <img src="/assets/logo.png" alt="Top Schools Rankings" style="height:60px; width:auto; max-width:100%;">
+  </a><p>Independent school and university research for students and families. We are not an admissions agency and do not sell rankings.</p><a class="correction-link" href="/contact-us/">Report a correction +'</a><div class="social-links" style="margin-top:20px; display:flex; gap:15px; font-size:13px;"><a href="https://www.youtube.com/@TopSchoolsRankings" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 00-2.122 2.136C0 8.07 0 12 0 12s0 3.93.501 5.814a3.016 3.016 0 002.122 2.136c1.872.55 9.377.55 9.377.55s7.505 0 9.377-.55a3.016 3.016 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.instagram.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg></a><a href="https://www.facebook.com/topschoolsrankings/" target="_blank" rel="noopener noreferrer" style="color:#a9b8ca; text-decoration:none;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#a9b8ca'" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display:block;"><path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg></a></div></div>
+    <div><h2>Research</h2><a href="/blogs/">All guides</a><a href="/listings/">Listings</a><a href="/compare/">Comparisons</a><a href="/tools/">Student tools</a></div>
+    <div><h2>Standards</h2><a href="/ranking-methodology/">Ranking methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/author/saahil/">Our writer</a><a href="/about-us/">About us</a><a href="/write-for-us/">Write for us</a></div>
+    <div><h2>Legal</h2><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms &amp; conditions</a><a href="/disclaimer/">Disclaimer</a><a href="/contact-us/">Contact us</a></div>
+  </div><div class="site-container footer-bottom"><p>A 2026 Top Schools Rankings. Educational information only.</p><p>Advertising, when enabled, is visually separated from editorial content.</p></div></footer></body></html>"""
+
+with open(os.path.join(tool_dir, "index.html"), "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("Created tools/cgpa-recovery-placement-target-calculator/index.html")
+
+# Update tools/index.html to add the card
+with open("tools/index.html", "r", encoding="utf-8") as f:
+    tools_html = f.read()
+
+card_html = """
+      <article class="listing-card">
+        <div class="card-meta"><span>Student tool</span><span>\u2022 New</span></div>
+        <h3><a href="/tools/cgpa-recovery-placement-target-calculator/">CGPA Recovery & Placement Calculator</a></h3>
+        <p>Calculate what GPA you need in your remaining semesters to reach your target CGPA for campus placements.</p>
+        <div class="card-footer"><a class="text-link" href="/tools/cgpa-recovery-placement-target-calculator/">Use tool <span>\u2192</span></a></div>
+      </article>"""
+
+if "cgpa-recovery-placement-target-calculator" not in tools_html:
+    insert_token = '<div class="listings-grid">'
+    tools_html = tools_html.replace(insert_token, insert_token + card_html)
+    with open("tools/index.html", "w", encoding="utf-8") as f:
+        f.write(tools_html)
+    print("Updated tools/index.html")
+
+# Update sitemap
+with open("sitemap.xml", "r", encoding="utf-8") as f:
+    sitemap_xml = f.read()
+
+sitemap_entry = """
+  <url>
+    <loc>https://topschoolsrankings.com/tools/cgpa-recovery-placement-target-calculator/</loc>
+    <lastmod>2026-08-25</lastmod>
+  </url>"""
+
+if "cgpa-recovery-placement-target-calculator" not in sitemap_xml:
+    sitemap_xml = sitemap_xml.replace('</urlset>', sitemap_entry + '\n</urlset>')
+    with open("sitemap.xml", "w", encoding="utf-8") as f:
+        f.write(sitemap_xml)
+    print("Updated sitemap.xml")
+
