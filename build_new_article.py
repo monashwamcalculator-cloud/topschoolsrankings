@@ -103,10 +103,16 @@ img['alt'] = "Modern smart university hostel in India with diverse students and 
 figure.find('figcaption').string = "The future of campus living in India is becoming increasingly digital."
 
 # Update Content
-rich_content = soup.find('div', class_='rich-article-content')
-rich_content.clear()
-content_soup = BeautifulSoup(html_content, 'html.parser')
-rich_content.append(content_soup)
+rich_content = soup.find('article', class_='article-body')
+
+# Remove existing paragraphs and headers from the template's article body, keeping the bottom boxes
+for tag in list(rich_content.children):
+    if getattr(tag, 'name', None) in ['p', 'h2', 'h3', 'ul', 'ol', 'img', 'figure']:
+        tag.decompose()
+
+content_soup = BeautifulSoup('<div class="rich-article-content">' + html_content + '</div>', 'html.parser')
+rich_content.insert(0, content_soup)
+
 
 # Update Author Block
 author_block = soup.find('div', class_='author-bio')
