@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: monashwamcalculator-cloud/topschoolsrankings
+  branch: master
+  base_url: https://topschoolsrankings.com
+  auth_endpoint: api/auth
+
+media_folder: "media/new-guides"
+public_folder: "/media/new-guides"
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "cms-articles"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Category", name: "category", widget: "select", options: ["UK", "Australia", "USA", "Canada", "India"]}
+      - {label: "Author Name", name: "author_name", widget: "string", default: "Saahil"}
+      - {label: "Author Bio", name: "author_bio", widget: "text", default: ""}
+      - {label: "Author Image", name: "author_image", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}

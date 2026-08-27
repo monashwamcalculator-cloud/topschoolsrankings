@@ -1,14 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/add-listing",
-      "destination": "/listings/",
-      "permanent": true
-    },
-    {
-      "source": "/add-listing/",
-      "destination": "/listings/",
-      "permanent": true
-    }
-  ]
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "."
 }
