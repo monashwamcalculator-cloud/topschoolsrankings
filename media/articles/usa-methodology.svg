@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">Top 100 high schools in the USA methodology</title>
+<desc id="desc">Ranking methodology weights: Academics 60%, Culture and diversity 12.5%, Parent and student surveys 10%, Teachers 10%, Clubs and activities 2.5%, Resources and facilities 2.5%, Sports 2.5%.</desc>
+<rect width="1200" height="420" fill="#f7f5ef"/>
+<text x="70" y="75" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#15283b">Top 100 high schools in the USA methodology</text>
+<text x="70" y="115" font-family="Arial, sans-serif" font-size="19" fill="#52606d">Disclosed weighting used for this comparison; no paid placement in this guide</text>
+<rect x="70.0" y="190" width="636.0" height="70" fill="#1f496e"/>
+<text x="388.0" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">60%</text>
+<rect x="706.0" y="190" width="132.5" height="70" fill="#d6a94b"/>
+<text x="772.2" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">12.5%</text>
+<rect x="838.5" y="190" width="106.0" height="70" fill="#64816e"/>
+<text x="891.5" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">10%</text>
+<rect x="944.5" y="190" width="106.0" height="70" fill="#8a6075"/>
+<text x="997.5" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#ffffff">10%</text>
+<rect x="1050.5" y="190" width="26.5" height="70" fill="#567a96"/>
+<rect x="1077.0" y="190" width="26.5" height="70" fill="#b57946"/>
+<rect x="1103.5" y="190" width="26.5" height="70" fill="#1f496e"/>
+<rect x="70" y="300" width="18" height="18" rx="3" fill="#1f496e"/>
+<text x="98" y="315" font-family="Arial, sans-serif" font-size="17" fill="#263746">Academics (60%)</text>
+<rect x="435" y="300" width="18" height="18" rx="3" fill="#d6a94b"/>
+<text x="463" y="315" font-family="Arial, sans-serif" font-size="17" fill="#263746">Culture and diversity (12.5%)</text>
+<rect x="800" y="300" width="18" height="18" rx="3" fill="#64816e"/>
+<text x="828" y="315" font-family="Arial, sans-serif" font-size="17" fill="#263746">Parent and student surveys (10%)</text>
+<rect x="70" y="338" width="18" height="18" rx="3" fill="#8a6075"/>
+<text x="98" y="353" font-family="Arial, sans-serif" font-size="17" fill="#263746">Teachers (10%)</text>
+<rect x="435" y="338" width="18" height="18" rx="3" fill="#567a96"/>
+<text x="463" y="353" font-family="Arial, sans-serif" font-size="17" fill="#263746">Clubs and activities (2.5%)</text>
+<rect x="800" y="338" width="18" height="18" rx="3" fill="#b57946"/>
+<text x="828" y="353" font-family="Arial, sans-serif" font-size="17" fill="#263746">Resources and facilities (2.5%)</text>
+<rect x="70" y="376" width="18" height="18" rx="3" fill="#1f496e"/>
+<text x="98" y="391" font-family="Arial, sans-serif" font-size="17" fill="#263746">Sports (2.5%)</text>
+</svg>

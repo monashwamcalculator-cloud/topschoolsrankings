@@ -1,0 +1,169 @@
+﻿import re
+
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking Methodology: How We Rank Schools & Universities | Top Schools Rankings</title>
+  <meta name="description" content="Discover the exact methodology Top Schools Rankings uses to evaluate universities and high schools. Learn about our data sources, ranking factors, scoring method, and editorial independence.">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
+  <link rel="canonical" href="https://topschoolsrankings.com/ranking-methodology/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Ranking Methodology: How We Rank Schools & Universities",
+    "description": "Discover the exact methodology Top Schools Rankings uses to evaluate universities and high schools. Learn about our data sources, ranking factors, scoring method, and editorial independence.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Top Schools Rankings",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://topschoolsrankings.com/icon.svg"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a class="brand" href="/" aria-label="Top Schools Rankings home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-copy"><strong>Top Schools</strong><small>RANKINGS</small></span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="/blogs/">Guides</a>
+        <a href="/listings/">Profiles</a>
+        <a href="/compare/">Compare</a>
+        <a href="/tools/">Tools</a>
+      </nav>
+      <div class="header-search">
+        <input type="search" placeholder="Search schools, guides..." aria-label="Search" data-search>
+        <div class="search-results" hidden></div>
+      </div>
+      <details class="mobile-nav">
+        <summary aria-label="Toggle menu"><span></span><span></span><span></span></summary>
+        <div class="mobile-nav-content">
+          <a href="/blogs/">Guides</a>
+          <a href="/listings/">Profiles</a>
+          <a href="/compare/">Compare</a>
+          <a href="/tools/">Tools</a>
+        </div>
+      </details>
+    </div>
+  </header>
+  <main>
+  <nav class="breadcrumbs site-container" aria-label="Breadcrumb">
+    <a href="/">Home</a><span><i aria-hidden="true">/</i><b>Ranking Methodology: How We Rank Schools &amp; Universities</b></span>
+  </nav>
+  
+  <header class="page-header">
+    <div class="site-container narrow">
+      <span class="eyebrow">Top Schools Rankings</span>
+      <h1>Ranking Methodology: How We Rank Schools &amp; Universities</h1>
+      <p>A transparent guide to our evaluation process, data sources, scoring methods, and editorial standards for ranking global educational institutions.</p>
+      <div class="page-meta">Last Updated: September 2026</div>
+    </div>
+  </header>
+
+  <section class="section site-container article-layout">
+    <article class="article-body">
+      <h2>1. About Our Rankings</h2>
+      <p>At Top Schools Rankings, our objective is to provide neutral, research-backed comparative guides that evaluate academic institutions. Our <a href="/blogs/">school and university rankings</a> measure institutional reputation, admissions selectivity, financial transparency, and student support.</p>
+      <p>Our guides are intended for prospective students, parents, and education researchers seeking a consolidated view of the global education landscape. These rankings should be interpreted as independent editorial research tools to aid in college list-building, not as official declarations endorsed by the institutions themselves.</p>
+      
+      <h2>2. Data Sources</h2>
+      <p>To ensure accuracy and transparency, we rely strictly on authoritative, publicly accessible data. We do not invent statistics or use unverified third-party estimates. Our primary data sources are separated into the following categories:</p>
+      <ul>
+        <li><strong>Universities:</strong> Official institutional domains (e.g., .edu, .ac.uk, .edu.au, .ca), university fact books, and common data portals.</li>
+        <li><strong>High Schools:</strong> Official independent and boarding school websites, and established national school directories.</li>
+        <li><strong>Admissions Data:</strong> Official undergraduate admissions pages and the Common Data Set (CDS) where available.</li>
+        <li><strong>Tuition/Fees:</strong> Official bursar, student accounts, and financial aid fee schedules for the current or upcoming academic year.</li>
+        <li><strong>Academic Outcomes:</strong> Official institutional employment reports, matriculation lists, and graduate outcomes surveys.</li>
+        <li><strong>Rankings/Reputation:</strong> Established global benchmarks including <a href="https://www.topuniversities.com/" target="_blank" rel="noopener noreferrer">QS World University Rankings</a>, Times Higher Education (THE), and U.S. News &amp; World Report.</li>
+        <li><strong>Government/Public Datasets:</strong> Federal registries such as the National Center for Education Statistics (NCES/IPEDS) in the US, the Department for Education in the UK, and the CRICOS register in Australia.</li>
+      </ul>
+
+      <h2>3. Ranking Factors</h2>
+      <p>Because we evaluate vastly different educational systems (from local high schools to global research universities), our methodology adapts to the specific category being ranked. Generally, we consider the following factors:</p>
+      <ul>
+        <li><strong>Academic Reputation &amp; Global Standing:</strong> Measured via existing established benchmarks (QS, THE) and accreditation status. This matters because it indicates the global recognition of a degree.</li>
+        <li><strong>Admissions Selectivity:</strong> Measured by <a href="/blogs/">acceptance rates</a> and standardized test averages (SAT/ACT/IB). This helps applicants gauge realistic admission chances.</li>
+        <li><strong>Financial Transparency:</strong> Measured by the clarity of published tuition rates, mandatory fees, and scholarship opportunities. This allows families to compare accurate financial commitments upfront.</li>
+        <li><strong>International Student Support:</strong> Measured by dedicated international offices, visa guidance, and English language requirements. This is essential for ensuring global applicants understand available support structures.</li>
+      </ul>
+      <p>When a ranking list uses a distinct set of factors—such as focusing entirely on STEM outcomes or boarding facilities—we clearly explain those specific criteria within the article itself.</p>
+
+      <h2>4. Scoring Method</h2>
+      <p>We use an <em>editorial synthesis</em> approach to convert raw data into a ranking or ordinal tier (e.g., "Top 20 Universities in Canada"). Rather than forcing disparate global data into a single, universal mathematical formula, our editorial team evaluates relative performance across the specific data sources mentioned above.</p>
+      <p>Because we aggregate existing recognized benchmarks and official statistics across different international reporting standards, a rigid, universal weighting percentage is not scientifically possible. If a precise proprietary mathematical calculation cannot be disclosed for a specific ranking list, it is explicitly because we are utilizing this editorial aggregation method rather than a hidden algorithm. We never invent fake formulas or arbitrary weighting percentages to appear more complex.</p>
+
+      <h2>5. Data Verification</h2>
+      <p>Our editorial team follows a strict verification process before publishing or updating a guide. This includes:</p>
+      <ul>
+        <li>Checking official institutional sources directly as the primary source of truth.</li>
+        <li>Checking publication dates to ensure we are citing the correct academic year (e.g., 2025 vs. 2026 tuition).</li>
+        <li>Cross-checking important statistics across multiple datasets (e.g., matching a school's claimed enrollment against government registries).</li>
+        <li>Handling conflicting information by prioritizing the most recent official release from the institution itself.</li>
+        <li>Conducting a final editorial review of the data before publication.</li>
+      </ul>
+
+      <h2>6. Missing Data</h2>
+      <p>Transparency is our priority. When an institution does not publish a particular statistic—such as a precise international acceptance rate—we explicitly mark that data as "unavailable" or report the broader, verified institutional average.</p>
+      <p><strong>We never estimate, guess, or fabricate missing values.</strong> If critical data points are entirely missing and cannot be sourced from government datasets, the institution may be excluded from data-heavy comparative lists.</p>
+
+      <h2>7. Updates</h2>
+      <p>Educational data is dynamic. We review our <a href="/blogs/">rankings</a> based on the following schedule:</p>
+      <ul>
+        <li><strong>Annual Reviews:</strong> Major university guides are reviewed annually, aligning with the release of new global ranking data (QS/THE) and major autumn admissions cycles.</li>
+        <li><strong>Targeted Updates:</strong> When major policy changes occur—such as a university reverting to mandatory SAT requirements—we update affected guides and <a href="/compare/">comparisons</a> as soon as practical.</li>
+        <li><strong>Periodic Audits:</strong> We regularly audit tuition figures and contact information.</li>
+      </ul>
+      <p>While we strive for accuracy, we cannot guarantee real-time updates for every institution immediately as policies change.</p>
+
+      <h2>8. Corrections Policy</h2>
+      <p>We welcome corrections from students, parents, and institutional representatives. If you spot incorrect statistics, outdated information, incorrect school details, or broken source links, please report them.</p>
+      <p>You can submit corrections via our <a href="/contact-us/">Contact Us</a> page or by emailing <code>topschoolsrankings@gmail.com</code>. All reports are independently reviewed against official institutional sources before any live page is amended.</p>
+
+      <h2>9. Editorial Independence</h2>
+      <p>Top Schools Rankings is an independent education research platform. Our rankings are purely editorial research. <strong>We do not sell ranking placements</strong>, and institutions cannot pay to adjust their ranking position, score, or editorial tone. Any advertising on the site is kept strictly separate from the editorial evaluation process.</p>
+
+      <h2>10. Limitations</h2>
+      <p>While we strive to provide the most accurate comparative data possible, our rankings should be used strictly as a research tool. <strong>No ranking system can measure every aspect of an institution</strong>, including campus culture, personal fit, or departmental nuances.</p>
+      <p>Students should consider their own personal goals, budgets, and geographic preferences when building a college list. Most importantly, always check official institution sources for the most current, binding information on admissions requirements, tuition fees, and application deadlines.</p>
+    </article>
+    <aside class="article-aside">
+      <div>
+        <span class="aside-label">Publisher</span>
+        <strong>Independent education website</strong>
+        <p>Not a school, university or admissions agency.</p>
+      </div>
+      <div>
+        <span class="aside-label">Related</span>
+        <a href="/editorial-policy/">Editorial Policy</a>
+        <a href="/about-us/">About Us</a>
+      </div>
+    </aside>
+  </section>
+  </main>
+  <footer class="site-footer"><div class="site-container footer-grid">
+    <div class="footer-about">
+  <a class="brand" href="/" aria-label="Top Schools Rankings home">
+    <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="brand-copy"><strong>Top Schools</strong><small>RANKINGS</small></span>
+  </a><p>Independent school and university research for students and families. We are not an admissions agency and do not sell rankings.</p><a class="correction-link" href="/contact-us/">Report a correction →</a></div>
+    <div><h2>Research</h2><a href="/blogs/">All guides</a><a href="/listings/">Institution profiles</a><a href="/compare/">Comparisons</a><a href="/tools/">Student tools</a></div>
+    <div><h2>Standards</h2><a href="/ranking-methodology/">Ranking methodology</a><a href="/editorial-policy/">Editorial policy</a><a href="/author/saahil/">Our writer</a><a href="/about-us/">About us</a></div>
+    <div><h2>Legal</h2><a href="/privacy-policy/">Privacy policy</a><a href="/terms-and-conditions/">Terms &amp; conditions</a><a href="/disclaimer/">Disclaimer</a><a href="/contact-us/">Contact us</a></div>
+  </div><div class="site-container footer-bottom"><p>© 2026 Top Schools Rankings. Educational information only.</p><p>Advertising, when enabled, is visually separated from editorial content.</p></div></footer>
+</body>
+</html>
+"""
+
+with open("ranking-methodology/index.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("Updated ranking-methodology/index.html")
