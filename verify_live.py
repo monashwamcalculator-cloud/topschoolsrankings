@@ -1,18 +1,15 @@
-﻿import urllib.request
+import urllib.request
 import time
 
-url = 'https://topschoolsrankings.com/bodwell-high-school-acceptance-rate-admissions-strategy/?v=123'
+urls = [
+    'https://topschoolsrankings.com/how-universities-are-using-custom-software-solutions-to-build-smarter-digital-education-ecosystems/?bust=' + str(time.time()),
+    'https://topschoolsrankings.com/author/samrat-biswas/?bust=' + str(time.time())
+]
 
-for _ in range(5):
+for url in urls:
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        res = urllib.request.urlopen(req).read().decode('utf-8')
-        if 'Bodwell High School Admissions Guide' in res:
-            print('DEPLOYMENT IS LIVE!')
-            break
-        else:
-            print('Waiting for deployment...')
-            time.sleep(2)
+        resp = urllib.request.urlopen(req)
+        print(f'{url.split("?")[0]}: HTTP {resp.getcode()}')
     except Exception as e:
-        print(e)
-        time.sleep(2)
+        print(f'{url.split("?")[0]}: ERROR {e}')
