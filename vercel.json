@@ -9,6 +9,16 @@
       "source": "/add-listing",
       "destination": "/listings/",
       "permanent": true
+    },
+    {
+      "source": "/top-20-canadian-boarding-schools/",
+      "destination": "/boarding-schools-in-canada/",
+      "permanent": true
+    },
+    {
+      "source": "/top-20-canadian-boarding-schools",
+      "destination": "/boarding-schools-in-canada/",
+      "permanent": true
     }
   ]
 }
