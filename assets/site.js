@@ -27,38 +27,140 @@
   }
   document.querySelectorAll("[data-search]").forEach(setupSearch);
 
+
+
   function toolMode(slug) {
     if (/quiz|checklist|readiness|eligibility|fit/.test(slug)) return "quiz";
     if (/timeline|planner/.test(slug)) return "quiz";
-    if (/cost|budget|loan|fees|living|dorm|public-school/.test(slug)) return "cost";
+    if (/loan/.test(slug)) return "loan";
+    if (/comparison|vs/.test(slug)) return "compare";
+    if (/cost|budget|fees|living|dorm|public-school/.test(slug)) return "cost";
     if (/converter|percentage|tariff/.test(slug)) return "converter";
     return "score";
   }
+
+  function getIELTSFromPTE(pte) {
+    if (pte >= 90) return 9.0;
+    if (pte >= 86) return 8.5;
+    if (pte >= 79) return 8.0;
+    if (pte >= 71) return 7.5;
+    if (pte >= 63) return 7.0;
+    if (pte >= 58) return 6.5;
+    if (pte >= 50) return 6.0;
+    if (pte >= 43) return 5.5;
+    if (pte >= 36) return 5.0;
+    if (pte >= 30) return 4.5;
+    return "< 4.5";
+  }
+
+  function getIELTSFromDET(det) {
+    if (det >= 155) return 9.0;
+    if (det >= 145) return 8.5;
+    if (det >= 135) return 8.0;
+    if (det >= 125) return 7.5;
+    if (det >= 115) return 7.0;
+    if (det >= 105) return 6.5;
+    if (det >= 95) return 6.0;
+    if (det >= 85) return 5.5;
+    if (det >= 75) return 5.0;
+    if (det >= 65) return 4.5;
+    return "< 4.5";
+  }
+
+  function getTOEFLFromIELTS(ielts) {
+    if (ielts >= 9.0) return "118-120";
+    if (ielts >= 8.5) return "115-117";
+    if (ielts >= 8.0) return "110-114";
+    if (ielts >= 7.5) return "102-109";
+    if (ielts >= 7.0) return "94-101";
+    if (ielts >= 6.5) return "79-93";
+    if (ielts >= 6.0) return "60-78";
+    if (ielts >= 5.5) return "46-59";
+    if (ielts >= 5.0) return "35-45";
+    if (ielts >= 4.5) return "32-34";
+    return "0-31";
+  }
+
   function renderTool(panel) {
     if (panel.hasAttribute('data-custom')) return;
 
     var slug = panel.getAttribute("data-tool") || "";
     var runtime = panel.querySelector(".tool-runtime");
     var mode = toolMode(slug);
+    
     if (mode === "quiz") {
       var labels = ["I verified the institution or programme in an official source.", "I checked the full cost, not only advertised tuition.", "I reviewed entry requirements for my qualification.", "I compared support, location and learning format.", "I saved source links and the date checked."];
       runtime.innerHTML = '<div class="checklist-tool">' + labels.map(function (label) { return '<label><input type="checkbox"><span>' + label + '</span></label>'; }).join("") + '</div><div class="tool-result" role="status">0/5 research checks complete</div>';
       runtime.addEventListener("change", function () { runtime.querySelector(".tool-result").textContent = runtime.querySelectorAll('input:checked').length + "/5 research checks complete"; });
       return;
     }
-    var labels = mode === "cost" ? ["Annual tuition", "Monthly living cost", "Annual fees & insurance", "Annual travel & extras"] : mode === "converter" ? ["Value to convert"] : /weighted-gpa/.test(slug) ? ["Unweighted GPA", "AP/IB courses", "Honors courses", "Total courses"] : ["Academic score", "Course rigor", "Relevant test score", "Other factor"];
+    
+    var labels = [];
+    if (mode === "loan") labels = ["Loan principal", "Annual interest rate (%)", "Loan term in years"];
+    else if (mode === "compare") labels = ["Scenario A: Tuition/Rent", "Scenario A: Food/Living", "Scenario B: Tuition/Rent", "Scenario B: Food/Living"];
+    else if (mode === "cost") labels = ["Annual tuition", "Monthly living cost", "Annual fees & insurance", "Annual travel & extras"];
+    else if (mode === "converter") labels = ["Value to convert"];
+    else if (/weighted-gpa|ap-gpa/.test(slug)) labels = ["Unweighted GPA", "AP/IB courses", "Honors courses", "Total courses"];
+    else labels = ["Academic score", "Course rigor", "Relevant test score", "Other factor"];
+
     runtime.innerHTML = '<div class="tool-fields">' + labels.map(function (label) { return '<label><span>' + label + '</span><input type="number" min="0" step="0.01" inputmode="decimal"></label>'; }).join("") + '</div><button class="button button-primary" type="button">Calculate estimate</button><div class="tool-result" role="status" hidden></div>';
+    
     runtime.querySelector("button").addEventListener("click", function () {
       var values = Array.from(runtime.querySelectorAll("input")).map(function (input) { return Number(input.value) || 0; });
       var text = "";
-      if (mode === "cost") text = "Estimated annual total: " + Math.round(values[0] + values[1] * 12 + values[2] + values[3]).toLocaleString();
+      
+      if (mode === "loan") {
+        var P = values[0];
+        var rate = values[1];
+        var years = values[2];
+        if (P <= 0 || years <= 0) {
+            text = "Please enter a valid principal and term greater than 0.";
+        } else {
+            var n = years * 12;
+            var r = rate / 100 / 12;
+            var payment = 0;
+            if (r === 0) payment = P / n;
+            else payment = P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            var totalRepayment = payment * n;
+            var totalInterest = totalRepayment - P;
+            text = "Planning estimate: $" + payment.toFixed(2) + " / month (Total Repayment: $" + totalRepayment.toFixed(2) + ", Interest: $" + totalInterest.toFixed(2) + "). Actual repayment depends on the loan agreement.";
+        }
+      }
+      else if (mode === "compare") {
+        var totalA = values[0] + values[1];
+        var totalB = values[2] + values[3];
+        var diff = Math.abs(totalA - totalB);
+        var moreExp = totalA > totalB ? "Scenario A" : (totalB > totalA ? "Scenario B" : "Neither");
+        text = "Scenario A Total: " + totalA.toLocaleString() + " | Scenario B Total: " + totalB.toLocaleString() + ". Difference: " + diff.toLocaleString() + " (" + moreExp + " is more expensive).";
+      }
+      else if (mode === "cost") {
+        text = "Estimated annual total: " + Math.round(values[0] + values[1] * 12 + values[2] + values[3]).toLocaleString();
+      }
       else if (mode === "converter") {
-        var converted = /percentage/.test(slug) ? Math.min(100, values[0] <= 10 ? values[0] * 9.5 : values[0] * 25) : /act-to-sat/.test(slug) ? Math.min(1600, Math.max(400, 400 + values[0] * 33.3)) : values[0] * 1.1;
-        text = "Planning estimate: " + converted.toFixed(1);
-      } else if (/weighted-gpa/.test(slug)) text = "Estimated weighted GPA: " + Math.min(5, values[3] > 0 ? values[0] + (values[1] + values[2] * .5) / values[3] : values[0]).toFixed(2);
-      else { var entered = values.filter(function (value) { return value > 0; }); text = "Planning estimate: " + (entered.length ? entered.reduce(function (sum, value) { return sum + value; }, 0) / entered.length : 0).toFixed(1); }
+        if (/pte-ielts/.test(slug)) {
+            text = "Concordance estimate: IELTS " + getIELTSFromPTE(values[0]) + " (Score equivalencies are approximate concordance estimates, not universal conversions).";
+        } else if (/duolingo-ielts/.test(slug)) {
+            text = "Concordance estimate: IELTS " + getIELTSFromDET(values[0]) + " (Score equivalencies are approximate concordance estimates, not universal conversions).";
+        } else if (/ielts-toefl/.test(slug)) {
+            text = "Concordance estimate: LEGACY TOEFL iBT " + getTOEFLFromIELTS(values[0]) + " (Approximate concordance estimate. Note: TOEFL introduced a new 1-6 scale from Jan 2026, check with your institution).";
+        } else if (/percentage/.test(slug)) {
+            var converted = Math.min(100, values[0] <= 10 ? values[0] * 9.5 : values[0] * 25);
+            text = "Planning estimate: " + converted.toFixed(1);
+        } else if (/act-to-sat/.test(slug)) {
+            var converted = Math.min(1600, Math.max(400, 400 + values[0] * 33.3));
+            text = "Planning estimate: " + converted.toFixed(1);
+        } else {
+            text = "Planning estimate: " + (values[0] * 1.1).toFixed(1);
+        }
+      } else if (/weighted-gpa|ap-gpa/.test(slug)) {
+        text = "Estimated weighted GPA: " + Math.min(5, values[3] > 0 ? values[0] + (values[1] + values[2] * .5) / values[3] : values[0]).toFixed(2);
+      } else { 
+        var entered = values.filter(function (value) { return value > 0; }); 
+        text = "Planning estimate: " + (entered.length ? entered.reduce(function (sum, value) { return sum + value; }, 0) / entered.length : 0).toFixed(1); 
+      }
       var result = runtime.querySelector(".tool-result"); result.textContent = text; result.hidden = false;
     });
   }
+
   document.querySelectorAll("[data-tool]").forEach(renderTool);
 })();
