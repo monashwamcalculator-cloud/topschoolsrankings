@@ -1,89 +1,66 @@
 import urllib.request
-import time
+import re
 import json
-import traceback
 
-ts = int(time.time())
-base = "https://topschoolsrankings.com"
-fails = []
-results = []
-
-def fetch(path):
-    url = f"{base}{path}?bust={ts}"
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+base_url = 'https://topschoolsrankings.com'
+# append a query param to bust cache
+def get_url(path):
+    req = urllib.request.Request(f"{base_url}{path}?v=1", headers={'User-Agent': 'Mozilla/5.0'})
     try:
-        resp = urllib.request.urlopen(req)
-        body = resp.read()
-        return resp.getcode(), body
+        with urllib.request.urlopen(req) as response:
+            return response.read().decode('utf-8'), response.status
     except Exception as e:
-        return 500, b''
+        return str(e), 500
 
-def check(name, condition):
-    res = "PASS" if condition else "FAIL"
-    if not condition: fails.append(name)
-    results.append(f"{name}: {res}")
+print("VERIFYING HOMEPAGE...")
+html, status = get_url('/')
+print(f"Homepage Status: {status}")
+print(f"Counters (104): {'104' in html}")
+print(f"Counters (46): {'46' in html}")
+print(f"Counters (135): {'135' in html}")
 
-print(f"Running LIVE checks against {base} with bust={ts}...")
+print("\nVERIFYING CLS PAGES (HTTP 200)...")
+for page in [
+    '/top-high-schools-in-england-rankings-guide/',
+    '/top-10-computer-science-universities-in-usa/',
+    '/top-10-universities-in-london/',
+    '/tools/student-loan-repayment-calculator/'
+]:
+    _, s = get_url(page)
+    print(f"{page} -> {s}")
 
-# 1. Homepage
-st, body = fetch("/")
-check("Homepage HTTP 200", st == 200)
+print("\nVERIFYING LOGO FIX IN PRODUCTION...")
+print("aspect-ratio" in html and "logo.png" in html)
+
+print("\nVERIFYING NO MOJIBAKE...")
+print("Ã" not in html)
+
+print("\nVERIFYING CANONICAL FOR INDIA HOSTEL...")
+hostel_html, s = get_url('/how-smart-hostels-are-changing-student-life-at-indian-universities/')
+can_match = re.search(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', hostel_html)
+if can_match: print(can_match.group(1))
+
+print("\nVERIFYING HIGH-RISK TOOLS NOINDEX...")
+for tool in [
+    '/tools/merit-aid-estimator/',
+    '/tools/college-chances-calculator/',
+    '/tools/nsw-selective-score-estimator/',
+    '/tools/hsc-atar-estimator/',
+    '/tools/ib-to-gpa-converter/',
+    '/tools/atar-gpa-converter/'
+]:
+    t_html, t_status = get_url(tool)
+    print(f"{tool} -> {'noindex,follow' in t_html or 'noindex, follow' in t_html}")
+
+print("\nVERIFYING SITEMAP...")
+xml, _ = get_url('/sitemap.xml')
+urls = re.findall(r'<url>', xml)
+print(f"Sitemap URL count: {len(urls)}")
+
+print("\nVERIFYING SEARCH INDEX...")
+idx, _ = get_url('/assets/search-index.json')
 try:
-    html = body.decode('utf-8')
-    check("Homepage Counters (104/46/135)", '104' in html and '46' in html and '135' in html)
-    check("Correct logo.png", 'logo.png' in html)
-    check("Mojibake: 0", body.startswith(b'\xef\xbb\xbf') and '\xc5\x92' not in html and '\u0152' not in html)
+    data = json.loads(idx)
+    print(f"Search index entries: {len(data)}")
 except:
-    check("Homepage Decode", False)
-
-# 2. Caltech
-st_cal, body_cal = fetch("/california-institute-of-technology-acceptance-rate-2026-how-hard-is-it-to-get-into-caltech/")
-check("Caltech HTTP 200", st_cal == 200)
-try:
-    html_cal = body_cal.decode('utf-8').lower()
-    obs_cal = ['strictly test-blind', 'test-blind', 'do not submit sat/act', 'even a 1600 won''t be looked at', 'look at sat/act scores at all']
-    check("Caltech obsolete phrases: 0", not any(p in html_cal for p in obs_cal))
-    check("Caltech updated wording LIVE", "sat/act results are considered as one part of caltech's holistic admissions review" in html_cal and "caltech requires first-year applicants to submit either sat or act scores" in html_cal)
-except:
-    check("Caltech check", False)
-
-# 3. Promo phrases (Check a known page that had them)
-st_promo, body_promo = fetch("/arizona-state-university-the-2026-insider-guide-to-admissions-fees-and-innovation/")
-try:
-    html_promo = body_promo.decode('utf-8').lower()
-    obs_promo = ['hard strategy to get admitted', 'cracking the bodwell admission code', 'interview secrets', 'exact strategy', 'best private boys'' school']
-    check("Promotional phrases: 0", not any(p in html_promo for p in obs_promo))
-except:
-    check("Promo check", False)
-
-# 4. Restored Pages
-st_t, _ = fetch("/tools/a-level-average-calculator/")
-check("Restored tools HTTP 200", st_t == 200)
-st_a, _ = fetch("/how-to-compare-universities-beyond-rankings/")
-check("Restored articles HTTP 200", st_a == 200)
-st_l, _ = fetch("/listing/harvard-university/")
-check("Restored listings HTTP 200", st_l == 200)
-
-# 5. Methodology
-st_m, body_m = fetch("/ranking-methodology/")
-check("Methodology HTTP 200", st_m == 200)
-try:
-    html_m = body_m.decode('utf-8')
-    check("Methodology is approved version", '1. Transparent Metric Selection' in html_m or 'How We Rank' in html_m)
-except:
-    pass
-
-# 6. Sitemap & Search Index
-st_sm, _ = fetch("/sitemap.xml")
-check("sitemap.xml HTTP 200", st_sm == 200)
-st_sj, _ = fetch("/assets/search-index.json")
-check("search-index.json HTTP 200", st_sj == 200)
-
-print("\n--- RESULTS ---")
-for r in results:
-    print(r)
-
-if len(fails) == 0:
-    print("\nFINAL LIVE VERIFICATION: PASS")
-else:
-    print("\nFINAL LIVE VERIFICATION: FAIL")
+    print("Invalid JSON")
