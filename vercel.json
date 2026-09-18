@@ -19,6 +19,11 @@
       "source": "/top-20-canadian-boarding-schools",
       "destination": "/boarding-schools-in-canada/",
       "permanent": true
+    },
+    {
+      "source": "/assets/post-covers/931b920e4016e54b.jpg",
+      "destination": "/og.png",
+      "permanent": true
     }
   ]
 }
