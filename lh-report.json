@@ -2381,7 +2381,7 @@
                       "height": 485
                     },
                     "snippet": "<article class=\"guide-card\">",
-                    "nodeLabel": "EDITORIAL GUIDE\n8–12 MIN READ\nTop 20 Boarding Schools in the USA (2026 Niche Ra…"
+                    "nodeLabel": "EDITORIAL GUIDE\n8–12 MIN READ\nTop 20 Schools & Boarding in the USA (2026 Niche Ra…"
                   }
                 }
               ]
@@ -4607,8 +4607,8 @@
                 "width": 384,
                 "height": 256
               },
-              "snippet": "<img class=\"\" src=\"/media/articles/top-high-schools-in-england-rankings-guide-featured.webp\" alt=\"Top 100 High Schools in England: 2026 Rankings &amp; Admissions Guide\" width=\"1500\" height=\"1000\" loading=\"eager\" decoding=\"async\">",
-              "nodeLabel": "Top 100 High Schools in England: 2026 Rankings & Admissions Guide"
+              "snippet": "<img class=\"\" src=\"/media/articles/top-high-schools-in-england-rankings-guide-featured.webp\" alt=\"Top 100 Schools & Boarding in England: 2026 Rankings &amp; Admissions Guide\" width=\"1500\" height=\"1000\" loading=\"eager\" decoding=\"async\">",
+              "nodeLabel": "Top 100 Schools & Boarding in England: 2026 Rankings & Admissions Guide"
             },
             "url": "http://localhost:8080/media/articles/top-high-schools-in-england-rankings-guide-featured.webp",
             "totalBytes": 197502,
@@ -4638,7 +4638,7 @@
                 "height": 40
               },
               "snippet": "<img src=\"/media/articles/top-high-schools-in-england-rankings-guide-inline-01.webp\" alt=\"London skyline viewed from Greenwich Park — many of England's top high sch…\" width=\"960\" height=\"100\" loading=\"lazy\" decoding=\"async\">",
-              "nodeLabel": "London skyline viewed from Greenwich Park — many of England's top high schools …"
+              "nodeLabel": "London skyline viewed from Greenwich Park — many of England's top Schools & Boarding …"
             },
             "url": "http://localhost:8080/media/articles/top-high-schools-in-england-rankings-guide-inline-01.webp",
             "totalBytes": 27798,
@@ -4726,7 +4726,7 @@
               "height": 174
             },
             "snippet": "<h1>",
-            "nodeLabel": "Top 100 High Schools in England: 2026 Rankings & Admissions Guide"
+            "nodeLabel": "Top 100 Schools & Boarding in England: 2026 Rankings & Admissions Guide"
           }
         ]
       },

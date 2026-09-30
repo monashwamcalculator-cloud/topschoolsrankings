@@ -1,17 +1,17 @@
 [
   {
-    "title": "Top 100 Schools in India 2025-26: Rankings, Scores, Fees & Admission Guide",
+    "title": "Top 100 Schools in India 2025-26: Rankings, Scores, Fees & Admissions & Visas",
     "type": "guide",
     "path": "/top-100-schools-in-india/"
   },
   {
     "path": "/how-universities-are-using-custom-software-solutions-to-build-smarter-digital-education-ecosystems/",
-    "title": "How Universities Are Using Custom Software to Build Smarter Digital Ecosystems",
+    "title": "How Universities Are Using Degree & Career Guides to Build Smarter Digital Ecosystems",
     "type": "article"
   },
   {
-    "path": "/how-to-verify-university-accreditation-before-you-apply/",
-    "title": "How to Verify University Accreditation Before You Apply",
+    "path": "/how-to-verify-university-Admissions & Visas-before-you-apply/",
+    "title": "How to Verify University Admissions & Visas Before You Apply",
     "type": "Application Safety"
   },
   {
@@ -27,22 +27,22 @@
   {
     "path": "/how-to-choose-a-university-course-uk/",
     "title": "How to Choose a UK University Course: Evidence Checklist",
-    "type": "UK Universities"
+    "type": "Global Universities"
   },
   {
     "path": "/how-to-check-a-canadian-school-dli-before-applying/",
     "title": "How to Check a Canadian School\u2019s DLI Status Before Applying",
-    "type": "Canada Universities"
+    "type": "Global Universities"
   },
   {
-    "path": "/how-to-verify-an-australian-cricos-course/",
-    "title": "How to Verify an Australian Course on CRICOS",
-    "type": "Australia Universities"
+    "path": "/how-to-verify-an-australian-Admissions & Visas-course/",
+    "title": "How to Verify an Australian Course on Admissions & Visas",
+    "type": "Global Universities"
   },
   {
     "path": "/boarding-school-open-day-questions-checklist/",
     "title": "Boarding School Open Day Questions: Parent Checklist",
-    "type": "Boarding Schools"
+    "type": "Schools & Boarding"
   },
   {
     "path": "/college-ranking-red-flags-and-how-to-read-them/",
@@ -75,8 +75,8 @@
     "type": "article"
   },
   {
-    "path": "/algoma-university-for-international-students-admissions-fees-courses-visa-guide/",
-    "title": "Algoma University for International Students: Admissions, Fees, Courses & Visa Guide",
+    "path": "/algoma-university-for-international-students-admissions-fees-courses-Admissions & Visas-guide/",
+    "title": "Algoma University for International Students: Admissions, Fees, Courses & Admissions & Visas Guide",
     "type": "article"
   },
   {
@@ -156,7 +156,7 @@
   },
   {
     "path": "/compare/usa-vs-uk-boarding-schools/",
-    "title": "USA vs UK Boarding Schools: Fees, Admissions & Curriculum (2026)",
+    "title": "USA vs UK Schools & Boarding: Fees, Admissions & Curriculum (2026)",
     "type": "comparison"
   },
   {
@@ -1036,27 +1036,27 @@
   },
   {
     "path": "/top-10-hardest-boarding-schools-to-get-into-usa/",
-    "title": "Top 10 Hardest Boarding Schools to Get Into in the USA (2026 Guide)",
+    "title": "Top 10 Hardest Schools & Boarding to Get Into in the USA (2026 Guide)",
     "type": "article"
   },
   {
     "path": "/top-10-medical-universities-in-usa/",
-    "title": "Top 10 Medical Universities in USA (2026 Guide for Pre-Med & MD Pathways)",
+    "title": "Top 10 Medical Universities in USA (2026 Guide for Degree & Career Guides & MD Pathways)",
     "type": "article"
   },
   {
-    "path": "/top-10-stem-boarding-schools-in-usa/",
-    "title": "Top 10 STEM Boarding Schools in the USA (2026 Guide)",
+    "path": "/top-10-Degree & Career Guides-boarding-schools-in-usa/",
+    "title": "Top 10 Degree & Career Guides Schools & Boarding in the USA (2026 Guide)",
     "type": "article"
   },
   {
     "path": "/top-10-uk-universities-for-international-students/",
-    "title": "Top 10 UK Universities for International Students (QS 2026 Guide)",
+    "title": "Top 10 Global Universities for International Students (QS 2026 Guide)",
     "type": "article"
   },
   {
     "path": "/top-10-undergraduate-business-schools-in-usa/",
-    "title": "Top 10 Undergraduate Business Schools in the USA (2026 Guide)",
+    "title": "Top 10 Undergraduate Degree & Career Guides in the USA (2026 Guide)",
     "type": "article"
   },
   {
@@ -1066,7 +1066,7 @@
   },
   {
     "path": "/top-15-australian-boarding-schools/",
-    "title": "Top 15 Australian Boarding Schools (2026 Guide)",
+    "title": "Top 15 Australian Schools & Boarding (2026 Guide)",
     "type": "article"
   },
   {
@@ -1081,12 +1081,12 @@
   },
   {
     "path": "/top-20-boarding-schools-in-usa/",
-    "title": "Top 20 Boarding Schools in the USA (2026 Niche Rankings Guide)",
+    "title": "Top 20 Schools & Boarding in the USA (2026 Niche Rankings Guide)",
     "type": "article"
   },
   {
     "path": "/top-20-canadian-boarding-schools/",
-    "title": "Top 20 Canadian Boarding Schools (2026 Admissions Guide)",
+    "title": "Top 20 Canadian Schools & Boarding (2026 Admissions Guide)",
     "type": "article"
   },
   {
@@ -1096,7 +1096,7 @@
   },
   {
     "path": "/top-20-uk-boarding-schools-for-international-students/",
-    "title": "Top 20 UK Boarding Schools for International Students (2026 Guide)",
+    "title": "Top 20 UK Schools & Boarding for International Students (2026 Guide)",
     "type": "article"
   },
   {
@@ -1116,7 +1116,7 @@
   },
   {
     "path": "/top-high-schools-in-england-rankings-guide/",
-    "title": "Top 100 High Schools in England: 2026 Rankings & Admissions Guide",
+    "title": "Top 100 Schools & Boarding in England: 2026 Rankings & Admissions Guide",
     "type": "article"
   },
   {
@@ -1271,7 +1271,7 @@
   },
   {
     "path": "/top-100-high-schools-in-usa/",
-    "title": "Top 100 High Schools in the USA | 2026\u201327 Rankings Guide",
+    "title": "Top 100 Schools & Boarding in the USA | 2026\u201327 Rankings Guide",
     "type": "article"
   },
   {
@@ -1286,7 +1286,7 @@
   },
   {
     "path": "/top-100-boarding-schools-in-the-world/",
-    "title": "Top 100 Boarding Schools in the World | 2026 Global Guide",
+    "title": "Top 100 Schools & Boarding in the World | 2026 Global Guide",
     "type": "article"
   },
   {
@@ -1296,12 +1296,12 @@
   },
   {
     "path": "/boarding-schools-in-canada/",
-    "title": "Top Boarding Schools in Canada | Complete 2026\u201327 Guide",
+    "title": "Top Schools & Boarding in Canada | Complete 2026\u201327 Guide",
     "type": "article"
   },
   {
     "path": "/top-100-high-schools-in-canada/",
-    "title": "Top 100 High Schools in Canada | 2026\u201327 Rankings Guide",
+    "title": "Top 100 Schools & Boarding in Canada | 2026\u201327 Rankings Guide",
     "type": "article"
   },
   {

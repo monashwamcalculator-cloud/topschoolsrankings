@@ -1,6 +1,6 @@
 import re
 
-with open('how-to-verify-an-australian-cricos-course/index.html', 'r', encoding='utf-8') as f:
+with open('how-to-verify-an-australian-Admissions & Visas-course/index.html', 'r', encoding='utf-8') as f:
     html = f.read()
 
 match = re.search(r'<article class="article-body">(.*?)</article>', html, re.DOTALL)
