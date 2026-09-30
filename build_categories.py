@@ -11,7 +11,7 @@ cat_map = {
     "Schools & Boarding": {
         "slug": "schools-and-boarding",
         "h1": "Schools & Boarding Guides",
-        "desc": "Admissions insights and fee comparisons for elite Schools & Boarding and boarding programs."
+        "desc": "Admissions insights and fee comparisons for elite high schools and boarding programs."
     },
     "Admissions & Visas": {
         "slug": "admissions-and-visas",

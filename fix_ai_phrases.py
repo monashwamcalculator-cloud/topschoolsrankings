@@ -1,7 +1,7 @@
 import os
 
 urls = [
-    "how-to-verify-university-Admissions & Visas-before-you-apply",
+    "how-to-verify-university-accreditation-before-you-apply",
     "how-to-check-a-canadian-school-dli-before-applying",
     "how-to-choose-a-university-course-uk",
     "complete-university-cost-comparison-checklist",

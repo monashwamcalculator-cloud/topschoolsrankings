@@ -1,6 +1,6 @@
 import re
 
-with open('how-to-verify-university-Admissions & Visas-before-you-apply/index.html', 'r', encoding='utf-8') as f:
+with open('how-to-verify-university-accreditation-before-you-apply/index.html', 'r', encoding='utf-8') as f:
     html = f.read()
 
 match = re.search(r'<article class="article-body">(.*?)</article>', html, re.DOTALL)
