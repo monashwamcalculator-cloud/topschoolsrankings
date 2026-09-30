@@ -6,7 +6,7 @@ date: "2026-09-30"
 author: "Saahil"
 featured_image: "/images/top-100-universities-in-europe-featured.webp"
 image_alt: "Top 100 Universities in Europe for International Students 2026 Ranking and Tuition Guide"
-category: "Rankings & Guides"
+category: "Global Universities"
 draft: false
 ---
 
