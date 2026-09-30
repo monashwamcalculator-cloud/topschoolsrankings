@@ -387,83 +387,97 @@ button, input { font: inherit; }
 
 /* Global Table Fix for All Articles */
 
-/* 1. Table wrapper ko full-width aur clean scrollable banayein */
-.table-wrapper,
-.table-responsive,
+/* 1. Wrapper ensure karta hai ki koi bhi cheez cut na ho */
 article .table-wrapper,
+.prose .table-wrapper,
+.table-responsive,
 .rich-article-content .table-wrapper,
 .rich-article-content > table {
   width: 100% !important;
-  display: block !important;
+  max-width: 100% !important;
+  display: block !important; /* Critical to allow native table scrolling if unwrapped */
   overflow-x: auto !important;
   -webkit-overflow-scrolling: touch;
-  margin: 1.75rem 0 !important;
+  margin: 1.5rem 0 !important;
 }
 
-/* 2. Table ko comfortable natural width dein taaki koi bhi column squeeze na ho */
+/* 2. Table ko container ke andar 100% fit rakhein */
 article table,
 .prose table,
 .rich-article-content table {
   width: 100% !important;
-  min-width: 980px !important; /* Table ko thoda chawda kiya taaki aakhri column na dabe */
+  max-width: 100% !important;
+  min-width: 100% !important; /* Hardcoded 980px/820px hata diya */
   border-collapse: collapse !important;
   table-layout: auto !important;
+  font-size: 0.88rem !important; /* Clean readability for 5-6 column tables */
+  line-height: 1.4 !important;
 }
 
-/* 3. Padding balance karein */
+/* 3. Word break fix - Single words tootenge nahi, spaces se naturally wrap honge */
 article table th,
 article table td,
 .prose table th,
 .prose table td,
 .rich-article-content table th,
 .rich-article-content table td {
-  padding: 12px 14px !important;
+  padding: 10px 10px !important; /* Balanced padding so everything fits */
   vertical-align: middle !important;
-  word-break: normal !important;
-  overflow-wrap: normal !important;
+  word-break: keep-all !important; /* Prevents Ra-nk, German-y breaks */
+  overflow-wrap: break-word !important; /* Allows multi-word wrapping */
+  hyphens: none !important;
 }
 
-/* 4. Column specific min-widths */
-/* Rank */
+/* 4. Headers background & contrast */
+article table thead th,
+.prose table thead th,
+.rich-article-content table thead th,
+.rich-article-content table th {
+  background-color: #0f2744 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  white-space: normal !important;
+}
+
+/* 5. Rank column compact */
 article table th:first-child,
 article table td:first-child,
 .prose table th:first-child,
 .prose table td:first-child,
 .rich-article-content table th:first-child,
 .rich-article-content table td:first-child {
-  min-width: 60px !important;
-  width: 60px !important;
+  width: 50px !important;
   text-align: center !important;
   white-space: nowrap !important;
 }
 
-/* Country */
+/* 6. Country column fits naturally */
 article table th:nth-child(3),
 article table td:nth-child(3),
 .prose table th:nth-child(3),
 .prose table td:nth-child(3),
 .rich-article-content table th:nth-child(3),
 .rich-article-content table td:nth-child(3) {
-  min-width: 140px !important;
   white-space: nowrap !important;
 }
 
-/* Last Column: Tuition & Fees */
+/* 7. Last column (Tuition / Fees) cleanly aligned without cutting */
 article table th:last-child,
 article table td:last-child,
 .prose table th:last-child,
 .prose table td:last-child,
 .rich-article-content table th:last-child,
 .rich-article-content table td:last-child {
-  min-width: 175px !important; /* Aakhri column ko poora space milega */
-  white-space: nowrap !important;
+  white-space: normal !important;
+  text-align: left !important;
 }
 
-/* 5. Mobile & tablet view par smooth horizontal indicator/scroll ensure karein */
-@media (max-width: 1024px) {
+/* Mobile responsive fallback */
+@media (max-width: 768px) {
   article table,
   .prose table,
   .rich-article-content table {
-    min-width: 920px !important;
+    min-width: 650px !important; /* Mobile par clean horizontal scroll allow karega */
+    font-size: 0.82rem !important;
   }
 }
