@@ -1,4 +1,3 @@
-
 :root {
   --navy-950: #07182e;
   --navy-900: #0b2140;
@@ -386,59 +385,85 @@ button, input { font: inherit; }
   * { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
 }
 
-
 /* Global Table Fix for All Articles */
-.prose table,
+
+/* 1. Table wrapper ko full-width aur clean scrollable banayein */
+.table-wrapper,
+.table-responsive,
+article .table-wrapper,
+.rich-article-content .table-wrapper,
+.rich-article-content > table {
+  width: 100% !important;
+  display: block !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.75rem 0 !important;
+}
+
+/* 2. Table ko comfortable natural width dein taaki koi bhi column squeeze na ho */
 article table,
+.prose table,
 .rich-article-content table {
   width: 100% !important;
-  min-width: 820px !important; /* Table ko natural width dega taaki columns dabey nahi */
-  border-collapse: collapse;
+  min-width: 980px !important; /* Table ko thoda chawda kiya taaki aakhri column na dabe */
+  border-collapse: collapse !important;
+  table-layout: auto !important;
 }
 
-/* Kisi bhi single word ko beech se tootne na dein */
-.prose table th,
-.prose table td,
+/* 3. Padding balance karein */
 article table th,
 article table td,
+.prose table th,
+.prose table td,
 .rich-article-content table th,
 .rich-article-content table td {
+  padding: 12px 14px !important;
+  vertical-align: middle !important;
   word-break: normal !important;
   overflow-wrap: normal !important;
-  hyphens: none !important;
-  padding: 10px 14px !important;
-  vertical-align: middle;
 }
 
-/* Rank aur Country jaise columns ko fixed clean single-line space dein */
-.prose table th:first-child,
-.prose table td:first-child,
+/* 4. Column specific min-widths */
+/* Rank */
 article table th:first-child,
 article table td:first-child,
+.prose table th:first-child,
+.prose table td:first-child,
 .rich-article-content table th:first-child,
 .rich-article-content table td:first-child {
+  min-width: 60px !important;
+  width: 60px !important;
+  text-align: center !important;
   white-space: nowrap !important;
-  min-width: 75px !important;
-  text-align: center;
 }
 
-.prose table th:nth-child(3),
-.prose table td:nth-child(3),
+/* Country */
 article table th:nth-child(3),
 article table td:nth-child(3),
+.prose table th:nth-child(3),
+.prose table td:nth-child(3),
 .rich-article-content table th:nth-child(3),
 .rich-article-content table td:nth-child(3) {
-  white-space: nowrap !important;
   min-width: 140px !important;
+  white-space: nowrap !important;
 }
 
-/* Mobile & smaller screens par table smooth horizontally scroll ho */
-.prose .table-wrapper,
-.table-responsive,
-.prose > table,
-.rich-article-content > table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+/* Last Column: Tuition & Fees */
+article table th:last-child,
+article table td:last-child,
+.prose table th:last-child,
+.prose table td:last-child,
+.rich-article-content table th:last-child,
+.rich-article-content table td:last-child {
+  min-width: 175px !important; /* Aakhri column ko poora space milega */
+  white-space: nowrap !important;
+}
+
+/* 5. Mobile & tablet view par smooth horizontal indicator/scroll ensure karein */
+@media (max-width: 1024px) {
+  article table,
+  .prose table,
+  .rich-article-content table {
+    min-width: 920px !important;
+  }
 }
