@@ -234,3 +234,40 @@
 
   document.querySelectorAll("[data-tool]").forEach(renderTool);
 })();
+
+
+// Category Filter Logic
+document.addEventListener('DOMContentLoaded', function() {
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const guideCards = document.querySelectorAll('.guide-card[data-category]');
+
+    if (filterPills.length > 0 && guideCards.length > 0) {
+        filterPills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                // Remove active class from all
+                filterPills.forEach(p => p.classList.remove('active'));
+                // Add active class to clicked
+                pill.classList.add('active');
+
+                const filterValue = pill.getAttribute('data-filter');
+
+                guideCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    
+                    // Reset animation by triggering reflow
+                    card.style.animation = 'none';
+                    card.offsetHeight; /* trigger reflow */
+                    card.style.animation = null;
+
+                    if (filterValue === 'all') {
+                        card.classList.remove('hidden');
+                    } else if (category === filterValue || category === filterValue.replace(/&amp;/g, '&')) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    }
+});
