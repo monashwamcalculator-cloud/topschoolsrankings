@@ -240,33 +240,80 @@
 document.addEventListener('DOMContentLoaded', function() {
     const filterPills = document.querySelectorAll('.filter-pill');
     const guideCards = document.querySelectorAll('.guide-card[data-category]');
+    
+    const headerH1 = document.querySelector('.page-header h1');
+    const headerP = document.querySelector('.page-header p');
+    const headerMeta = document.querySelector('.page-header .page-meta');
+
+    const copyData = {
+        'all': {
+            h1: 'All Educational Guides & Rankings',
+            p: 'Evidence-led comparisons, admissions explainers, and practical research checklists for students and families.'
+        },
+        'Global Universities': {
+            h1: 'Global Universities Guides & Rankings',
+            p: 'Authoritative world university rankings, institutional breakdowns, and campus guides.'
+        },
+        'Schools & Boarding': {
+            h1: 'Schools & Boarding Guides',
+            p: 'Comparative rankings and admissions pathways for elite day, grammar, and boarding schools.'
+        },
+        'Admissions & Visas': {
+            h1: 'Admissions & Visas Guides',
+            p: 'Practical checklists, CRICOS guidance, and visa requirements for international students.'
+        },
+        'Degree & Career Guides': {
+            h1: 'Degree & Career Guides',
+            p: 'Strategic roadmaps for specialized degrees, professional careers, and higher education technology.'
+        }
+    };
+
+    function updateHeader(filterValue, visibleCount) {
+        if (!headerH1 || !headerP || !headerMeta) return;
+        
+        let key = filterValue;
+        if (key === 'Schools &amp; Boarding') key = 'Schools & Boarding';
+        if (key === 'Admissions &amp; Visas') key = 'Admissions & Visas';
+        if (key === 'Degree &amp; Career Guides') key = 'Degree & Career Guides';
+        
+        const data = copyData[key] || copyData['all'];
+        headerH1.textContent = data.h1;
+        headerP.textContent = data.p;
+        headerMeta.textContent = `${visibleCount} EDITORIAL GUIDES`;
+    }
 
     if (filterPills.length > 0 && guideCards.length > 0) {
+        if (headerMeta && headerH1) {
+            updateHeader('all', guideCards.length);
+        }
+
         filterPills.forEach(pill => {
             pill.addEventListener('click', () => {
-                // Remove active class from all
                 filterPills.forEach(p => p.classList.remove('active'));
-                // Add active class to clicked
                 pill.classList.add('active');
 
                 const filterValue = pill.getAttribute('data-filter');
+                let visibleCount = 0;
 
                 guideCards.forEach(card => {
                     const category = card.getAttribute('data-category');
                     
-                    // Reset animation by triggering reflow
                     card.style.animation = 'none';
-                    card.offsetHeight; /* trigger reflow */
+                    card.offsetHeight; 
                     card.style.animation = null;
 
                     if (filterValue === 'all') {
                         card.classList.remove('hidden');
+                        visibleCount++;
                     } else if (category === filterValue || category === filterValue.replace(/&amp;/g, '&')) {
                         card.classList.remove('hidden');
+                        visibleCount++;
                     } else {
                         card.classList.add('hidden');
                     }
                 });
+
+                updateHeader(filterValue, visibleCount);
             });
         });
     }
