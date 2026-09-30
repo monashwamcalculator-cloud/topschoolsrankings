@@ -2,11 +2,11 @@
 title: "Top 100 Universities in Europe for International Students: 2026 Rankings, English-Taught Degrees & Tuition Guide"
 description: "A complete comparative guide to the 100 leading European higher education institutions for global candidates. Breakdown of English coursework, non-EU fee structures, and post-study employment avenues."
 slug: "top-100-universities-in-europe"
-date: "2026-08-25"
+date: "2026-09-30"
 author: "Saahil"
 featured_image: "/images/top-100-universities-in-europe-featured.webp"
 image_alt: "Top 100 Universities in Europe for International Students 2026 Ranking and Tuition Guide"
-category: "Universities"
+category: "Rankings & Guides"
 draft: false
 ---
 
