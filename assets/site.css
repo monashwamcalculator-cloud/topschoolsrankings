@@ -385,3 +385,60 @@ button, input { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition-duration: .001ms !important; animation-duration: .001ms !important; }
 }
+
+
+/* Global Table Fix for All Articles */
+.prose table,
+article table,
+.rich-article-content table {
+  width: 100% !important;
+  min-width: 820px !important; /* Table ko natural width dega taaki columns dabey nahi */
+  border-collapse: collapse;
+}
+
+/* Kisi bhi single word ko beech se tootne na dein */
+.prose table th,
+.prose table td,
+article table th,
+article table td,
+.rich-article-content table th,
+.rich-article-content table td {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+  padding: 10px 14px !important;
+  vertical-align: middle;
+}
+
+/* Rank aur Country jaise columns ko fixed clean single-line space dein */
+.prose table th:first-child,
+.prose table td:first-child,
+article table th:first-child,
+article table td:first-child,
+.rich-article-content table th:first-child,
+.rich-article-content table td:first-child {
+  white-space: nowrap !important;
+  min-width: 75px !important;
+  text-align: center;
+}
+
+.prose table th:nth-child(3),
+.prose table td:nth-child(3),
+article table th:nth-child(3),
+article table td:nth-child(3),
+.rich-article-content table th:nth-child(3),
+.rich-article-content table td:nth-child(3) {
+  white-space: nowrap !important;
+  min-width: 140px !important;
+}
+
+/* Mobile & smaller screens par table smooth horizontally scroll ho */
+.prose .table-wrapper,
+.table-responsive,
+.prose > table,
+.rich-article-content > table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
