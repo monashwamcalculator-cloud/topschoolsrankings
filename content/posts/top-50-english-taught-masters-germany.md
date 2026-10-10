@@ -4,7 +4,7 @@ slug: "top-50-english-taught-masters-germany"
 category: "Admissions & Visas"
 date: "2026-10-10"
 readTime: "14 min read"
-featuredImage: "/media/articles/top-50-english-masters-germany-featured.jpg"
+featuredImage: "/media/articles/top-50-english-masters-germany-featured.webp"
 ---
 
 ## Executive Summary & Landscape Analysis
