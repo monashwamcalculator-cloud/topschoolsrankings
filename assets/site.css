@@ -454,14 +454,14 @@ article table td:first-child,
   white-space: nowrap !important;
 }
 
-/* 6. Country column fits naturally */
+/* 6. Column 3 text wraps naturally */
 article table th:nth-child(3),
 article table td:nth-child(3),
 .prose table th:nth-child(3),
 .prose table td:nth-child(3),
 .rich-article-content table th:nth-child(3),
 .rich-article-content table td:nth-child(3) {
-  white-space: nowrap !important;
+  white-space: normal !important;
 }
 
 /* 7. Last column (Tuition / Fees) cleanly aligned without cutting */
@@ -482,6 +482,101 @@ article table td:last-child,
   .rich-article-content table {
     min-width: 650px !important; /* Mobile par clean horizontal scroll allow karega */
     font-size: 0.82rem !important;
+  }
+}
+
+/* Dedicated styles for Master 50 Programs Table (Fits 100% on screen without cut-off) */
+.table-programs-50 {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  border-collapse: collapse !important;
+  table-layout: fixed !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+}
+
+.table-programs-50 th,
+.table-programs-50 td {
+  padding: 8px 5px !important;
+  vertical-align: middle !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  border: 1px solid var(--line) !important;
+}
+
+.table-programs-50 thead th {
+  background-color: #0f2744 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  text-align: left !important;
+  padding: 9px 5px !important;
+  letter-spacing: 0.02em;
+}
+
+/* Col 1: Rank */
+.table-programs-50 th:nth-child(1),
+.table-programs-50 td:nth-child(1) {
+  width: 5% !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  padding: 8px 2px !important;
+  font-weight: 700 !important;
+}
+
+/* Col 2: University */
+.table-programs-50 th:nth-child(2),
+.table-programs-50 td:nth-child(2) {
+  width: 23% !important;
+  font-weight: 600 !important;
+  white-space: normal !important;
+}
+
+/* Col 3: Program / Specialization */
+.table-programs-50 th:nth-child(3),
+.table-programs-50 td:nth-child(3) {
+  width: 28% !important;
+  white-space: normal !important;
+}
+
+/* Col 4: City / State */
+.table-programs-50 th:nth-child(4),
+.table-programs-50 td:nth-child(4) {
+  width: 15% !important;
+  white-space: normal !important;
+}
+
+/* Col 5: Semester Contribution */
+.table-programs-50 th:nth-child(5),
+.table-programs-50 td:nth-child(5) {
+  width: 15% !important;
+  white-space: normal !important;
+}
+
+/* Col 6: English Req */
+.table-programs-50 th:nth-child(6),
+.table-programs-50 td:nth-child(6) {
+  width: 7% !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  padding: 8px 2px !important;
+}
+
+/* Col 7: APS Required? */
+.table-programs-50 th:nth-child(7),
+.table-programs-50 td:nth-child(7) {
+  width: 7% !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  padding: 8px 2px !important;
+}
+
+@media (max-width: 768px) {
+  .table-programs-50 {
+    min-width: 650px !important;
+    table-layout: auto !important;
   }
 }
 
