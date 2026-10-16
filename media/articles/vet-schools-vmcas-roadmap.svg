@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="vsr-title vsr-desc">
+  <title id="vsr-title">Strategic VMCAS Veterinary Application Roadmap (Cycle 2026)</title>
+  <desc id="vsr-desc">Four-phase admissions roadmap for US veterinary colleges: Phase 1 Prerequisite Audit &amp; Shadowing, Phase 2 VMCAS Portal &amp; Experience Log, Phase 3 Casper Assessment &amp; Final Submission, Phase 4 Supplemental Applications &amp; Interviews.</desc>
+  <defs>
+    <linearGradient id="bg-grad-3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow-3" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg-grad-3)"/>
+  <rect width="1200" height="675" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="0" y1="5" x2="1200" y2="5" stroke="#7c3aed" stroke-width="8"/>
+
+  <!-- Header Section -->
+  <text x="60" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#7c3aed" letter-spacing="1.5">ADMISSIONS STRATEGY ROADMAP • 12-MONTH TIMELINE</text>
+  <text x="60" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="800" fill="#0f2237">VMCAS Application Lifecycle &amp; Strategic Milestones</text>
+  <text x="60" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#64748b">Operational steps required to assemble a competitive Doctor of Veterinary Medicine (DVM) submission</text>
+
+  <!-- Timeline Flow Connectors -->
+  <g transform="translate(60, 160)">
+    <!-- Phase 1 -->
+    <g transform="translate(0, 0)" filter="url(#shadow-3)">
+      <rect width="250" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+      <rect x="0" y="0" width="250" height="8" rx="4" fill="#2563eb"/>
+      <circle cx="36" cy="42" r="16" fill="#eff6ff"/>
+      <text x="36" y="47" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="800" fill="#1d4ed8">1</text>
+      <text x="62" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#2563eb">PHASE 1</text>
+      <text x="62" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#0f2237">JANUARY – APRIL</text>
+      <line x1="20" y1="72" x2="230" y2="72" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f2237">Prerequisites &amp; Audits</text>
+      <text x="20" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#475569" width="210">
+        <tspan x="20" dy="0">• Audit science prerequisites</tspan>
+        <tspan x="20" dy="18">  (Biochem, Genetics, Physics)</tspan>
+        <tspan x="20" dy="24">• Log clinical hours with DVMs</tspan>
+        <tspan x="20" dy="18">  (Target minimum 400+ hrs)</tspan>
+        <tspan x="20" dy="24">• Order official transcripts</tspan>
+        <tspan x="20" dy="18">  from all post-secondary units</tspan>
+        <tspan x="20" dy="24">• Secure evaluation commitments</tspan>
+        <tspan x="20" dy="18">  from 2 DVMs and 1 professor</tspan>
+      </text>
+      <rect x="20" y="375" width="210" height="32" rx="6" fill="#eff6ff"/>
+      <text x="125" y="396" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" font-weight="700" fill="#1e40af">GOAL: 3.7+ SCIENCE GPA</text>
+    </g>
+
+    <!-- Phase 2 -->
+    <g transform="translate(276, 0)" filter="url(#shadow-3)">
+      <rect width="250" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+      <rect x="0" y="0" width="250" height="8" rx="4" fill="#059669"/>
+      <circle cx="36" cy="42" r="16" fill="#ecfdf5"/>
+      <text x="36" y="47" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="800" fill="#047857">2</text>
+      <text x="62" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#059669">PHASE 2</text>
+      <text x="62" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#0f2237">MAY – JUNE</text>
+      <line x1="20" y1="72" x2="230" y2="72" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f2237">Portal &amp; Experience</text>
+      <text x="20" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#475569">
+        <tspan x="20" dy="0">• VMCAS portal opens early May</tspan>
+        <tspan x="20" dy="18">  (Initialize candidate profile)</tspan>
+        <tspan x="20" dy="24">• Categorize hours accurately:</tspan>
+        <tspan x="20" dy="18">  Veterinary vs Animal Care</tspan>
+        <tspan x="20" dy="24">• Enter coursework line-by-line</tspan>
+        <tspan x="20" dy="18">  for professional transcript verify</tspan>
+        <tspan x="20" dy="24">• Send automated eLOR links</tspan>
+        <tspan x="20" dy="18">  directly to evaluator portals</tspan>
+      </text>
+      <rect x="20" y="375" width="210" height="32" rx="6" fill="#ecfdf5"/>
+      <text x="125" y="396" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" font-weight="700" fill="#065f46">PORTAL INITIALIZATION</text>
+    </g>
+
+    <!-- Phase 3 -->
+    <g transform="translate(552, 0)" filter="url(#shadow-3)">
+      <rect width="250" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+      <rect x="0" y="0" width="250" height="8" rx="4" fill="#d97706"/>
+      <circle cx="36" cy="42" r="16" fill="#fffbeb"/>
+      <text x="36" y="47" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="800" fill="#b45309">3</text>
+      <text x="62" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#d97706">PHASE 3</text>
+      <text x="62" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#0f2237">JULY – SEPTEMBER</text>
+      <line x1="20" y1="72" x2="230" y2="72" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f2237">Casper &amp; Deadline</text>
+      <text x="20" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#475569">
+        <tspan x="20" dy="0">• Schedule and sit for Casper</tspan>
+        <tspan x="20" dy="18">  situational judgment test</tspan>
+        <tspan x="20" dy="24">• Finalize personal statement</tspan>
+        <tspan x="20" dy="18">  (5,000 character limit)</tspan>
+        <tspan x="20" dy="24">• Complete institution-specific</tspan>
+        <tspan x="20" dy="18">  custom essay prompts</tspan>
+        <tspan x="20" dy="24">• Submit by mid-September</tspan>
+        <tspan x="20" dy="18">  (Strict hard deadline cutoff)</tspan>
+      </text>
+      <rect x="20" y="375" width="210" height="32" rx="6" fill="#fffbeb"/>
+      <text x="125" y="396" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" font-weight="700" fill="#92400e">SUBMISSION DEADLINE</text>
+    </g>
+
+    <!-- Phase 4 -->
+    <g transform="translate(828, 0)" filter="url(#shadow-3)">
+      <rect width="250" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+      <rect x="0" y="0" width="250" height="8" rx="4" fill="#7c3aed"/>
+      <circle cx="36" cy="42" r="16" fill="#f5f3ff"/>
+      <text x="36" y="47" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="800" fill="#6d28d9">4</text>
+      <text x="62" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#7c3aed">PHASE 4</text>
+      <text x="62" y="52" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#0f2237">OCTOBER – APRIL</text>
+      <line x1="20" y1="72" x2="230" y2="72" stroke="#f1f5f9" stroke-width="1.5"/>
+      <text x="20" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#0f2237">Interviews &amp; Offers</text>
+      <text x="20" y="124" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#475569">
+        <tspan x="20" dy="0">• Secondary supplemental review</tspan>
+        <tspan x="20" dy="18">  and processing fees</tspan>
+        <tspan x="20" dy="24">• Multiple Mini Interviews (MMI)</tspan>
+        <tspan x="20" dy="18">  and faculty panel interviews</tspan>
+        <tspan x="20" dy="24">• Admissions offers released</tspan>
+        <tspan x="20" dy="18">  (Dec through February)</tspan>
+        <tspan x="20" dy="24">• Seat deposit confirmation</tspan>
+        <tspan x="20" dy="18">  by national deadline: April 15</tspan>
+      </text>
+      <rect x="20" y="375" width="210" height="32" rx="6" fill="#f5f3ff"/>
+      <text x="125" y="396" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" font-weight="700" fill="#5b21b6">FINAL MATCH: APRIL 15</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="630" x2="1140" y2="630" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="60" y="652" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">VMCAS Application timeline published by the American Association of Veterinary Medical Colleges.</text>
+  <text x="1140" y="652" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f2237">TopSchoolsRankings.com Research</text>
+</svg>

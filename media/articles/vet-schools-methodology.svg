@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="vsm-title vsm-desc">
+  <title id="vsm-title">US Veterinary School Admissions Evaluation Weights (2026)</title>
+  <desc id="vsm-desc">Empirical multi-factor criteria used by AVMA-accredited DVM admissions committees: Science &amp; Prerequisite GPA 35%, Veterinary &amp; Clinical Experience 25%, Evaluator Recommendations 15%, Casper Situational Judgment 15%, Personal Statement 10%.</desc>
+  <defs>
+    <linearGradient id="bg-grad-1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow-1" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg-grad-1)"/>
+  <rect width="1200" height="675" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="0" y1="5" x2="1200" y2="5" stroke="#2563eb" stroke-width="8"/>
+
+  <!-- Header Section -->
+  <text x="60" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#2563eb" letter-spacing="1.5">TOP SCHOOLS RANKINGS • ADMISSIONS EVALUATION MODEL</text>
+  <text x="60" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="800" fill="#0f2237">US Veterinary School Admissions Criteria &amp; Weights (2026)</text>
+  <text x="60" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#64748b">Empirical evaluation standards prioritized by AVMA Council on Education accredited DVM selection committees</text>
+
+  <!-- Overview Summary Bar -->
+  <g transform="translate(60, 150)">
+    <rect width="1080" height="24" rx="6" fill="#e2e8f0"/>
+    <rect x="0" width="378" height="24" rx="6" fill="#1e40af"/>
+    <rect x="378" width="270" height="24" fill="#059669"/>
+    <rect x="648" width="162" height="24" fill="#d97706"/>
+    <rect x="810" width="162" height="24" fill="#7c3aed"/>
+    <rect x="972" width="108" height="24" rx="6" fill="#e11d48"/>
+  </g>
+
+  <!-- Criteria Card 1: Science GPA -->
+  <g transform="translate(60, 195)" filter="url(#shadow-1)">
+    <rect width="1080" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <rect x="0" y="0" width="8" height="74" rx="4" fill="#1e40af"/>
+    <text x="28" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2237">Science &amp; Prerequisite Cumulative GPA</text>
+    <text x="28" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#64748b">Biochemistry, Organic Chemistry, Genetics, Cellular Biology &amp; Physics academic rigor</text>
+    <rect x="820" y="24" width="150" height="26" rx="13" fill="#eff6ff"/>
+    <text x="895" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#1d4ed8">Benchmark: 3.70+ GPA</text>
+    <text x="1045" y="46" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#1e40af">35%</text>
+  </g>
+
+  <!-- Criteria Card 2: Veterinary Experience -->
+  <g transform="translate(60, 280)" filter="url(#shadow-1)">
+    <rect width="1080" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <rect x="0" y="0" width="8" height="74" rx="4" fill="#059669"/>
+    <text x="28" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2237">Veterinary &amp; Clinical Experience Hours</text>
+    <text x="28" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#64748b">Direct shadowing with licensed DVMs, clinical observation, surgical prep &amp; animal care duties</text>
+    <rect x="820" y="24" width="150" height="26" rx="13" fill="#ecfdf5"/>
+    <text x="895" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#047857">Target: 400–1,000+ Hrs</text>
+    <text x="1045" y="46" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#059669">25%</text>
+  </g>
+
+  <!-- Criteria Card 3: Evaluator Letters -->
+  <g transform="translate(60, 365)" filter="url(#shadow-1)">
+    <rect width="1080" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <rect x="0" y="0" width="8" height="74" rx="4" fill="#d97706"/>
+    <text x="28" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2237">Evaluator Letters of Recommendation (eLORs)</text>
+    <text x="28" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#64748b">Minimum two letters from practicing DVMs confirming ethical aptitude &amp; clinical acumen</text>
+    <rect x="820" y="24" width="150" height="26" rx="13" fill="#fffbeb"/>
+    <text x="895" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#b45309">2 DVMs + 1 Academic</text>
+    <text x="1045" y="46" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#d97706">15%</text>
+  </g>
+
+  <!-- Criteria Card 4: Casper Assessment -->
+  <g transform="translate(60, 450)" filter="url(#shadow-1)">
+    <rect width="1080" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <rect x="0" y="0" width="8" height="74" rx="4" fill="#7c3aed"/>
+    <text x="28" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2237">Acuity Insights Casper Assessment</text>
+    <text x="28" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#64748b">Online situational judgment test evaluating empathy, ethical conflict resolution &amp; teamwork</text>
+    <rect x="820" y="24" width="150" height="26" rx="13" fill="#f5f3ff"/>
+    <text x="895" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#6d28d9">Q4 Score Benchmark</text>
+    <text x="1045" y="46" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#7c3aed">15%</text>
+  </g>
+
+  <!-- Criteria Card 5: Personal Statement -->
+  <g transform="translate(60, 535)" filter="url(#shadow-1)">
+    <rect width="1080" height="74" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <rect x="0" y="0" width="8" height="74" rx="4" fill="#e11d48"/>
+    <text x="28" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="17" font-weight="700" fill="#0f2237">Personal Statement, Leadership &amp; Diversity</text>
+    <text x="28" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" fill="#64748b">Clear professional vision, resilience under pressure, community service &amp; life perspective</text>
+    <rect x="820" y="24" width="150" height="26" rx="13" fill="#fff1f2"/>
+    <text x="895" y="42" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#be123c">Holistic Essay Review</text>
+    <text x="1045" y="46" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="24" font-weight="800" fill="#e11d48">10%</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="630" x2="1140" y2="630" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="60" y="652" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Source: AAVMC Annual Data Report &amp; AVMA Council on Education Admissions Guidelines (2025/2026 Cycle).</text>
+  <text x="1140" y="652" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f2237">TopSchoolsRankings.com Research</text>
+</svg>

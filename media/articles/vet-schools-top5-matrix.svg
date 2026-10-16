@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="vst-title vst-desc">
+  <title id="vst-title">Elite US Veterinary Medical Colleges Comparison (Top 5 Overview)</title>
+  <desc id="vst-desc">Comparative breakdown of top 5 US veterinary schools: UC Davis, Cornell University, Colorado State University, North Carolina State, and Ohio State University across NAVLE pass rates, tuition, and clinical caseload.</desc>
+  <defs>
+    <linearGradient id="bg-grad-2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow-2" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg-grad-2)"/>
+  <rect width="1200" height="675" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="0" y1="5" x2="1200" y2="5" stroke="#059669" stroke-width="8"/>
+
+  <!-- Header Section -->
+  <text x="60" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#059669" letter-spacing="1.5">TSR EDITORIAL DATASET • INSTITUTIONAL COMPARISON</text>
+  <text x="60" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="800" fill="#0f2237">Top 5 US Veterinary Schools: Key Metrics Comparison</text>
+  <text x="60" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#64748b">Comparing 5-year NAVLE pass rates, estimated annual tuition, clinical hospital volume &amp; core research strengths</text>
+
+  <!-- Column Headers -->
+  <g transform="translate(60, 155)">
+    <text x="20" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">COLLEGE &amp; RANK</text>
+    <text x="360" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">ANNUAL TUITION (RES / NON-RES)</text>
+    <text x="660" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">NAVLE PASS RATE</text>
+    <text x="860" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="700" fill="#64748b">CLINICAL CASELOAD</text>
+  </g>
+
+  <!-- Row 1: UC Davis -->
+  <g transform="translate(60, 175)" filter="url(#shadow-2)">
+    <rect width="1080" height="78" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <circle cx="36" cy="39" r="18" fill="#eff6ff"/>
+    <text x="36" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#1d4ed8">#1</text>
+    <text x="68" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#0f2237">University of California, Davis</text>
+    <text x="68" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Davis, CA • One Health Institute &amp; Equine Health Center</text>
+    <text x="360" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">$36,800 / $49,000</text>
+    <text x="360" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">In-state statutory subsidy</text>
+    <rect x="660" y="24" width="75" height="28" rx="14" fill="#ecfdf5"/>
+    <text x="697" y="43" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#047857">98.2%</text>
+    <text x="860" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">52,000+ cases/yr</text>
+    <text x="860" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">William R. Pritchard Hospital</text>
+  </g>
+
+  <!-- Row 2: Cornell -->
+  <g transform="translate(60, 265)" filter="url(#shadow-2)">
+    <rect width="1080" height="78" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <circle cx="36" cy="39" r="18" fill="#eff6ff"/>
+    <text x="36" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#1d4ed8">#2</text>
+    <text x="68" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#0f2237">Cornell University</text>
+    <text x="68" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Ithaca, NY • Problem-Based Learning &amp; Wildlife Health Center</text>
+    <text x="360" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">$44,200 / $65,500</text>
+    <text x="360" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Contract college framework</text>
+    <rect x="660" y="24" width="75" height="28" rx="14" fill="#ecfdf5"/>
+    <text x="697" y="43" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#047857">97.5%</text>
+    <text x="860" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">30,000+ cases/yr</text>
+    <text x="860" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Hospital for Animals</text>
+  </g>
+
+  <!-- Row 3: Colorado State -->
+  <g transform="translate(60, 355)" filter="url(#shadow-2)">
+    <rect width="1080" height="78" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <circle cx="36" cy="39" r="18" fill="#eff6ff"/>
+    <text x="36" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#1d4ed8">#3</text>
+    <text x="68" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#0f2237">Colorado State University</text>
+    <text x="68" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Fort Collins, CO • Flint Animal Cancer Center &amp; Orthopedics</text>
+    <text x="360" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">$37,400 / $64,800</text>
+    <text x="360" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">In-state petition after Year 1</text>
+    <rect x="660" y="24" width="75" height="28" rx="14" fill="#ecfdf5"/>
+    <text x="697" y="43" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#047857">96.8%</text>
+    <text x="860" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">45,000+ cases/yr</text>
+    <text x="860" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">James L. Voss Teaching Hospital</text>
+  </g>
+
+  <!-- Row 4: NC State -->
+  <g transform="translate(60, 445)" filter="url(#shadow-2)">
+    <rect width="1080" height="78" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <circle cx="36" cy="39" r="18" fill="#eff6ff"/>
+    <text x="36" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#1d4ed8">#4</text>
+    <text x="68" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#0f2237">North Carolina State University</text>
+    <text x="68" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Raleigh, NC • Equine &amp; Farm Animal Clinical Operations</text>
+    <text x="360" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">$23,900 / $51,200</text>
+    <text x="360" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Lowest in-state cost index</text>
+    <rect x="660" y="24" width="75" height="28" rx="14" fill="#ecfdf5"/>
+    <text x="697" y="43" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#047857">96.4%</text>
+    <text x="860" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">38,000+ cases/yr</text>
+    <text x="860" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">NC State Veterinary Hospital</text>
+  </g>
+
+  <!-- Row 5: Ohio State -->
+  <g transform="translate(60, 535)" filter="url(#shadow-2)">
+    <rect width="1080" height="78" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <circle cx="36" cy="39" r="18" fill="#eff6ff"/>
+    <text x="36" y="45" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="800" fill="#1d4ed8">#5</text>
+    <text x="68" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="16" font-weight="700" fill="#0f2237">Ohio State University</text>
+    <text x="68" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Columbus, OH • Frank Stanton Spectrum of Care Clinic</text>
+    <text x="360" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">$36,400 / $77,800</text>
+    <text x="360" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Comprehensive DVM cohort</text>
+    <rect x="660" y="24" width="75" height="28" rx="14" fill="#ecfdf5"/>
+    <text x="697" y="43" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#047857">95.8%</text>
+    <text x="860" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="15" font-weight="600" fill="#0f2237">42,000+ cases/yr</text>
+    <text x="860" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Hummel &amp; Galbreath Centers</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="630" x2="1140" y2="630" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="60" y="652" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Data compiled from official AVMA Council on Education accreditation reports and university disclosures (2025/2026).</text>
+  <text x="1140" y="652" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f2237">TopSchoolsRankings.com Research</text>
+</svg>

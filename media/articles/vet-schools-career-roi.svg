@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="vsc-title vsc-desc">
+  <title id="vsc-title">Veterinary Medicine Career Distribution &amp; Financial ROI</title>
+  <desc id="vsc-desc">Economic breakdown of DVM graduates: 67% Companion Animal, 12% Equine &amp; Food Animal, 9% Biomedical Research, 7% Public Health &amp; Government, 5% Zoo &amp; Wildlife, with starting salary and educational debt benchmarks.</desc>
+  <defs>
+    <linearGradient id="bg-grad-4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow-4" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0f172a" flood-opacity="0.04"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg-grad-4)"/>
+  <rect width="1200" height="675" fill="none" stroke="#e2e8f0" stroke-width="2"/>
+  <line x1="0" y1="5" x2="1200" y2="5" stroke="#d97706" stroke-width="8"/>
+
+  <!-- Header Section -->
+  <text x="60" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#d97706" letter-spacing="1.5">ECONOMIC ANALYSIS • SALARY VS EDUCATIONAL DEBT PROFILE</text>
+  <text x="60" y="98" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="800" fill="#0f2237">Veterinary Medicine Career Distribution &amp; Financial Realities</text>
+  <text x="60" y="128" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#64748b">Empirical market outcomes, starting associate compensation, and educational debt amortization</text>
+
+  <!-- Panel 1: Career Distribution (Left, width 525) -->
+  <g transform="translate(60, 160)" filter="url(#shadow-4)">
+    <rect width="525" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <text x="28" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="18" font-weight="800" fill="#0f2237">DVM Practice Specialization Breakdown</text>
+    <text x="28" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Primary employment sector choices among recent graduates</text>
+
+    <!-- Bar 1 -->
+    <text x="28" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Companion / Small Animal Clinical Practice</text>
+    <text x="495" y="100" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#2563eb">67%</text>
+    <rect x="28" y="110" width="467" height="12" rx="4" fill="#f1f5f9"/>
+    <rect x="28" y="110" width="313" height="12" rx="4" fill="#2563eb"/>
+
+    <!-- Bar 2 -->
+    <text x="28" y="160" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Equine &amp; Food Animal / Mixed Practice</text>
+    <text x="495" y="160" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#059669">12%</text>
+    <rect x="28" y="170" width="467" height="12" rx="4" fill="#f1f5f9"/>
+    <rect x="28" y="170" width="56" height="12" rx="4" fill="#059669"/>
+
+    <!-- Bar 3 -->
+    <text x="28" y="220" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Biomedical &amp; Pharmaceutical Research</text>
+    <text x="495" y="220" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#d97706">9%</text>
+    <rect x="28" y="230" width="467" height="12" rx="4" fill="#f1f5f9"/>
+    <rect x="28" y="230" width="42" height="12" rx="4" fill="#d97706"/>
+
+    <!-- Bar 4 -->
+    <text x="28" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Public Health &amp; Government (USDA, CDC, Military)</text>
+    <text x="495" y="280" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#7c3aed">7%</text>
+    <rect x="28" y="290" width="467" height="12" rx="4" fill="#f1f5f9"/>
+    <rect x="28" y="290" width="33" height="12" rx="4" fill="#7c3aed"/>
+
+    <!-- Bar 5 -->
+    <text x="28" y="340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="600" fill="#1e293b">Zoological, Aquatic &amp; Wildlife Conservation</text>
+    <text x="495" y="340" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="14" font-weight="700" fill="#e11d48">5%</text>
+    <rect x="28" y="350" width="467" height="12" rx="4" fill="#f1f5f9"/>
+    <rect x="28" y="350" width="23" height="12" rx="4" fill="#e11d48"/>
+
+    <rect x="28" y="380" width="467" height="30" rx="6" fill="#f8fafc"/>
+    <text x="261" y="400" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Private clinical practice absorbs ~79% of all practicing US veterinarians</text>
+  </g>
+
+  <!-- Panel 2: Financial Metrics & Debt Profile (Right, width 525) -->
+  <g transform="translate(615, 160)" filter="url(#shadow-4)">
+    <rect width="525" height="430" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2"/>
+    <text x="28" y="38" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="18" font-weight="800" fill="#0f2237">Financial Benchmarks &amp; Debt Realities</text>
+    <text x="28" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">AVMA Economic Survey 2025/2026 Reporting Standards</text>
+
+    <!-- Stat Box 1: Starting Salary -->
+    <g transform="translate(28, 85)">
+      <rect width="469" height="72" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+      <text x="18" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="700" fill="#1d4ed8">AVERAGE ENTRY ASSOCIATE SALARY</text>
+      <text x="18" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="22" font-weight="800" fill="#0f2237">$105,000 – $125,000</text>
+      <text x="450" y="52" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#2563eb">+ Production Bonuses</text>
+    </g>
+
+    <!-- Stat Box 2: Mean Educational Debt -->
+    <g transform="translate(28, 170)">
+      <rect width="469" height="72" rx="8" fill="#fff1f2" stroke="#fecdd3" stroke-width="1"/>
+      <text x="18" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="700" fill="#be123c">MEAN GRADUATING EDUCATIONAL DEBT</text>
+      <text x="18" y="55" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="22" font-weight="800" fill="#0f2237">$185,000 (In-State) / $275,000+ (Non-Res)</text>
+    </g>
+
+    <!-- Strategy Section -->
+    <g transform="translate(28, 258)">
+      <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="13" font-weight="700" fill="#0f2237">Debt Mitigation &amp; Repayment Pathways:</text>
+      <text x="0" y="44" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#475569">
+        <tspan x="0" dy="0">• Public Service Loan Forgiveness (PSLF) for academic &amp; non-profit practice</tspan>
+        <tspan x="0" dy="20">• SAVE / Income-Driven Repayment (IDR) to cap monthly obligations</tspan>
+        <tspan x="0" dy="20">• USDA Veterinary Medicine Loan Repayment Program (VMLRP) for food animal</tspan>
+        <tspan x="0" dy="20">• Corporate employer educational loan contribution &amp; signing bonuses</tspan>
+      </text>
+    </g>
+
+    <rect x="28" y="380" width="469" height="30" rx="6" fill="#f8fafc"/>
+    <text x="262" y="400" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="11" fill="#64748b">Debt-to-income ratio remains the #1 financial factor for prospective DVMs</text>
+  </g>
+
+  <!-- Footer -->
+  <line x1="60" y1="630" x2="1140" y2="630" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="60" y="652" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" fill="#64748b">Source: American Veterinary Medical Association (AVMA) Economic State of the Veterinary Profession Report.</text>
+  <text x="1140" y="652" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif" font-size="12" font-weight="600" fill="#0f2237">TopSchoolsRankings.com Research</text>
+</svg>
