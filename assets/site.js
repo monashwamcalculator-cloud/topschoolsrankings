@@ -213,12 +213,16 @@
             text = "Concordance estimate: IELTS " + getIELTSFromDET(values[0]) + " (Score equivalencies are approximate concordance estimates, not universal conversions).";
         } else if (/ielts-toefl/.test(slug)) {
             text = "Concordance estimate: LEGACY TOEFL iBT " + getTOEFLFromIELTS(values[0]) + " (Approximate concordance estimate. Note: TOEFL introduced a new 1-6 scale from Jan 2026, check with your institution).";
-        } else if (/percentage/.test(slug)) {
-            var converted = Math.min(100, values[0] <= 10 ? values[0] * 9.5 : values[0] * 25);
-            text = "Planning estimate: " + converted.toFixed(1);
+        } else if (/cgpa-percentage/.test(slug)) {
+            var converted = Math.min(100, values[0] <= 10 ? values[0] * 9.5 : values[0]);
+            text = "Planning estimate: " + converted.toFixed(1) + "% (CGPA x 9.5 formula)";
+        } else if (/gpa-percentage/.test(slug)) {
+            var converted = Math.min(100, values[0] <= 4 ? values[0] * 25 : (values[0] <= 10 ? values[0] * 9.5 : values[0]));
+            text = "Planning estimate: " + converted.toFixed(1) + "% (4.0-scale GPA x 25; see the table below for the basis)";
         } else if (/act-to-sat/.test(slug)) {
-            var converted = Math.min(1600, Math.max(400, 400 + values[0] * 33.3));
-            text = "Planning estimate: " + converted.toFixed(1);
+            var actSat = {36:1590,35:1540,34:1500,33:1460,32:1430,31:1400,30:1370,29:1340,28:1310,27:1280,26:1240,25:1210,24:1180,23:1140,22:1110,21:1080,20:1040,19:1010,18:970,17:940,16:890,15:850,14:800,13:750,12:690,11:620};
+            var a = Math.max(11, Math.min(36, Math.round(values[0])));
+            text = "Concordance estimate: SAT " + actSat[a] + " (midpoint of the official ACT-SAT concordance range for ACT " + a + "; see the table on this page)";
         } else {
             text = "Planning estimate: " + (values[0] * 1.1).toFixed(1);
         }
