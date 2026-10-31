@@ -890,11 +890,6 @@
     "type": "tool"
   },
   {
-    "path": "/tools/act-score-estimator/",
-    "title": "ACT Score Estimator & Competitiveness Band",
-    "type": "tool"
-  },
-  {
     "path": "/tools/act-to-sat-converter/",
     "title": "ACT to SAT Score Converter",
     "type": "tool"
@@ -905,18 +900,8 @@
     "type": "tool"
   },
   {
-    "path": "/tools/application-timeline-planner/",
-    "title": "University Application Timeline Planner",
-    "type": "tool"
-  },
-  {
     "path": "/tools/boarding-school-cost-calculator/",
     "title": "Boarding School Cost Calculator (2026)",
-    "type": "tool"
-  },
-  {
-    "path": "/tools/boarding-school-readiness-quiz/",
-    "title": "Boarding School Readiness Quiz for Parents",
     "type": "tool"
   },
   {
@@ -945,18 +930,8 @@
     "type": "tool"
   },
   {
-    "path": "/tools/gap-year-budget-planner/",
-    "title": "Gap Year Budget Planner",
-    "type": "tool"
-  },
-  {
     "path": "/tools/gpa-percentage-converter/",
     "title": "GPA to Percentage Converter (4.0 Scale)",
-    "type": "tool"
-  },
-  {
-    "path": "/tools/gre-score-estimator/",
-    "title": "GRE Score Estimator (Verbal + Quant)",
     "type": "tool"
   },
   {
@@ -985,23 +960,8 @@
     "type": "tool"
   },
   {
-    "path": "/tools/sat-score-estimator/",
-    "title": "SAT Score Estimator: Total Score & Competitiveness Band (2026)",
-    "type": "tool"
-  },
-  {
-    "path": "/tools/scholarship-eligibility-quiz/",
-    "title": "Scholarship Eligibility Quiz: Merit & Need-Based Pathways",
-    "type": "tool"
-  },
-  {
     "path": "/tools/student-loan-repayment-calculator/",
     "title": "Student Loan Repayment Calculator",
-    "type": "tool"
-  },
-  {
-    "path": "/tools/study-abroad-budget-planner/",
-    "title": "Study Abroad Budget Planner: 4-Year Degree Cost (2026)",
     "type": "tool"
   },
   {
@@ -1017,11 +977,6 @@
   {
     "path": "/tools/university-cost-calculator/",
     "title": "University Cost Calculator: Tuition + Living Expenses (2026)",
-    "type": "tool"
-  },
-  {
-    "path": "/tools/us-college-fit-quiz/",
-    "title": "US College Fit Quiz: Size, Setting & Culture",
     "type": "tool"
   },
   {
