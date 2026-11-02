@@ -224,13 +224,12 @@
             var a = Math.max(11, Math.min(36, Math.round(values[0])));
             text = "Concordance estimate: SAT " + actSat[a] + " (midpoint of the official ACT-SAT concordance range for ACT " + a + "; see the table on this page)";
         } else {
-            text = "Planning estimate: " + (values[0] * 1.1).toFixed(1);
+            text = "Estimate unavailable for this tool.";
         }
       } else if (/weighted-gpa|ap-gpa/.test(slug)) {
         text = "Estimated weighted GPA: " + Math.min(5, values[3] > 0 ? values[0] + (values[1] + values[2] * .5) / values[3] : values[0]).toFixed(2);
       } else {
-        var entered = values.filter(function (value) { return value > 0; });
-        text = "Planning estimate: " + (entered.length ? entered.reduce(function (sum, value) { return sum + value; }, 0) / entered.length : 0).toFixed(1);
+        text = "Estimate unavailable for this tool.";
       }
       var result = runtime.querySelector(".tool-result"); result.textContent = text; result.hidden = false;
     });
