@@ -71,6 +71,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://topschoolsrankings.com/ap-vs-ib-diploma/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://topschoolsrankings.com/brown-university-complete-guide-2026/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -657,6 +662,11 @@
   </url>
   <url>
     <loc>https://topschoolsrankings.com/tools/weighted-gpa-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://topschoolsrankings.com/tools/ap-gpa-calculator/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
