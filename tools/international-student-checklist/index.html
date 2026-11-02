@@ -10,7 +10,7 @@
   <meta name="yandex-verification" content="e3b79ee5ab31d1de" />
   
   
-  <meta name="robots" content="noindex, follow">
+  <meta name="robots" content="index, follow">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -37,6 +37,20 @@
   ]
 }
 </script>
+<style>
+.isc-controls select{width:100%;height:48px;border:1px solid rgba(255,255,255,.2);border-radius:9px;padding:0 13px;background:rgba(255,255,255,.09);color:#fff;outline:none}
+.isc-controls select:focus{border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(230,173,58,.16)}
+.isc-controls option{color:#0f172a}
+.isc-group{margin:20px 0 10px;color:#fff;font:600 19px/1.3 Georgia,serif}
+@media print{
+.evidence-bar,.site-header,.site-footer,.breadcrumbs,.page-header,.article-aside,.isc-controls,.isc-actions,.isc-note,.tool-panel-head{display:none!important}
+.article-body>*:not(.tool-panel){display:none!important}
+.tool-panel{background:#fff!important;color:#000!important;box-shadow:none!important;padding:0}
+.checklist-tool label{background:#f2f2f2!important;color:#000!important}
+.tool-result{background:#fff!important;color:#000!important;border-color:#888}
+.isc-group{color:#000!important}
+}
+</style>
 </head><body>
   <div class="evidence-bar"><div class="site-container evidence-bar-inner"><span>Independent education research</span><span>Sources shown · Dates checked · Corrections welcomed</span></div></div>
   <header class="site-header"><div class="site-container header-inner">
@@ -54,7 +68,187 @@
     <details class="mobile-nav"><summary aria-label="Open menu">Menu</summary><nav><a href="/blogs/">Guides</a><a href="/tools/">Tools</a><a href="/listings/">School Profiles</a><a href="/compare/">Compare</a><a href="/ranking-methodology/">Methodology</a><a href="/about-us/">About</a></nav></details>
   </div></header><main>
   <nav class="breadcrumbs site-container" aria-label="Breadcrumb"><a href="/">Home</a><span><i aria-hidden="true">/</i><a href="/tools/">Tools</a></span><span><i aria-hidden="true">/</i><b>International Student Application Checklist</b></span></nav>
-  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive planning resource</span><h1>International Student Application Checklist</h1><p>Document and preparation checklist for international university applicants.</p><div class="page-meta">Free to use · No account · Educational estimate only</div></div></header><section class="section site-container article-layout"><article class="article-body"><section class="tool-panel" data-tool="international-student-checklist"><div class="tool-panel-head"><span>Interactive planning tool</span><h2>International Student Application Checklist</h2><p>Enter your figures or complete the checklist. Results are planning estimates, not official decisions.</p></div><div class="tool-runtime"></div></section><p>Applying to university as an international student involves significantly more paperwork than domestic applications. Beyond academic transcripts and test scores, you'll need credential evaluations, visa documentation, financial statements, and health records. Missing even one document can delay your application or visa.</p><p>This International Student Checklist generates a personalized document and preparation checklist based on your academic level, English test status, and visa requirements. It helps ensure you don't overlook any critical steps.</p><h2>How to use this checklist</h2><ul><li>Select your level — undergraduate or graduate applications have different requirements.</li><li>Indicate English test status — this determines if test preparation needs to be included.</li><li>Indicate visa requirement — visa-requiring students need additional financial and health documentation.</li></ul><p>Answer a few questions for a personalized document checklist .</p><h2>Understanding your results</h2><p>The checklist shows documents and steps organized by priority. Start with items that take the longest to obtain — credential evaluations can take 4–8 weeks, and visa processing can take 2–4 months in some countries. Financial documentation (bank statements, sponsor letters) should show at least 12 months of tuition and living costs.</p><h2>Frequently asked questions</h2><p>Common requirements include: academic transcripts (often officially translated), standardized test scores (SAT/ACT, GRE), English proficiency scores (IELTS/TOEFL), credential evaluation report (WES/ECE), passport, financial documentation (bank statements, sponsor letters), health records, and visa application forms.</p><p>You typically need to prove you can cover one year of tuition plus living expenses. For the USA (F-1 visa), this means showing $50,000–$80,000+. For the UK (Student visa), around £25,000–£40,000. Requirements vary by country and institution — check your I-20 (USA) or CAS (UK) for the exact amount.</p><h2>Related tools</h2><h3>Application timeline planner</h3><p>Month-by-month admissions checklist.</p><h3><a href="/tools/university-cost-calculator/">University cost calculator</a></h3><p>Tuition plus living expenses by country.</p><h3>Scholarship eligibility quiz</h3><p>Merit &amp; need-based pathways.</p><h3><a href="/tools/ielts-toefl-converter/">IELTS ↔ TOEFL converter</a></h3><p>English test score conversion.</p><h3><a href="/tools/duolingo-ielts-converter/">Duolingo English Test to IELTS Converter</a></h3><p>Convert Duolingo English Test scores to approximate IELTS Academic bands.</p><h2>How to interpret the result</h2><p>Use the result to compare scenarios and identify questions. Schools, universities, testing bodies and government agencies may use different scales, rounding rules and eligibility criteria. An estimate on this page cannot override an official calculation.</p><h2>Before you decide</h2><ul><li>Read the assumptions shown beside the tool.</li><li>Repeat the calculation with a lower and higher scenario.</li><li>Save the official requirement that applies to your case.</li><li>Ask the responsible institution to confirm any conversion in writing.</li></ul></article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Not an official calculator</strong><p>Results do not predict admission, aid, visa or academic outcomes.</p></div></aside></section></main>
+  <header class="page-header"><div class="site-container narrow"><span class="eyebrow">Interactive planning resource</span><h1>International Student Application Checklist</h1><p>Document and preparation checklist for international university applicants.</p><div class="page-meta">Free to use · No account · Educational estimate only</div></div></header><section class="section site-container article-layout"><article class="article-body"><section class="tool-panel" data-custom>
+    <div class="tool-panel-head">
+      <span>Interactive planning tool</span>
+      <h2>Build your personalised checklist</h2>
+      <p>Answer four questions and this tool builds a document and preparation checklist for your level, destination, English-test status and stage. It updates as you change your answers.</p>
+    </div>
+    <div class="tool-fields isc-controls">
+      <label><span>Academic level</span><select id="isc-level"><option value="school">School student</option><option value="undergraduate" selected>Undergraduate (Bachelor's)</option><option value="postgraduate">Postgraduate (Master's / PhD)</option></select></label>
+      <label><span>Destination country</span><select id="isc-country"><option value="usa" selected>United States (USA)</option><option value="uk">United Kingdom (UK)</option><option value="canada">Canada</option><option value="australia">Australia</option></select></label>
+      <label><span>English test status</span><select id="isc-english"><option value="not-taken" selected>Not taken yet</option><option value="booked">Booked</option><option value="done">Done — I have a score</option></select></label>
+      <label><span>Where are you in the process?</span><select id="isc-stage"><option value="researching" selected>Researching universities</option><option value="applying">Applying now</option><option value="offer">I have an offer</option><option value="visa">Visa stage</option></select></label>
+    </div>
+    <div class="tool-result" role="status" id="isc-progress">0/0 complete</div>
+    <div id="isc-list" style="margin-top:6px"></div>
+    <div class="isc-actions" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+      <button class="button button-primary" type="button" id="isc-print">Print / save as PDF</button>
+      <button class="button" type="button" id="isc-reset">Reset ticks</button>
+    </div>
+    <p class="isc-note" style="margin-top:16px; color:#b9c7d9; font-size:12px;">Changing an answer rebuilds the list straight away; ticks on items that are still on your list are kept. Reset unticks everything. Your answers and ticks are saved only in this browser (local storage) so you can come back later — nothing is sent to us. General guidance only: requirements change and differ by university, so always confirm each item against your university's instructions and the official government immigration website for your destination.</p>
+  </section>
+  <script>
+// International Student Checklist — personalised checklist generator.
+// Pure function: same code is embedded in tools/international-student-checklist/index.html
+// and exercised in Node by /tmp/isc-test.js. No DOM access in this part.
+function iscBuildChecklist(sel) {
+  var items = [];
+  function add(group, id, text) { items.push({ group: group, id: id, text: text }); }
+
+  var G_DOCS = "Documents everyone needs";
+  add(G_DOCS, "passport", "Valid passport — make sure it stays valid for your whole course; many countries expect validity beyond your travel dates, so renew early if it is close to expiring.");
+  add(G_DOCS, "transcripts", "Academic transcripts and mark sheets for the qualifications you have completed, in the format each university asks for.");
+  add(G_DOCS, "translation", "Certified English translations of any document that is not in English, if your university or the visa authority requires them.");
+  add(G_DOCS, "financial-plan", "A funding plan showing how tuition and living costs will be covered (savings, family support, scholarship or education loan), with documents that evidence it.");
+  add(G_DOCS, "deadline-tracker", "A deadline tracker for every university on your list — application, scholarship and deposit deadlines differ by institution and are easy to miss.");
+
+  var G_LEVEL = "For your level";
+  if (sel.level === "school") {
+    add(G_LEVEL, "school-reports", "Recent school reports and, if your school issues them, predicted grades for the qualifications you are currently studying.");
+    add(G_LEVEL, "school-reference", "A reference from your current school — ask for it early in the school term, not in the last week before the deadline.");
+    add(G_LEVEL, "guardian", "If you will be under 18 when the course starts, arrange the guardianship and welfare arrangements your destination and school require; under-18 students are asked about these in both admission and visa processes.");
+  } else if (sel.level === "postgraduate") {
+    add(G_LEVEL, "degree-certificate", "Bachelor's degree certificate and complete transcripts. Some universities also ask for a credential evaluation of international qualifications — check whether yours does before paying for one.");
+    add(G_LEVEL, "sop-postgrad", "A statement of purpose tailored to each programme (not one generic essay), plus an up-to-date CV covering study, work and relevant projects.");
+    add(G_LEVEL, "lor-postgrad", "Two academic or professional references — request them well ahead of deadlines; referees are a common bottleneck.");
+    add(G_LEVEL, "grad-test", "Standardised test scores if your programme requires them (for example GRE or GMAT). Many programmes do not — check each programme page before booking anything.");
+  } else { // undergraduate
+    add(G_LEVEL, "school-results", "School-leaving results or predicted grades (for example A-level, IB, CBSE/ISC or your national equivalent), ready to send in the format each university specifies.");
+    add(G_LEVEL, "personal-statement", "Personal statement or application essays drafted and reviewed against each university's own prompts and word limits.");
+    add(G_LEVEL, "lor-undergrad", "At least one teacher reference / letter of recommendation, requested well before the application deadline.");
+  }
+
+  var G_ENG = "English test";
+  if (sel.english === "booked") {
+    add(G_ENG, "test-booked-prep", "Prepare for your booked test date, and note the deadline by which scores must reach each university — build in time for a possible retake.");
+    add(G_ENG, "test-send-scores", "Check how your scores are sent: several test providers let you send scores to institutions directly from your test account, sometimes free only within a time window.");
+  } else if (sel.english === "done") {
+    add(G_ENG, "test-check-minimums", "Check your score against each university's overall minimum AND any per-section minimums — meeting the total but missing a section minimum is a common problem.");
+    add(G_ENG, "test-validity", "Check your score's validity period: universities and visa authorities generally only accept recent scores (often taken within roughly the last two years) — verify the current rule for your destination.");
+  } else { // not-taken
+    add(G_ENG, "test-book", "Choose and book your English test (IELTS, TOEFL, PTE Academic or Duolingo English Test) — first confirm which tests each of your universities accepts, and book early enough to allow a retake.");
+    add(G_ENG, "test-prep-plan", "Set a preparation plan against the score your target universities require, including any per-section minimums, not just the overall score.");
+  }
+
+  var countryNames = { usa: "United States", uk: "United Kingdom", canada: "Canada", australia: "Australia" };
+  var G_COUNTRY = "Destination: " + (countryNames[sel.country] || sel.country);
+  if (sel.country === "usa") {
+    add(G_COUNTRY, "usa-route", "Confirm your visa route: most full-time international students study on an F-1 visa, and your university's international office issues your Form I-20 after admission and financial proof.");
+  } else if (sel.country === "uk") {
+    add(G_COUNTRY, "uk-route", "Confirm your visa route: most students use the UK Student visa. Your university sponsors you and issues your CAS once your offer is unconditional and any required deposit is paid.");
+  } else if (sel.country === "canada") {
+    add(G_COUNTRY, "canada-dli", "Confirm your institution is on Canada's Designated Learning Institution (DLI) list — a study permit generally requires an offer from a DLI.");
+  } else if (sel.country === "australia") {
+    add(G_COUNTRY, "australia-gs", "Read the Genuine Student (GS) requirement for the Australian Student visa and prepare a clear, honest statement of why you chose this course and institution and how it fits your circumstances.");
+  }
+
+  var G_STAGE = "At your stage";
+  if (sel.stage === "applying") {
+    add(G_STAGE, "apply-complete", "Complete each application carefully and keep a copy of everything you submit, including payment receipts and confirmation emails.");
+    add(G_STAGE, "apply-scans", "Prepare clean scanned copies of your passport, transcripts and any test scores in the file formats and size limits each application portal specifies.");
+  } else if (sel.stage === "offer") {
+    add(G_STAGE, "offer-conditions", "Read your offer conditions carefully — grades to achieve, English requirements, deposit and reply deadlines — and put every date in your tracker.");
+    add(G_STAGE, "offer-accept", "Accept your offer through the university's official channel before its deadline; holding multiple offers past their deadlines can lose you a place.");
+  } else if (sel.stage === "visa") {
+    add(G_STAGE, "visa-travel", "Do not book non-refundable travel until your visa is granted, and keep both digital and printed copies of every visa document.");
+  } else { // researching
+    add(G_STAGE, "research-requirements", "Shortlist universities and check each one's official entry requirements for your qualification and the country you studied in — requirements are set per institution, not per country alone.");
+    add(G_STAGE, "research-cost", "Estimate the full cost per university — tuition plus living costs, insurance and travel, not tuition alone — so your shortlist is affordable as well as attractive.");
+  }
+
+  // Offer-stage steps that unlock the visa documents, by country.
+  if (sel.stage === "offer") {
+    var G_OFFER = "Securing your visa document";
+    if (sel.country === "usa") {
+      add(G_OFFER, "usa-i20-proof", "Send your university the financial documents it asks for (for example bank statements or sponsor evidence) so it can issue your Form I-20 — the university states the amount your evidence must cover.");
+    } else if (sel.country === "uk") {
+      add(G_OFFER, "uk-pre-cas", "Complete your university's pre-CAS checks and pay any deposit it requires, so it can issue your CAS (Confirmation of Acceptance for Studies).");
+    } else if (sel.country === "canada") {
+      add(G_OFFER, "canada-deposit", "Pay any tuition deposit your institution requires and keep the receipt — study permit applications generally ask for proof of payment of first-year tuition or a deposit.");
+    } else if (sel.country === "australia") {
+      add(G_OFFER, "australia-coe-deposit", "Accept your offer and pay the deposit or first fees your institution requires so it can issue your Confirmation of Enrolment (CoE).");
+    }
+  }
+
+  // Visa-stage documents, by country.
+  if (sel.stage === "visa") {
+    var G_VISA = "Visa application documents";
+    if (sel.country === "usa") {
+      add(G_VISA, "usa-i20", "Form I-20 received from your university — check every detail (name spelling, programme, dates, funding) and sign it; ask the university to correct any error before your interview.");
+      add(G_VISA, "usa-sevis", "SEVIS I-901 fee paid through the official US government payment site, with the receipt saved and printed.");
+      add(G_VISA, "usa-ds160", "DS-160 online visa application completed and its confirmation page printed for your interview.");
+      add(G_VISA, "usa-interview", "F-1 visa interview booked at the US embassy or consulate, with your passport, I-20, DS-160 confirmation, SEVIS receipt, admission letter and financial evidence ready to take with you.");
+    } else if (sel.country === "uk") {
+      add(G_VISA, "uk-cas", "CAS (Confirmation of Acceptance for Studies) received from your university — check every detail; only the university can correct CAS errors, and you should not apply with a wrong CAS.");
+      add(G_VISA, "uk-funds", "Evidence that you hold the required funds, held for the consecutive period UK rules require before you apply (28 days at the time of writing) — verify the current amounts and rules on gov.uk, as they change.");
+      add(G_VISA, "uk-ihs", "Immigration Health Surcharge (IHS) paid as part of the online visa application — pay only through the official gov.uk application flow.");
+      add(G_VISA, "uk-tb", "TB test certificate from an approved clinic, if your country of residence is on the UK's list of countries that require one — check the current list on gov.uk.");
+    } else if (sel.country === "canada") {
+      add(G_VISA, "canada-permit", "Study permit application prepared through your IRCC account, with your letter of acceptance, passport and proof of financial support.");
+      add(G_VISA, "canada-pal", "Provincial Attestation Letter (PAL) arranged if your programme and province require one — most applicants outside Quebec need one under current rules; check the current IRCC guidance for your case.");
+      add(G_VISA, "canada-gic", "If you choose to evidence funds this way (or your route requires it), a Guaranteed Investment Certificate (GIC) from a participating Canadian financial institution, arranged through the bank's official channels.");
+      add(G_VISA, "canada-biometrics", "Biometrics given at a Visa Application Centre if IRCC asks for them, and any medical exam done with an IRCC panel physician if one is required for your country of residence.");
+    } else if (sel.country === "australia") {
+      add(G_VISA, "australia-coe", "Confirmation of Enrolment (CoE) received from your institution for the course you will study — you need it before lodging the visa application.");
+      add(G_VISA, "australia-oshc", "Overseas Student Health Cover (OSHC) arranged for the full period of your stay — holding adequate OSHC is a condition of the Student visa.");
+      add(G_VISA, "australia-500", "Student visa (subclass 500) application lodged online through ImmiAccount, with your CoE, OSHC details, passport and evidence of financial capacity.");
+      add(G_VISA, "australia-health", "Health examination with an approved panel physician if your application asks for one, and police certificates if requested for your circumstances.");
+    }
+  }
+
+  return items;
+}
+(function () {
+  var KEY = "tsr-international-student-checklist-v1";
+  var sel = { level: "undergraduate", country: "usa", english: "not-taken", stage: "researching" };
+  var checked = {};
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || "null");
+    if (saved && saved.sel) { for (var k in sel) { if (saved.sel[k]) sel[k] = saved.sel[k]; } }
+    if (saved && saved.checked) checked = saved.checked;
+  } catch (e) {}
+  var fields = {
+    level: document.getElementById("isc-level"),
+    country: document.getElementById("isc-country"),
+    english: document.getElementById("isc-english"),
+    stage: document.getElementById("isc-stage")
+  };
+  Object.keys(fields).forEach(function (k) { if (fields[k]) fields[k].value = sel[k]; });
+  var listBox = document.getElementById("isc-list");
+  var progress = document.getElementById("isc-progress");
+  function save() { try { localStorage.setItem(KEY, JSON.stringify({ sel: sel, checked: checked })); } catch (e) {} }
+  function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function render() {
+    var items = iscBuildChecklist(sel);
+    var html = "", lastGroup = null, done = 0;
+    items.forEach(function (it) {
+      if (it.group !== lastGroup) {
+        if (lastGroup !== null) html += "</div>";
+        html += '<h3 class="isc-group">' + esc(it.group) + '</h3><div class="checklist-tool">';
+        lastGroup = it.group;
+      }
+      if (checked[it.id]) done++;
+      html += '<label><input type="checkbox" data-isc-id="' + it.id + '"' + (checked[it.id] ? " checked" : "") + '><span>' + esc(it.text) + "</span></label>";
+    });
+    if (lastGroup !== null) html += "</div>";
+    listBox.innerHTML = html;
+    progress.textContent = done + "/" + items.length + " complete";
+    listBox.querySelectorAll("input[type=checkbox]").forEach(function (box) {
+      box.addEventListener("change", function () {
+        if (box.checked) checked[box.getAttribute("data-isc-id")] = true; else delete checked[box.getAttribute("data-isc-id")];
+        save(); render();
+      });
+    });
+  }
+  Object.keys(fields).forEach(function (k) {
+    if (fields[k]) fields[k].addEventListener("change", function () { sel[k] = fields[k].value; save(); render(); });
+  });
+  document.getElementById("isc-print").addEventListener("click", function () { window.print(); });
+  document.getElementById("isc-reset").addEventListener("click", function () { checked = {}; save(); render(); });
+  render();
+})();
+  </script><p>Applying to university as an international student involves significantly more paperwork than a domestic application. Beyond transcripts and test scores, you may need financial evidence, a visa application and destination-specific documents — and the exact list depends on your level, your destination and how far along you are.</p><p>That is exactly what the tool above does: answer the four questions — academic level, destination country (USA, UK, Canada or Australia), English test status and application stage — and it builds a personalised document and preparation checklist from your answers. Tick items off as you complete them; your progress is saved in this browser so you can return later, and you can print the list or save it as a PDF.</p><h2>How to use this checklist</h2><ul><li>Select your academic level — school, undergraduate and postgraduate applicants are asked for different documents. Postgraduate applicants, for example, usually need a degree certificate and two references.</li><li>Select your destination country — this adds that country's visa route, such as the Form I-20 process for the USA, the CAS for the UK, the DLI check and study permit for Canada, or the CoE and subclass 500 visa for Australia.</li><li>Select your English test status — if you have not taken a test yet, the list includes choosing and booking one; if you already have a score, it includes checking the score against each university's overall and per-section minimums.</li><li>Select your application stage — researching, applying, holding an offer, or at the visa stage. Later stages add their own steps: the visa stage, for example, adds the specific visa documents for your destination.</li></ul><p>Changing any answer rebuilds the list immediately. Ticks on items that are still on your new list are kept, and your answers and ticks are stored only in this browser — nothing is sent to us or to anyone else.</p><h2>Understanding your checklist</h2><p>The list is organised in sections: documents everyone needs, items for your level, English test steps, destination-specific items, and the steps for your current stage. Start with the items that depend on other people or offices — references, any credential evaluation your university requires, and visa steps — because their timelines are outside your control. Treat the list as a planning aid, not a ruling: always confirm each item against your university's own instructions and the official government immigration website for your destination before relying on it.</p><h2>Frequently asked questions</h2><p><strong>What documents do most international applicants need?</strong> Common requirements include a valid passport, academic transcripts (officially translated if they are not in English), English proficiency scores (IELTS, TOEFL, PTE Academic or Duolingo English Test, where required), references, a personal statement or statement of purpose, and financial evidence. The personalised list above shows the set that applies to your answers.</p><p><strong>How much money do I need to show?</strong> You generally need to evidence tuition fees plus living costs for the period your visa rules specify. The exact amount is set by your university and destination — for example, it is stated on the Form I-20 (USA), tied to your CAS (UK), or set out in the official visa guidance for Canada and Australia — so use the figure in your own university and visa documents rather than a general estimate.</p><p><strong>Does this checklist guarantee admission or a visa?</strong> No. It is a planning tool built from standard, publicly documented steps. Only your university and the relevant government authority can confirm what applies to you, and their requirements override anything on this page.</p><h2>Related tools</h2><h3><a href="/tools/university-cost-calculator/">University cost calculator</a></h3><p>Tuition plus living expenses by country.</p><h3><a href="/tools/student-loan-repayment-calculator/">Student loan repayment calculator</a></h3><p>Monthly payment &amp; total interest estimate.</p><h3><a href="/tools/ielts-toefl-converter/">IELTS ↔ TOEFL converter</a></h3><p>English test score conversion.</p><h3><a href="/tools/duolingo-ielts-converter/">Duolingo English Test to IELTS Converter</a></h3><p>Convert Duolingo English Test scores to approximate IELTS Academic bands.</p><h2>Before you rely on this list</h2><ul><li>Check each item against your university's offer letter and document instructions.</li><li>Check visa items on the official government immigration website for your destination — rules and amounts change.</li><li>Keep copies of everything you submit, with dates.</li><li>If anything here disagrees with an official source, follow the official source.</li></ul></article><aside class="article-aside"><div><span class="aside-label">Important</span><strong>Not an official source</strong><p>This checklist is general guidance only. It does not predict admission, aid or visa outcomes — your university and the immigration authority decide those.</p></div></aside></section></main>
   <footer class="site-footer"><div class="site-container footer-grid">
     <div class="footer-about">
   <a class="brand" href="/" aria-label="Top Schools Rankings home" style="display:flex; align-items:center;">
