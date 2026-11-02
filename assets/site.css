@@ -394,8 +394,7 @@ button, input { font: inherit; }
 article .table-wrapper,
 .prose .table-wrapper,
 .table-responsive,
-.rich-article-content .table-wrapper,
-.rich-article-content > table {
+.rich-article-content .table-wrapper {
   width: 100% !important;
   max-width: 100% !important;
   display: block !important; /* Critical to allow native table scrolling if unwrapped */
