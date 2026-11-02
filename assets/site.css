@@ -32,7 +32,8 @@ body {
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; }
-button, input { font: inherit; }
+code { overflow-wrap: anywhere; }
+button, input, select, textarea { font: inherit; }
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -67,7 +68,7 @@ button, input { font: inherit; }
 .mobile-nav { display: none; margin-left: auto; }
 .mobile-nav summary { list-style: none; cursor: pointer; padding: 9px 14px; border: 1px solid var(--line); border-radius: 10px; font-weight: 700; }
 .mobile-nav summary::-webkit-details-marker { display: none; }
-.mobile-nav nav { position: absolute; right: 20px; top: 70px; display: grid; min-width: 230px; padding: 12px; background: white; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.mobile-nav nav { position: absolute; right: 20px; top: calc(100% + 1px); display: grid; min-width: 230px; padding: 12px; background: white; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
 .mobile-nav nav a { padding: 10px 12px; border-radius: 8px; font-weight: 650; }
 .mobile-nav nav a:hover { background: var(--soft); }
 
@@ -288,8 +289,9 @@ button, input { font: inherit; }
 .tool-fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 18px; }
 .tool-fields label { display: grid; gap: 6px; }
 .tool-fields label span { color: #c9d5e4; font-size: 12px; }
-.tool-fields input { width: 100%; height: 48px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 9px; padding: 0 13px; background: rgba(255, 255, 255, .09); color: white; outline: none; }
-.tool-fields input:focus { border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(230, 173, 58, .16); }
+.tool-fields input, .tool-fields select { width: 100%; height: 48px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 9px; padding: 0 13px; background: rgba(255, 255, 255, .09); color: white; outline: none; }
+.tool-fields input:focus, .tool-fields select:focus { border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(230, 173, 58, .16); }
+.tool-fields select option { color: var(--navy-900); }
 .tool-panel .button-primary { background: var(--gold-500); color: var(--navy-950); }
 .tool-result { margin-top: 17px; padding: 14px 16px; border: 1px solid rgba(255, 255, 255, .2); border-radius: 9px; background: rgba(255, 255, 255, .08); color: white; font-weight: 750; }
 .checklist-tool { display: grid; gap: 10px; }
@@ -476,11 +478,16 @@ article table td:last-child,
 
 /* Mobile responsive fallback */
 @media (max-width: 768px) {
-  article table,
   .prose table,
-  .rich-article-content table {
+  .rich-article-content table,
+  .table-scroll table {
     min-width: 650px !important; /* Mobile par clean horizontal scroll allow karega */
     font-size: 0.82rem !important;
+  }
+
+  /* Bare tool tables have no overflow wrapper, so the wide-table minimum above must not push them past the viewport. */
+  .article-body > table {
+    min-width: 100% !important;
   }
 }
 
