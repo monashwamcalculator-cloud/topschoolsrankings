@@ -634,3 +634,31 @@ article table td:last-child,
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Guides index pagination */
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+.pagination a {
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+  text-decoration: none;
+}
+.pagination a:hover {
+  border-color: #0f172a;
+  color: #0f172a;
+}
+.pagination a.active {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
