@@ -1050,11 +1050,6 @@
     "type": "article"
   },
   {
-    "path": "/top-20-canadian-boarding-schools/",
-    "title": "Top 20 Canadian Boarding Schools (2026 Admissions Guide)",
-    "type": "article"
-  },
-  {
     "path": "/top-20-fashion-schools-in-the-us/",
     "title": "Top 20 Fashion Schools in the US: Programs, Costs, Careers & Admissions Guide",
     "type": "article"
@@ -1458,5 +1453,35 @@
     "path": "/listing/texas-a-and-m-university/",
     "title": "Texas A&M University",
     "type": "listing"
+  },
+  {
+    "path": "/top-100-finance-schools-us/",
+    "title": "Top 100 Finance Schools in the US: 2026 Rankings",
+    "type": "article"
+  },
+  {
+    "path": "/top-100-universities-in-europe/",
+    "title": "Top 100 Universities in Europe: 2026 Rankings & Tuition",
+    "type": "article"
+  },
+  {
+    "path": "/top-50-english-taught-masters-germany/",
+    "title": "Top 50 English-Taught Master's in Germany: Fees, APS & Visa",
+    "type": "article"
+  },
+  {
+    "path": "/tools/ib-to-gpa-converter/",
+    "title": "IB to GPA Converter (Approximate US 4.0 Scale)",
+    "type": "tool"
+  },
+  {
+    "path": "/tools/atar-gpa-converter/",
+    "title": "ATAR to GPA Converter (Approximate)",
+    "type": "tool"
+  },
+  {
+    "path": "/tools/college-chances-calculator/",
+    "title": "College Admissions Chances Predictor",
+    "type": "tool"
   }
 ]
