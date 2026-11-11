@@ -242,11 +242,16 @@
 // Category Filter Logic
 document.addEventListener('DOMContentLoaded', function() {
     const filterPills = document.querySelectorAll('.filter-pill');
-    const guideCards = document.querySelectorAll('.guide-card[data-category]');
-    
+    const gridEl = document.querySelector('.guide-grid');
+    const paginationNav = document.querySelector('.pagination');
     const headerH1 = document.querySelector('.page-header h1');
     const headerP = document.querySelector('.page-header p');
     const headerMeta = document.querySelector('.page-header .page-meta');
+    const initialMetaText = headerMeta ? headerMeta.textContent : '';
+
+    function getCards() {
+        return document.querySelectorAll('.guide-card[data-category]');
+    }
 
     const copyData = {
         'all': {
@@ -273,21 +278,82 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateHeader(filterValue, visibleCount) {
         if (!headerH1 || !headerP || !headerMeta) return;
-        
+
         let key = filterValue;
         if (key === 'Schools &amp; Boarding') key = 'Schools & Boarding';
         if (key === 'Admissions &amp; Visas') key = 'Admissions & Visas';
         if (key === 'Degree &amp; Career Guides') key = 'Degree & Career Guides';
-        
+
         const data = copyData[key] || copyData['all'];
         headerH1.textContent = data.h1;
         headerP.textContent = data.p;
         headerMeta.textContent = `${visibleCount} EDITORIAL GUIDES`;
     }
 
-    if (filterPills.length > 0 && guideCards.length > 0) {
-        if (headerMeta && headerH1) {
-            updateHeader('all', guideCards.length);
+    // Pagination support: the guides index is split across pages, so when a
+    // category filter is chosen, first pull the cards from the sibling pages
+    // into this grid — the filter then covers every guide, as it did when all
+    // cards lived on one page. Choosing "All" removes them again.
+    let extrasLoaded = false;
+    let extrasPromise = null;
+
+    function siblingPageUrls() {
+        if (!paginationNav) return [];
+        const urls = [];
+        paginationNav.querySelectorAll('a[href]').forEach(a => {
+            const u = a.getAttribute('href');
+            if (u && urls.indexOf(u) === -1) urls.push(u);
+        });
+        return urls.filter(u => u !== window.location.pathname);
+    }
+
+    function ensureAllCards() {
+        if (extrasLoaded) return Promise.resolve();
+        if (extrasPromise) return extrasPromise;
+        const urls = siblingPageUrls();
+        if (!gridEl || urls.length === 0) { extrasLoaded = true; return Promise.resolve(); }
+        extrasPromise = Promise.all(urls.map(u => fetch(u).then(r => r.text()))).then(htmlPages => {
+            htmlPages.forEach(html => {
+                const parsed = new DOMParser().parseFromString(html, 'text/html');
+                parsed.querySelectorAll('.guide-card[data-category]').forEach(card => {
+                    const clone = document.importNode(card, true);
+                    clone.setAttribute('data-extra', '1');
+                    gridEl.appendChild(clone);
+                });
+            });
+            extrasLoaded = true;
+        }).catch(() => { extrasLoaded = true; });
+        return extrasPromise;
+    }
+
+    function removeExtras() {
+        document.querySelectorAll('.guide-card[data-extra]').forEach(c => c.remove());
+        extrasLoaded = false;
+        extrasPromise = null;
+    }
+
+    function applyFilter(filterValue) {
+        let visibleCount = 0;
+        getCards().forEach(card => {
+            const category = card.getAttribute('data-category');
+
+            card.style.animation = 'none';
+            card.offsetHeight;
+            card.style.animation = null;
+
+            if (filterValue === 'all' || category === filterValue || category === filterValue.replace(/&amp;/g, '&')) {
+                card.classList.remove('hidden');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+        return visibleCount;
+    }
+
+    if (filterPills.length > 0 && getCards().length > 0) {
+        if (headerMeta && headerH1 && !paginationNav) {
+            updateHeader('all', getCards().length);
         }
 
         filterPills.forEach(pill => {
@@ -296,27 +362,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 pill.classList.add('active');
 
                 const filterValue = pill.getAttribute('data-filter');
-                let visibleCount = 0;
 
-                guideCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    
-                    card.style.animation = 'none';
-                    card.offsetHeight; 
-                    card.style.animation = null;
-
-                    if (filterValue === 'all') {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    } else if (category === filterValue || category === filterValue.replace(/&amp;/g, '&')) {
-                        card.classList.remove('hidden');
-                        visibleCount++;
-                    } else {
-                        card.classList.add('hidden');
+                if (filterValue === 'all') {
+                    removeExtras();
+                    if (paginationNav) paginationNav.style.display = '';
+                    applyFilter('all');
+                    if (headerH1 && headerP && headerMeta) {
+                        const data = copyData['all'];
+                        headerH1.textContent = data.h1;
+                        headerP.textContent = data.p;
+                        headerMeta.textContent = initialMetaText;
                     }
-                });
+                    return;
+                }
 
-                updateHeader(filterValue, visibleCount);
+                ensureAllCards().then(() => {
+                    if (paginationNav) paginationNav.style.display = 'none';
+                    const visibleCount = applyFilter(filterValue);
+                    updateHeader(filterValue, visibleCount);
+                });
             });
         });
     }
