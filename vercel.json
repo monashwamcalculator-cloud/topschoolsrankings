@@ -64,6 +64,46 @@
       "source": "/favicon.ico",
       "destination": "/favicon.jpg",
       "permanent": true
+    },
+    {
+      "source": "/home/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page/4/",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/page/4",
+      "destination": "/blogs/",
+      "permanent": true
+    },
+    {
+      "source": "/top-10-universities-in-canada-for-engineering-co-op-pathways/",
+      "destination": "/top-10-universities-in-canada-for-engineering-co-op/",
+      "permanent": true
+    },
+    {
+      "source": "/top-10-universities-in-canada-for-engineering-co-op-pathways",
+      "destination": "/top-10-universities-in-canada-for-engineering-co-op/",
+      "permanent": true
+    },
+    {
+      "source": "/write-for-us-list-schools-on-topschoolsrankings-com/",
+      "destination": "/write-for-us/",
+      "permanent": true
+    },
+    {
+      "source": "/write-for-us-list-schools-on-topschoolsrankings-com",
+      "destination": "/write-for-us/",
+      "permanent": true
     }
   ]
 }
