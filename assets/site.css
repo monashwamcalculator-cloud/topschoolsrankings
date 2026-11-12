@@ -303,7 +303,8 @@ button, input, select, textarea { font: inherit; }
 .not-found p { color: var(--muted); font-size: 18px; }
 .not-found .button { margin: 20px 6px 0; }
 
-.site-footer { padding-top: 65px; color: #b4c2d4; background: var(--navy-950); }
+.site-footer { padding-top: 65px; color: #b4c2d4; background: linear-gradient(180deg, #0a1c33, #030b16); border-top: 5px solid var(--gold-500); box-shadow: 0 -14px 30px rgba(3, 11, 22, .35); }
+.site-footer .brand img { background: #ffffff; border-radius: 12px; padding: 10px 14px; }
 .footer-grid { display: grid; grid-template-columns: 1.7fr repeat(3, 1fr); gap: 60px; padding-bottom: 54px; }
 .site-footer .brand-copy strong { color: white; }
 .footer-about p { max-width: 355px; margin: 23px 0 13px; color: #9daec3; font-size: 13px; }
@@ -311,7 +312,7 @@ button, input, select, textarea { font: inherit; }
 .site-footer h2 { margin: 0 0 17px; color: white; font-size: 12px; text-transform: uppercase; letter-spacing: .12em; }
 .site-footer .footer-grid > div:not(.footer-about) a { display: block; margin: 10px 0; color: #a9b8ca; font-size: 13px; }
 .site-footer .footer-grid > div:not(.footer-about) a:hover { color: white; }
-.footer-bottom { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 25px; border-top: 1px solid rgba(255, 255, 255, .1); color: #7f92ab; font-size: 11px; }
+.footer-bottom { min-height: 66px; display: flex; align-items: center; justify-content: space-between; gap: 25px; border-top: 1px solid rgba(255, 255, 255, .18); color: #7f92ab; font-size: 11px; }
 
 @media (max-width: 1050px) {
   .desktop-nav { gap: 14px; }
