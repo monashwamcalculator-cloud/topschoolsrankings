@@ -434,6 +434,10 @@
     <loc>https://topschoolsrankings.com/top-100-schools-in-australia/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url><url>
+    <loc>https://topschoolsrankings.com/top-50-schools-in-sydney/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://topschoolsrankings.com/top-100-schools-in-india/</loc>
