@@ -445,6 +445,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://topschoolsrankings.com/top-50-schools-in-queensland/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://topschoolsrankings.com/top-100-schools-in-india/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
