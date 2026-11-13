@@ -104,6 +104,26 @@
       "source": "/write-for-us-list-schools-on-topschoolsrankings-com",
       "destination": "/write-for-us/",
       "permanent": true
+    },
+    {
+      "source": "/tools/sat-score-estimator/",
+      "destination": "/tools/act-to-sat-converter/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/sat-score-estimator",
+      "destination": "/tools/act-to-sat-converter/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/hsc-atar-estimator/",
+      "destination": "/tools/atar-gpa-converter/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/hsc-atar-estimator",
+      "destination": "/tools/atar-gpa-converter/",
+      "permanent": true
     }
   ]
 }
