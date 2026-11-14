@@ -698,3 +698,6 @@ article table td:last-child,
 .tool-card h3 a:hover { color: var(--blue-700); }
 .tool-card p { margin: 0 0 20px; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .tool-card .text-link { margin-top: auto; }
+
+/* Featured profiles (homepage): show each institution's own logo, sized like the listings hub */
+.featured-profiles .country-card > img { width: 92px; height: 48px; object-fit: contain; object-position: left center; }
