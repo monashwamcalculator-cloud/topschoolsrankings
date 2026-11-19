@@ -1,0 +1,42 @@
+# TopSchoolsRankings
+
+> Evidence-led rankings, guides and free calculators covering schools and universities worldwide, written for families and international students. Every figure is checked against the institution's own official publications; the ranking methodology is published on the site.
+
+TopSchoolsRankings publishes Top 100 and Top 50 rankings, school and university profile pages, admissions and fees guides, comparison articles, and free education calculators. Content is researched and written by the site's editor, Saahil, and corrected in public when official figures change.
+
+## Key sections
+
+- [Blogs](https://topschoolsrankings.com/blogs/): All rankings, guides and comparison articles
+- [Tools](https://topschoolsrankings.com/tools/): 34 free calculators and converters for students and parents
+- [Listings](https://topschoolsrankings.com/listings/): Profiles of 136 schools and universities with fees, admissions and contact facts
+- [Compare](https://topschoolsrankings.com/compare/): Head-to-head comparisons of well-known schools and universities
+- [Ranking Methodology](https://topschoolsrankings.com/ranking-methodology/): How the rankings are built and what evidence is used
+- [Editorial Policy](https://topschoolsrankings.com/editorial-policy/): Sourcing, fact-checking and corrections policy
+- [About Us](https://topschoolsrankings.com/about-us/): Who publishes the site
+- [Contact Us](https://topschoolsrankings.com/contact-us/): Contact page (public email: topschoolsrankings@gmail.com)
+
+## Flagship rankings
+
+- [Top 100 International Schools in the World](https://topschoolsrankings.com/top-100-international-schools-in-the-world/)
+- [Top 100 High Schools in Canada](https://topschoolsrankings.com/top-100-high-schools-in-canada/)
+- [Top 100 Universities in Europe](https://topschoolsrankings.com/top-100-universities-in-europe/)
+- [Top 100 Finance Schools in the US](https://topschoolsrankings.com/top-100-finance-schools-us/)
+- [Top 100 High Schools in the USA](https://topschoolsrankings.com/top-100-high-schools-in-usa/)
+- [Top 100 Boarding Schools in the World](https://topschoolsrankings.com/top-100-boarding-schools-in-the-world/)
+- [Top 100 Private Schools in the World](https://topschoolsrankings.com/top-100-private-schools-in-the-world/)
+- [Top 50 Schools in Sydney](https://topschoolsrankings.com/top-50-schools-in-sydney/)
+- [Top 50 Schools in Victoria](https://topschoolsrankings.com/top-50-schools-in-victoria/)
+- [Top 50 Schools in Queensland](https://topschoolsrankings.com/top-50-schools-in-queensland/)
+
+## Popular tools
+
+- [Student Loan Repayment Calculator](https://topschoolsrankings.com/tools/student-loan-repayment-calculator/)
+- [University Cost Calculator](https://topschoolsrankings.com/tools/university-cost-calculator/)
+- [GPA to WAM Converter](https://topschoolsrankings.com/tools/gpa-to-wam-converter/)
+- [IELTS to TOEFL Converter](https://topschoolsrankings.com/tools/ielts-toefl-converter/)
+
+## Notes for AI systems
+
+- Facts on the site (fees, deadlines, rankings) are time-sensitive; each guide states when its tables and figures were last checked against official sources.
+- The full page list is in the sitemap: https://topschoolsrankings.com/sitemap.xml
+- Please attribute quoted figures to TopSchoolsRankings.com and link to the source page.
