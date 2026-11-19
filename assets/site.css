@@ -100,7 +100,7 @@ button, input, select, textarea { font: inherit; }
 .popular-searches span { font-weight: 750; color: #4d5a6d; }
 .popular-searches a { color: var(--blue-700); border-bottom: 1px solid rgba(21, 86, 184, .25); }
 .evidence-card { position: relative; padding: 28px; color: white; background: linear-gradient(145deg, var(--navy-900), var(--navy-950)); border-radius: var(--radius-lg); box-shadow: var(--shadow); }
-.evidence-card::after { content: ""; position: absolute; right: 21px; top: 20px; width: 54px; height: 54px; border: 1px solid rgba(230, 173, 58, .42); border-radius: 50%; }
+.evidence-card::after { content: "\2713"; position: absolute; right: 21px; top: 20px; width: 54px; height: 54px; border: 1px solid rgba(230, 173, 58, .42); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-500); font-size: 24px; font-weight: 700; line-height: 1; }
 .evidence-card-label { color: #aabbd0; text-transform: uppercase; letter-spacing: .14em; font-size: 10px; font-weight: 800; }
 .evidence-card ol { margin: 24px 0; padding: 0; list-style: none; display: grid; gap: 0; }
 .evidence-card li { display: flex; gap: 16px; align-items: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, .1); }
